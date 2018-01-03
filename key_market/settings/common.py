@@ -37,7 +37,6 @@ INSTALLED_APPS = (
     'djangobower',
     'pipeline',
     'easy_thumbnails',
-    'fabric_utils',
     'lib',
     'news',
     'games',
