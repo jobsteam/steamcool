@@ -1,0 +1,17 @@
+{% load thumbnail %}
+
+<div class="gray_block">
+    <h3>Скоро в продаже</h3>
+    {% for soon_game in soon %}
+        <div class="preorder-box">
+            {% thumbnail soon_game.image "200x93" crop="center" as im %}
+            <a href="{% url 'games:detail' soon_game.slug %}">
+                <img src="{{ im.url }}" width="{{ im.width }}" alt="">
+            </a>
+            <div class="preorder-name">{{ soon_game.title }}</div>
+            <div class="preorder-percent-price clear-block">
+                <span>Скоро в продаже!</span>
+            </div>
+        </div>
+    {% endfor %}
+</div>

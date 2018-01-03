@@ -1,0 +1,10 @@
+<div class="gray_block">
+    <h3>Жанры</h3>
+    <ul class="block_menu">
+        {% for genre in genre_list %}
+            <li>
+                <a class="{% if active_page == genre.slug %}active{% endif %}" href="{% url 'games:genre_list' genre.slug %}">{{ genre.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

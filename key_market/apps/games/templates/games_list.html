@@ -1,0 +1,38 @@
+{% extends "columns_3.html" %}
+{% load thumbnail %}
+
+{% block title %}{{ page_title }}{% endblock title %}
+
+{% block keywords %}Ключи, {{ section }}{% endblock keywords %}
+
+{% block description %}Описание {{ section }}{% endblock description %}
+
+{% block center_column %}
+    {% if game_list %}
+        <h2 class="list_title">{{ page_title }}</h2>
+        <div class="game_list">
+            {% for games in object_list %}
+                <div class="game_list_element clear-block">
+                    <span class="foto">
+
+                        {% thumbnail games.image "160x75" as im %}
+                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+
+                    </span>
+                    <div class="game_list_element_name">
+                        <span class="name">{{ games.title }}</span>
+                        <div>{{ games.get_store_activation_display }} ключ</div>
+                    </div>
+                    <span class="price">{{ games.my_coast }} р.</span>
+                    <a href="{% url 'games:detail' games.slug %}"></a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        {% if is_alphabet %}
+            На такую букву игр не нашлось
+        {% else %}
+            В разделе {{ section }} нет ни одной игры. Приходите позже, они обязательно появятся
+        {% endif %}
+    {% endif %}
+{% endblock %}

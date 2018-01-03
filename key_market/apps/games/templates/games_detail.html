@@ -1,0 +1,217 @@
+{% extends "columns_2.html" %}
+
+{% load static pipeline %}
+{% load thumbnail %}
+
+{% block title %}{{ game.seo_title }}{% endblock title %}
+
+{% block keywords %}{{ game.seo_keywords }}{% endblock keywords %}
+
+{% block description %}{{ game.seo_description }}{% endblock description %}
+
+{% block extra-styles %}<link rel="stylesheet" href="{% static 'frontend/style/jquery.fancybox.css' %}" />{% endblock extra-styles %}
+
+{% block extra-scripts %}<script type="text/javascript" src="{% static 'frontend/js/jquery.fancybox.js' %}"></script>{% endblock extra-scripts %}
+
+{% block view_element %}
+    <div class="game">
+        <h1>{{ game.seo_title }}</h1>
+        <div class="game_top clear-block">
+            <div class="game_img">
+                {% thumbnail game.image "400x187" as main_image %}
+                <img src="{{ main_image.url }}">
+            </div>
+            <div class="game_info">
+                <div class="game_mini_info">
+
+                    Жанр:
+                        {% for genre in game.genre.all%}
+                            <a href="{% url 'games:genre_list' genre.slug %}">{{ genre.title }}</a>
+                        {% endfor %}
+                        <br />
+
+                    Язык:
+                        {{ game.get_language_display }}
+                        <br />
+
+                    Активация:
+                        <a href="{% url 'games:store_list' game.get_store_activation_display %}">{{ game.get_store_activation_display }}</a>
+                        <br />
+
+                    Дата выхода:
+                        {{ game.date_release|date:"SHORT_DATE_FORMAT" }}
+                        <br />
+
+                    Издатель:
+                        {{ game.publisher }}
+                        <br />
+
+                </div>
+                <div class="game_price_info clear-block">
+                    <div class="game_price clear-block">
+                        <div class="percent">- {{ game.percent }}%</div>
+                        <div class="coast">{{ game.my_coast }} <span>руб.</span></div>
+                    </div>
+
+                    {% if game.in_stock %}
+                        <a class="buy" href="{% url 'games:order' game.slug %}">Купить ключ</a>  
+                    {% else %}
+                        <div class="nonal">Нет в наличии</div>
+                    {% endif %}
+
+                    
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="game_content clear-block">
+            <div class="game_content_left">
+                <div class="tab_menu">
+                    <ul class="tabs tabs_game">
+                        <li><a href="#tab1" class="active">Описание</a></li>
+                        <li><a href="#tab2">Активация</a></li>
+                    </ul>
+                    <div id="tab1" style="display: block;">
+                        <div class="game_content_block">
+                            <h2>Описание игры</h2>
+                            <div class="game_text">
+                                <div class="store_box store_icon_{{ game.method_activation }} clear-block">
+                                    <div class="store_box_left">
+                                        <img src="/static/frontend/images/{{ game.get_store_activation_display }}.png" width="100" height="100">
+                                    </div>
+                                    <div class="store_box_right ">
+                                        При покупке данного товара вы покупаете
+
+                                        {% if game.method_activation == 1 %}
+                                            <strong>лицензионный steam gift</strong>
+                                        {% elif game.method_activation == 2 %}
+                                            <strong>лицензионный steam ключ</strong>
+                                        {% elif game.method_activation == 3 %}
+                                            <strong>лицензионный origin ключ</strong>
+                                        {% elif game.method_activation == 4 %}
+                                            <strong>лицензионный uplay ключ</strong>
+                                        {% elif game.method_activation == 5 %}
+                                            <strong>лицензионный rockstar social club ключ</strong>
+                                        {% endif %}
+
+                                        активации к игре Expeditions: Viking
+                                    </div>
+                                </div>
+                                {{ game.description|safe }}
+                            </div>
+                        </div>
+                        <div class="game_content_block">
+                            <h2>Системные требования</h2>
+                            <div class="game_text">
+                                <table class="system" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top" align="right"><strong>ОС</strong></td>
+                                            <td>{{ game.os }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" align="right"><strong>Процессор</strong></td>
+                                            <td>{{ game.processor }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" align="right"><strong>ОЗУ</strong></td>
+                                            <td>{{ game.ozu }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" align="right"><strong>Видеокарта</strong></td>
+                                            <td>{{ game.video_card }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" align="right"><strong>HDD</strong></td>
+                                            <td>{{ game.hdd }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab2" style="display: none;">
+                        <div class="game_content_block">
+                            <h2>Что я покупаю?</h2>
+                            <div class="game_text"> 
+                                <strong>ВНИМАНИЕ!</strong> Данный ключ имеет региональные ограничения и <strong>может быть активирован только в странах</strong>:
+
+                                {% if game.region == 1 %}
+                                    Армения, Азербайджан, Республика Беларусь, Грузия, Киргизстан, Казахстан, Республика Молдова, Таджикистан, Туркменистан, Узбекистан, Украина, <strong>Россия</strong>.
+                                {% elif game.region == 2 %}
+                                    Россия.
+                                {% elif game.region == 3 %}
+                                    Россия, Польша.
+                                {% endif %}
+
+                                Купленный ключ не имеет срока годности, активировать его вы можете в любой момент.
+                            </div>
+                        </div>
+                        <div class="game_content_block">
+                            <h2>Инструкция по активации</h2>
+                            <div class="game_text"> 
+                                {% if game.method_activation == 1 %}
+                                    <strong>Как активировать Steam gift к игре {{ game.title }}</strong>:<br />
+                                    1. Если у Вас нет аккаунта Steam, вам необходимо создать его;<br />
+                                    2. Перейдите по купленной ключ-ссылке;<br />
+                                    3. Перейдя по ссылке, вы попадете на сайт Steam, где Вам будет предложено авторизоваться;<br />
+                                    4. Авторизуйтесь, используя ваш логин и пароль;<br />
+                                    5. Выберите активацию игры в библиотеки;<br />
+                                    6. После этого игра отобразится в разделе «Библиотека», и вы сможете <strong>скачать {{ game.title }}</strong> из своей библиотеки;<br />
+                                    7. Приятной игры.
+                                {% elif game.method_activation == 2 %}
+                                    <strong>Как активировать Steam ключ к игре {{ game.title }}:</strong><br />
+                                    1. Если у Вас нет аккаунта Steam, вам необходимо создать его;<br />
+                                    2. Скачайте и установите себе Steam;<br />
+                                    3. Запустите Steam и авторизуйтесь, используя ваш логин и пароль;<br />
+                                    4. В Steam воспользуйтесь меню "Игры - Активировать через Steam";<br />
+                                    5. В открывшемся окне введите лицензионный ключ к игре;<br />
+                                    6. После этого игра отобразится в разделе «Библиотека», и вы сможете <strong>скачать {{ game.title }}</strong> из своей библиотеки;<br />
+                                    7. Приятной игры.
+                                {% elif game.method_activation == 3 %}
+                                    <strong>Как активировать Origin ключ к игре {{ game.title }}</strong>:<br />
+                                    1. Если не установлен Origin клиент, скачайте и установите его;<br />
+                                    2. Войдите в свой аккаунт Origin или зарегистрируйте новый, если у вас его еще нет;<br />
+                                    3. Воспользуйтесь функцией «Активировать код продукта»;<br />
+                                    4. Введите ключ активации;<br />
+                                    5. После этого игра отобразится в разделе "Мои игры", и вы сможете <strong>скачать {{ game.title }}</strong>;<br />
+                                    6. Приятной игры.
+                                {% elif game.method_activation == 4 %}
+                                    <strong>Как активировать Uplay ключ к игре {{ game.title }}</strong>:<br />
+                                    1. Если у Вас не установлен Uplay клиент, скачайте и установите его;<br />
+                                    2. Войдите в свой аккаунт Uplay или зарегистрируйте новый, если у вас его еще нет;<br />
+                                    3. Нажмите на изображение «Шестерёнки» и выберите «Активировать продукт»;<br />
+                                    4. Введите ключ активации;<br />
+                                    5. После этого игра отобразится в библиотеке игр, и вы сможете <strong>скачать {{ game.title }}</strong>;<br />
+                                    6. Приятной игры.
+                                {% elif game.method_activation == 5 %}
+                                    <strong>Как активировать ключ от Rockstar к игре {{ game.title }}:</strong><br />
+                                    1. Если у Вас нет аккаунта <a href="https://ru.socialclub.rockstargames.com/profile/signin">Social Club</a>, вам необходимо создать его;<br />
+                                    2. Перейдите по <a href="https://ru.socialclub.rockstargames.com/games/activate/index-signin">ссылке</a> и нажмите на кнопку "Использовать код активации Rockstar";<br />
+                                    3. После того как вы активируете ключ, вместо кнопки "Приобрести" будет доступно "Зугрузить для Windows". <strong>Скачатей игру {{ game.title }}</strong> на PC и запустите setup.exe.<br />
+                                    4. После окончании установки вы сможете играть.
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="game_content_right">
+
+                <div class="gallery">
+                    {% for screenshot in game.screenshots.all %}
+                    <a data-fancybox="gallery" href="{{ screenshot.image.url }}">
+                        {% thumbnail screenshot.image "95x53" as im %}
+                        <img src="{{ im.url }}">
+                    </a>
+                    {% endfor %}
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}

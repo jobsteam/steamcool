@@ -1,0 +1,10 @@
+{% if last_pay %}
+    <div class="gray_block">
+        <h3>Последние продажи</h3>
+        <ul class="block_menu">
+            {% for game in last_pay %}
+                <li><a href="{{ game.get_absolute_url }}">{{ game.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

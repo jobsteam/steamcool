@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="content">
+    <table cellpadding="4" width="100%">
+        <tr>
+            <td><strong>Название игры</strong></td>
+            <td><strong>steambuy.com</strong></td>
+            <td><strong>steampay.com</strong></td>
+            <td><strong>steam-account.ru</strong></td>
+            <td><strong>zaka-zaka.com</strong></td>
+            <td><strong>steamcool.ru</strong></td>
+        </tr>
+        {% for games in object_list %}
+            <tr>
+                <td>{{ games.title }}</td>
+                <td>{{ games.sb_id }}</td>
+                <td>{{ games.sp_id }}</td>
+                <td>{{ games.sa_id }}</td>
+                <td>{{ games.zz_id }}</td>
+                <td>{{ games.my_coast }} р.</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock content %}

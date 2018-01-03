@@ -1,0 +1,133 @@
+{% load static pipeline %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name="keywords" content="{% block keywords %}{% endblock keywords %}" />
+    <meta name="description" content="{% block description %}{% endblock description %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/style.css' %}">
+    <script type="text/javascript" src="{% static 'frontend/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/js/tabs.js' %}"></script>
+    {% block extra-styles %}{% endblock extra-styles %}
+    {% block extra-scripts %}{% endblock extra-scripts %}
+</head>
+<body class="{% spaceless %}{% block bodyclass %}{% endblock %}{% endspaceless %}">
+
+    <div class="wrapper">
+        <div class="top">
+            <div class="top_left">
+                <ul>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Способы оплаты</a></li>
+                    <li><a href="#">Как купить</a></li>
+                    <li><a href="#">Поддержка</a></li>
+                    <li><a href="{% url 'pages:guarantees' %}">Гарантия качества</a></li>
+                </ul>
+            </div>
+            <div class="top_right">
+                <ul>
+                    <li><a href="#">Мои покупки</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="head">
+            <a class="logo" href="/"><img src="{% static 'frontend/images/logo.png' %}"></a>
+            <div class="search clear-block">
+                <div class="search_input"><input type="text" placeholder="Что ищем?"/></div>
+                <div class="search_submit"><input type="submit" value="поиск" /></div>
+            </div>
+        </div>
+        <div class="top_menu">
+            <ul>
+                <li><a class="{% if is_index %}active{% endif %}" href="{% url 'index' %}">Главная</a></li>
+                {% for store in store_list %}
+                    <li><a class="{% if active_page == store %}active{% endif %}" href="{% url 'games:store_list' store %}">{{ store|title }} ключи</a></li>
+                {% endfor %}
+                <li><a class="{% if is_freelist %}active{% endif %}" href="{% url 'games:free' %}">Игры даром</a></li>
+            </ul>
+        </div>
+        <div class="top">
+            <div class="book clear-block">
+                {% for symbol in alphabet %}
+                    <a class="{% if alphabet_symbol == symbol %}active{% endif %}" href="{% url 'games:list' %}?query={{symbol}}">{{ symbol|title }}</a>
+                {% endfor %}
+                {# <a class="active" href="#fixme">H</a> #}
+                <a class="all_games" href="{% url 'games:list' %}">Все игры</a>
+            </div>
+        </div>
+        <div class="colums clear-block">
+            {% block content %}{% endblock content %}
+        </div>
+        <div class="pre_footer">
+            <div class="pre_payments">
+                <h3>Способы оплаты</h3>
+            </div>
+            <div class="payments clear-block">
+                <div class="payment-ic vm"></div>
+                <div class="payment-ic ya"></div>
+                <div class="payment-ic qw"></div>
+                <div class="payment-ic vis"></div>
+                <div class="payment-ic meg"></div>
+                <div class="payment-ic bil"></div>
+                <div class="payment-ic mts"></div>
+                <div class="payment-ic sbr"></div>
+                <div class="payment-ic tele"></div>
+                <div class="payment-ic poch"></div>
+            </div>
+            <div class="after_payments">
+                Наш магазин использует только самые популярные сисетмы оплаты.<br />
+                Внимание! Каждая система оплаты взымает комиссию при переводе денежных средств.<br />
+                Ознакомиться с комиссией можно на специальной <a href="#">странице</a>.
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-menu menu_1">
+                <h3>Товары</h3>
+                <ul>
+                    <li><a href="#">Steam ключи</a></li>
+                    <li><a href="#">Orign ключи</a></li>
+                    <li><a href="#">Uplay ключи</a></li>
+                </ul>
+            </div>
+            <div class="footer-menu menu_2">
+                <h3>Наш магазин</h3>
+                <ul>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Способы оплаты</a></li>
+                    <li><a href="#">Гарантии</a></li>
+                </ul>
+            </div>
+            <div class="footer-menu menu_3">
+                <h3>Помощь</h3>
+                <ul>
+                    <li><a href="#">Поддержка</a></li>
+                    <li><a href="#">Как купить</a></li>
+                    <li><a href="#">Мои покупки</a></li>
+                </ul>
+            </div>
+            <a class="footer-logo" href="#"></a>
+            <div class="footer-line"></div>
+            <div class="footer-text">
+                Этот сайт не был одобрен корпорацией Valve и не аффилирован с корпорацией Valve или ее лицензиаров. Все ключи продаваемые на нашем сайте были приобретены по оптовым ценам у официальных дилеров, работающих напрямую с издателями. Это может объяснить такую низкую стоимость на ключи в нашем каталоге игр. Мы гарантируем качество продаваемого товара и даем полную консультацию по приобретению, активации и совместимости покупаемой игры.
+            </div>
+            <div class="vk-footer clear-block">
+                <a class="vk-footer-ic" href="#"></a>
+                <div class="vk-footer-info">
+                    Мы есть в социальной сети <a href="#">Вконтакте</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
+
+
+
+
+
+
