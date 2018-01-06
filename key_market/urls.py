@@ -11,6 +11,8 @@ from games.views import IndexPage
 urlpatterns = [
     url(r'^$', IndexPage.as_view(), name='index'),
     url(r'^', include('games.urls', namespace='games')),
+    url(r'^a441a4cc8871.html$',
+        TemplateView.as_view(template_name='yandex.html')),
     url(r'^news/', include('news.urls')),
     url(r'^about/', include('pages.urls', namespace='pages')),
     url(r'^robots.txt$',
