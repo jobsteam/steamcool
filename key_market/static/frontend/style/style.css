@@ -689,8 +689,8 @@ span#rightNav {
 .tele{
     background: url(../images/pay-sprite.png) -216px -108px no-repeat;
 }
-.alfa{
-    background: url(../images/pay-sprite.png) -108px -54px no-repeat;
+.prf{
+    background: url(../images/pay-sprite.png) -270px 0px no-repeat;
 }
 .payment .pay_text{
     position: absolute;
