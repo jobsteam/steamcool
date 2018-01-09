@@ -11,7 +11,7 @@
     font-style: normal;
 }
 body{
-    background: url(../images/fon.jpg) top center no-repeat fixed;
+    background: url(https://7themes.su/_ph/28/327696235.jpg) top center no-repeat fixed;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -150,10 +150,17 @@ body{
     display: block;
 }
 .game_list_element span.price{
-    width: 100px;
+    width: 69px;
     float: right;
-    font: normal 16px/74px ptSans;
+    font: normal 14px ptSans;
     text-align: center;
+    background: #169d00;
+    color: #FFF;
+    padding: 6px;
+    border-radius: 6px;
+    position: absolute;
+    right: 20px;
+    top: 25px;
 }
 .game_list_element_name{
     font: normal 18px ptSans;
@@ -165,6 +172,7 @@ body{
 }
 .game_list_element_name div{
     font: normal 14px ptSans;
+    color: #169d00;
 }
 .game_list_element_name .name{
     height:25px;
@@ -244,25 +252,24 @@ body{
     height: 45px;
     padding: 13px 15px 0 15px;
     box-sizing:border-box;
-    text-transform: uppercase;
 }
 .tabs_main li a.active{
     background: #169d00;
 }
 .book{
-    padding: 9px 0 0 9px;
+    padding: 0;
 }
 .book a{
     display: block;
     float: left;
-    padding: 4px 0;
+    padding: 13px 0;
     background: #ebebeb;
     font: normal 14px ptSans;
     text-decoration: none;
     color: #333;
-    margin: 0 5px 0 0;
+    margin: 0 1px 0 0;
     text-align: center;
-    width: 26px;
+    width: 35px;
 }
 
 .book a:hover{
@@ -274,7 +281,8 @@ body{
     color: #FFF;
 }
 .book a.all_games{
-    width: 75px;
+    width: 89px;
+    margin: 0;
     background: #169d00;
     color: #FFF;
 }
@@ -1222,4 +1230,28 @@ a.vk-footer-ic{
 .preorder-percent-price span:first-child{
     background: #d91536;
     text-align: center;
+}
+.white_block{
+    background: #FFF;
+}
+.white_block h3 {
+    background: #d0d0d0;
+    margin: 0;
+    padding: 15px;
+    font: normal 14px ptSans;
+    color: #333;
+}
+.event{
+    padding: 15px;
+}
+.event a{
+    font: normal 15px ptSans;
+    color: #169d00;
+}
+.event a:hover{
+    text-decoration: none;
+}
+.event-text{
+    padding: 8px 0 0 0;
+    font: normal 14px ptSans;
 }
