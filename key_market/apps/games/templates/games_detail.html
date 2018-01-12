@@ -11,7 +11,13 @@
 
 {% block extra-styles %}<link rel="stylesheet" href="{% static 'frontend/style/jquery.fancybox.css' %}" />{% endblock extra-styles %}
 
-{% block extra-scripts %}<script type="text/javascript" src="{% static 'frontend/js/jquery.fancybox.js' %}"></script>{% endblock extra-scripts %}
+{% block extra-scripts %}
+    <script type="text/javascript" src="{% static 'frontend/js/jquery.fancybox.js' %}"></script>
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?151"></script>
+    <script type="text/javascript">
+        VK.init({apiId: 6330274, onlyWidgets: true});
+    </script>
+{% endblock extra-scripts %}
 
 {% block view_element %}
     <div class="game">
@@ -58,12 +64,6 @@
                     {% else %}
                         <div class="nonal">Нет в наличии</div>
                     {% endif %}
-
-                    
-
-
-
-
                 </div>
             </div>
         </div>
@@ -214,4 +214,9 @@
         </div>
         
     </div>
+<!-- Put this div tag to the place, where the Comments block will be -->
+<div id="vk_comments"></div>
+<script type="text/javascript">
+    VK.Widgets.Comments("vk_comments", {limit: 20, attach: "photo"});
+</script>
 {% endblock %}
