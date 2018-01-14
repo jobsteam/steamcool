@@ -9,7 +9,7 @@
 
 {% block description %}{{ game.seo_description }}{% endblock description %}
 
-{% block ogtitle %}Купить {{ game.title }}.{% endblock ogtitle %}
+{% block ogtitle %}Купить {{ game.title }} ({{ game.get_store_activation_display }}){% endblock ogtitle %}
 
 {% block ogdescription %}Купить лицензионный {{ game.title }} - активация в {{ game.get_store_activation_display }}. Моментальная доставка на электронный почтовый ящик.{% endblock ogdescription %}
 
