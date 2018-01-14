@@ -9,6 +9,12 @@
 
 {% block description %}{{ game.seo_description }}{% endblock description %}
 
+{% block ogtitle %}Купить {{ game.title }}.{% endblock ogtitle %}
+
+{% block ogdescription %}Купить лицензионный {{ game.title }} - активация в {{ game.get_store_activation_display }}. Моментальная доставка на электронный почтовый ящик.{% endblock ogdescription %}
+
+{% block ogimg %}{{ game.image.url }}{% endblock ogimg %}
+
 {% block extra-styles %}<link rel="stylesheet" href="{% static 'frontend/style/jquery.fancybox.css' %}" />{% endblock extra-styles %}
 
 {% block extra-scripts %}
