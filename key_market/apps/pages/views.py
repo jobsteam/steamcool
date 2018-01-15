@@ -11,6 +11,18 @@ class GuaranteePage(TemplateView):
     template_name = "pages_guarantee.html"
 
 
+class PaymentPage(TemplateView):
+    template_name = "pages_payment.html"
+
+
+class InstructionPage(TemplateView):
+    template_name = "pages_instruction.html"
+
+
+class SupportPage(TemplateView):
+    template_name = "pages_support.html"
+
+
 class ReviewsPage(TemplateView):
     template_name = "pages_reviews.html"
 
