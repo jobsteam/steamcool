@@ -1174,11 +1174,10 @@ a.vk-footer-ic{
     display: block;
 }
 .special-box{
+    padding: 15px;
 }
 .sale-name{
     font: normal 14px ptSans;
-    color: #FFF;
-    padding: 10px;
 }
 
 .sale-percent-price span{
@@ -1254,4 +1253,28 @@ a.vk-footer-ic{
 .event-text{
     padding: 8px 0 0 0;
     font: normal 14px ptSans;
+}
+.sale-per{
+    width: 60px;
+    height: 51px;
+    float: left;
+    background: #d9a300;
+    font: bold 19px/51px ptSans;
+    text-align: center;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #535555;
+}
+.sale-foto{
+    width:110px;
+    height: 51px;
+    float: left;
+}
+.sale-title a{
+    font: normal 13px ptSans;
+    color: #169d00;
+    display: block;
+    padding: 10px 0 0 0;
+}
+.sale-title a:hover{
+    text-decoration: none;
 }

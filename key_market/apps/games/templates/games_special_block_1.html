@@ -1,18 +1,22 @@
 {% load thumbnail %}
 
-<div class="gray_block">
-    <h3>Акции / Скидки</h3>
+<div class="white_block">
+    <h3>Лучшая цена</h3>
     {% for special_game in special_block_1 %}
         <div class="special-box">
-            {% thumbnail special_game.image "200x93" crop="center" as im %}
-            <a href="{% url 'games:detail' special_game.slug %}">
-                <img src="{{ im.url }}" width="{{ im.width }}" alt="">
-            </a>
-            <div class="sale-name">{{ special_game.title }}</div>
-            <div class="sale-percent-price clear-block">
-                <span>-{{ special_game.percent }}%</span>
-                <span>{{ special_game.my_coast }} р.</span>
+
+            <div class="sale-per-foto clear-block">
+                <div class="sale-per">-{{ special_game.percent }}%</div>
+                {% thumbnail special_game.image "110x51" crop="center" as im %}
+                <a class="sale-foto" href="{% url 'games:detail' special_game.slug %}">
+                    <img src="{{ im.url }}" width="{{ im.width }}" alt="">
+                </a>
             </div>
+            <div class="sale-title">
+                <a href="{% url 'games:detail' special_game.slug %}">Успей купить {{ special_game.title }} по специальной цене со скидкой {{ special_game.percent }}%</a>
+            </div>
+            
+
         </div>
     {% endfor %}
 </div>
