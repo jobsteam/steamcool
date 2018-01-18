@@ -53,6 +53,7 @@ class GameAdmin(admin.ModelAdmin):
                 'is_slide',
                 'is_soon',
                 'is_special_block_1',
+                'is_favorite',
             )
         }),
         ('Настройка активации', {

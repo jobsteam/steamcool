@@ -154,6 +154,6 @@ class IndexPage(TemplateView):
             'slides': slides,
             'games_all': Game.objects.all(),
             'games_new_on_site': Game.objects.order_by('-date_created')[:25],
-            'games_new': Game.objects.order_by('-date_release').filter(is_soon=False)[:25],
+            'games_favorite': Game.objects.order_by('-date_release').filter(is_favorite=True)[:25],
         })
         return context

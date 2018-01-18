@@ -187,6 +187,10 @@ class Game(models.Model):
         'Специальный блок №1',
         default=False)
 
+    is_favorite = models.BooleanField(
+        'В популярное',
+        default=False)
+
     sb_id = models.IntegerField(
         'Steambuy id_d',
         blank=True, null=True)
