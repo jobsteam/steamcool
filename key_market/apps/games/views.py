@@ -142,6 +142,11 @@ class GamesOrder(DetailView):
         return self.render_to_response(self.get_context_data(form=form))
 
 
+class GamesLucky(TemplateView):
+    model = Game
+    template_name = "games_lucky.html"
+
+
 class IndexPage(TemplateView):
     template_name = "index.html"
 

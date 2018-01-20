@@ -19,4 +19,6 @@ urlpatterns = [
         views_games.GamesList.as_view(), name='genre_list'),
     url(r'^store/(?P<store>%s)/$' % '|'.join(stories),
         views_games.GamesStoreList.as_view(), name='store_list'),
+    url(r'^lucky/$',
+        views_games.GamesLucky.as_view(), name='lucky'),
 ]
