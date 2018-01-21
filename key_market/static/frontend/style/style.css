@@ -1281,6 +1281,9 @@ a.vk-footer-ic{
 .super_big_center{
     padding: 0 15px;
 }
+.lucky{
+    padding: 35px 0;
+}
 .lucky-icon{
     position: absolute;
     width: 80px;
@@ -1331,8 +1334,21 @@ a.vk-footer-ic{
 .price-lucky{
     font: bold 25px ptSans;
     text-align: center;
+    margin: 0 0 8px 0;
 }
 .price-lucky span{
     font: normal 18px ptSans;
     text-align: center;
 }
+.lucky-text{
+    float: left;
+}
+.lucky-value{
+    float: right;
+}
+
+
+                    <div class="lucky-texts clear-block">
+                        <div class="lucky-text">Шанс на призовую игру</div>
+                        <div class="lucky-value">1%</div>
+                    </div>
