@@ -1281,11 +1281,50 @@ a.vk-footer-ic{
 .super_big_center{
     padding: 0 15px;
 }
+.lucky-icon{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #CCC;
+    top: -20px;
+    left: 50%;
+    margin: 0 0 0 -40px;
+}
 .lucky-box{
+    position: relative;
     float: left;
     width: 270px;
     background: #FFF;
     margin: 0 30px;
     border: solid 1px #afafaf;
     box-sizing: border-box;
+    padding: 70px 15px 15px 15px;
+}
+.lucky h1{
+    text-align: center;
+    font: bold 25px ptSans;
+    margin: 0 0 45px 0;
+    padding: 0;
+}
+
+.lucky-buy a{
+    padding: 15px;
+    width: 100%;
+    display: block;
+    background: #169d00;
+    font: normal 18px ptSans;
+    box-sizing: border-box;
+    text-align: center;
+    color: #FFF;
+    text-decoration: none;
+}
+.lucky-info{
+    font: normal 14px ptSans;
+    margin: 0 0 25px 0;
+}
+.lucky-info h2{
+    margin: 0 0 25px 0;
+    padding: 0;
+    display: block;
+    text-align: center;
 }
