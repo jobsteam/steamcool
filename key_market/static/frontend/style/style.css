@@ -1323,8 +1323,16 @@ a.vk-footer-ic{
     margin: 0 0 25px 0;
 }
 .lucky-info h2{
-    margin: 0 0 25px 0;
+    margin: 0 0 8px 0;
     padding: 0;
     display: block;
+    text-align: center;
+}
+.price-lucky{
+    font: bold 25px ptSans;
+    text-align: center;
+}
+.price-lucky span{
+    font: normal 18px ptSans;
     text-align: center;
 }
