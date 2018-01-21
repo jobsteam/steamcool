@@ -1281,3 +1281,11 @@ a.vk-footer-ic{
 .super_big_center{
     padding: 0 15px;
 }
+.lucky-box{
+    float: left;
+    width: 270px;
+    background: #FFF;
+    margin: 0 30px;
+    border: solid 1px #afafaf;
+    box-sizing: border-box;
+}
