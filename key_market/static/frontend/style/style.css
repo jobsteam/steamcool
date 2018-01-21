@@ -781,10 +781,9 @@ span#rightNav {
     text-align: center;
     color: #cb0000;
     display: block;
-    margin: 0 0 5px 0;
-    border: solid 2px #cb0000;
+    margin: 0 0 15px 0;
     padding: 10px;
-    font: bold 19px ptSans;
+    font: normal 19px ptSans;
     background: #d2bcbc;
 }
 .mail_form_input input:focus::-webkit-input-placeholder {
