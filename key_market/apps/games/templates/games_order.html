@@ -50,6 +50,13 @@
             </div>
         </div>
         <div class="game_content clear-block">
+            {% if form.payment.errors %}
+                <span class="error">Вы не выбрали способ оплаты</span>
+            {% endif %}
+            {% if form.mail.errors %}
+                <span class="error">Вы не заполнили поле E-mail</span>
+            {% endif %}
+
             <form action="" method="POST">{% csrf_token %}
                 <div class="payment">
                     <h2>Выберите способ оплаты</h2>
@@ -176,9 +183,7 @@
                         </div>
                     </div>
 
-                            {% if form.payment.errors %}
-                                <span class="error">Вы не выбрали способ оплаты</span>
-                            {% endif %}
+
 
                 </div>
                 <div class="payment">
@@ -189,9 +194,7 @@
                         </div>
                         
                         <div class="mail_form_input">
-                            {% if form.mail.errors %}
-                                <span class="error">Вы не заполнили поле E-mail</span>
-                            {% endif %}
+                            
                             <input type="text" placeholder="Введите E-mail" name="mail" value="{% if form.mail.value %}{{ form.mail.value }}{% endif %}">
                         </div>
                         <div class="mail_form_submit">

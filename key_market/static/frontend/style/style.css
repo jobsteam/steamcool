@@ -778,9 +778,14 @@ span#rightNav {
     text-decoration: none;
 }
 .error{
+    text-align: center;
     color: #cb0000;
     display: block;
     margin: 0 0 5px 0;
+    border: solid 2px #cb0000;
+    padding: 10px;
+    font: bold 19px ptSans;
+    background: #d2bcbc;
 }
 .mail_form_input input:focus::-webkit-input-placeholder {
     color:transparent;
