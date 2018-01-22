@@ -1350,9 +1350,13 @@ a.vk-footer-ic{
 .lucky-value{
     float: right;
 }
-
-
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Шанс на призовую игру</div>
-                        <div class="lucky-value">1%</div>
-                    </div>
+.lucky-infotext h2{
+    text-align: center;
+    font: bold 25px ptSans;
+}
+.lucky-infotext{
+    width: 90%;
+    margin: 50px auto;
+    text-align: center;
+    font: normal 14px ptSans;
+}
