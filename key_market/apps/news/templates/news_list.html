@@ -1,11 +1,16 @@
+{% extends "columns_3.html" %}
 
-{% extends "base.html" %}
-
-{% block content %}
+{% block center_column %}
     <h2>Новости</h2>
-    <ul>
-        {% for news in object_list %}
-            <li><a href="{% url 'news_detail' news.id %}">{{ news.title }}</a></li>
-        {% endfor %}
-    </ul>
-{% endblock %}
+
+    {% for news in object_list %}
+        <div class="event">
+            <a href="#"><a href="{% url 'news:readevent' news.slug %}">{{ news.title }}</a></a>
+            <div class="event-text">Успейте купить серию темного рыцаря по неверочтно низкой цене.</div>
+        </div>
+    {% endfor %}
+
+{% endblock center_column %}
+
+
+

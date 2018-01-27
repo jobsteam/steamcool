@@ -1360,3 +1360,33 @@ a.vk-footer-ic{
     text-align: center;
     font: normal 14px ptSans;
 }
+.article{
+    border-top: solid 3px #4a4a4a;
+    background: #FFF;
+    box-sizing: border-box;
+    padding: 15px;
+    font: normal 15px ptSans;
+}
+.article h1{
+    font: bold 30px ptSans;
+    padding: 0;
+    margin: 15px 0;
+}
+.article-text{
+    box-sizing: border-box;
+    padding: 10px;
+    font: normal 15px/21px ptSans;
+}
+.article-date{
+    font: normal 15px ptSans;
+    margin-bottom: 15px;
+}
+.article-share{
+    font: normal 15px ptSans;
+    padding: 0px 10px 10px 10px;
+}
+
+
+
+
+    

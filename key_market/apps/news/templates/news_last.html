@@ -1,0 +1,9 @@
+<div class="white_block">
+    <h3>Новости / События</h3>
+    {% for event in last_news %}
+        <div class="event">
+            <a href="#"><a href="{% url 'news:readevent' event.slug %}">{{ event.title }}</a></a>
+            <div class="event-text">{{ event.short_text }}</div>
+        </div>
+    {% endfor %}
+</div>

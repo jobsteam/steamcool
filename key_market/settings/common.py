@@ -72,6 +72,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'games.context_processors.sitewide',
                 'games.context_processors.last_pay',
+                'news.context_processors.last_news',
             ],
         },
     },
