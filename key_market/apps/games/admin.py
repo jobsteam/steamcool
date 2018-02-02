@@ -69,6 +69,7 @@ class GameAdmin(admin.ModelAdmin):
                 'field_thumbnail',
                 'image_slide',
                 'field_slide_thumbnail',
+                'id_video',
             )
         }),
         ('СЕО', {

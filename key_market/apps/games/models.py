@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils.safestring import mark_safe
 
 from pytils.translit import slugify
 
@@ -119,6 +120,11 @@ class Game(models.Model):
         'Стоимость в рублях',
         blank=True, null=True)
 
+    id_video = models.CharField(
+        'ID youtube ролика',
+        max_length=254,
+        blank=True, null=True)
+
     in_stock = models.BooleanField(
         'Товар в наличии',
         default=False)
@@ -226,6 +232,14 @@ class Game(models.Model):
     @property
     def percent(self):
         return 100 - int(self.my_coast / self.store_coast * 100)
+
+    @property
+    def gamevideo(self):
+        if self.id_video:
+            return mark_safe(
+                '<div class="game_content_block"><h2>Описание игры</h2><div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/{video}?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div>'.format(video=self.id_video))
+
+        return ''
 
     def get_absolute_url(self):
         return reverse('games:detail', args=[self.slug])

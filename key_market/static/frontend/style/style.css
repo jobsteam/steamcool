@@ -1385,7 +1385,9 @@ a.vk-footer-ic{
     font: normal 15px ptSans;
     padding: 0px 10px 10px 10px;
 }
-
+.video-container{
+    padding:15px;
+}
 
 
 

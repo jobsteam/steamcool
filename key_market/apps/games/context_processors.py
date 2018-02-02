@@ -20,7 +20,7 @@ def last_pay(request):
     cache_key = 'last_pay'
     ids = cache.get(cache_key, None)
     if ids is None:
-        ids = fetch_last_pay()[:10]
+        ids = fetch_last_pay()[:9]
         cache.set(cache_key, ids, 60 * 10)
 
     games = {'%s' % game.digiseller_id: game
