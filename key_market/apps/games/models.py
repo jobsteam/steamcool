@@ -193,6 +193,10 @@ class Game(models.Model):
         'Специальный блок №1',
         default=False)
 
+    is_special_block_2 = models.BooleanField(
+        'Специальный блок №2',
+        default=False)
+
     is_favorite = models.BooleanField(
         'В популярное',
         default=False)
