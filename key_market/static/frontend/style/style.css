@@ -1388,7 +1388,38 @@ a.vk-footer-ic{
 .video-container{
     padding:15px;
 }
-
-
-
-    
+.game_card_element{
+    width:192px;
+    float: left;
+    margin: 0 9px 9px 0;
+}
+.game_card_element:nth-child(3n){
+    width:192px;
+    float: left;
+    margin: 0 0 9px 0;
+}
+.game_card_title{
+    background:#333;
+    font: normal 13px ptSans;
+    padding: 4px 8px;
+    color:#cecece;
+}
+.game_card_foto{
+    position: relative;
+}
+.game_card_foto img{
+    display: block;
+}
+.game_card_foto .game_card_price{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #169d00;
+    padding: 4px 8px;
+    font: normal 13px ptSans;
+    color: #FFF;
+    border-left: solid 2px #333;
+    border-top: solid 2px #333;
+    border-right: solid 2px #333;
+}
