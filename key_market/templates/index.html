@@ -30,17 +30,22 @@
                 
                 {% for game in games_favorite %}
 
-                    <div class="game_list_element clear-block">
-                        <span class="foto">
-                            {% thumbnail game.image "160x75" as im %}
-                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-                        </span>
-                        <div class="game_list_element_name">
-                            <span class="name">{{ game.title }}</span>
-                             <div>{{ game.get_store_activation_display }} ключ</div>
+                  
+
+
+
+
+                    <div class="game_card_element">
+                        <div class="game_card_foto">
+                            {% thumbnail game.image "192x90" as im %}
+                            <a href="{% url 'games:detail' game.slug %}">
+                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                            </a>
+                            <span class="game_card_price">{{ game.my_coast }} руб.</span>
                         </div>
-                        <span class="price">{{ game.my_coast }} р.</span>
-                        <a href="{% url 'games:detail' game.slug %}"></a>
+                        <div class="game_card_title">
+                            {{ game.title }}
+                        </div>
                     </div>
 
                   
