@@ -43,18 +43,7 @@
                         <a href="{% url 'games:detail' game.slug %}"></a>
                     </div>
 
-                    {#<div class="game_card_element">
-                        <div class="game_card_foto">
-                            {% thumbnail game.image "192x90" as im %}
-                            <a href="{% url 'games:detail' game.slug %}">
-                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-                            </a>
-                            <span class="game_card_price">{{ game.my_coast }} руб.</span>
-                        </div>
-                        <div class="game_card_title">
-                            {{ game.title }}
-                        </div>
-                    </div>#}
+                  
 
                     
                 {% endfor %}
