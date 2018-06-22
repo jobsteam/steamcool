@@ -1,0 +1,751 @@
+@font-face{
+    font-family: 'ptSans';
+    src: url('../fonts/ptSansBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'ptSans';
+    src: url('../fonts/ptSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto';
+    src: url('../fonts/robotoBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto';
+    src: url('../fonts/roboto.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background: url(../images/fon.jpg) top center no-repeat fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+.clear-block:after {
+    content: ".";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+}
+* html .clear-block {
+    height: 1%;
+}
+*:first-child + html .clear-block {
+    min-height: 1%;
+}
+.clear {
+    clear:both;
+    line-height:0;
+    height:0;
+    font-size:0;
+}
+.head{
+    width: 1200px;
+    height:100px;
+    margin: 0 auto;
+    background: #FFF;
+    position: relative;
+}
+.logo{
+    width: 200px;
+    height: 70px;
+    position: absolute;
+    left: 25px;
+    top: 15px;
+}
+.search{
+    width: 590px;
+    height: 40px;
+    position: absolute;
+    left: 275px;
+    top: 30px;
+}
+.search-text{
+    height: 40px;
+    margin:0 85px 0 0;
+    padding: 0 15px 0 0;
+    box-sizing: border-box;
+}
+.search-submit{
+    width: 85px;
+    height: 40px;
+    float: right;
+}
+.search-text input{
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: none;
+    padding: 0 15px;
+    background: #EEE;
+    box-shadow: inset 1px 1px 3px 0px #ccc;
+    box-sizing: border-box;
+}
+.search-submit input{
+    width: 100%;
+    height: 40px;
+    display: block;
+    background: #4f4f4f;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+    font: normal 14px ptSans;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.search-submit input:hover {
+    box-shadow: inset 0 0 0 30px #e66700;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.book{
+    width: 260px;
+    height: 40px;
+    position: absolute;
+    right: 25px;
+    top: 30px;
+}
+.book a{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+    text-align: center;
+    font: normal 14px/20px ptSans;
+    text-decoration: none;
+    color: #333;
+    border-radius: 2px;
+}
+.book a:hover{
+    background: #e66700;
+    color: #FFF;
+}
+.wrapper{
+    width: 1200px;
+    margin: 0 auto; 
+}
+.block{
+    background: url(../images/pix.png) top center repeat;
+}
+.left{
+    float: left;
+    width: 250px; 
+}
+.right{
+    float: left;
+    width: 250px;
+}
+.center{
+    background: #FFF;
+    float: left;
+    width: 700px; 
+}
+.big-center{
+    float: left;
+    width: 950px;
+}
+.ganre-menu h3{
+    text-transform: uppercase;
+    font: bold 16px ptSans;
+    color: #666;
+    border-bottom: solid 2px #666;
+    margin: 0 0 10px 0;
+    padding: 5px 0 10px 0;
+}
+.ganre-menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ganre-menu ul li a{
+    display: block;
+    padding: 5px 0;
+    font: normal 16px ptSans;
+    color: #FFF;
+    text-decoration: none;
+}
+.ganre-menu ul li a:hover{
+    color: #e66700;
+}
+.ganre-menu{
+    padding: 15px;
+}
+.last-pay h3{
+    text-transform: uppercase;
+    font: bold 16px ptSans;
+    color: #666;
+    border-bottom: solid 2px #666;
+    margin: 0 0 10px 0;
+    padding: 5px 0 10px 0;
+}
+.last-pay ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.last-pay ul li a{
+    display: block;
+    padding: 5px 0;
+    font: normal 16px ptSans;
+    color: #FFF;
+    text-decoration: none;
+}
+.last-pay ul li a:hover{
+    color: #e66700;
+}
+.last-pay{
+    padding: 15px;
+}
+.slide img{
+    display: block;
+}
+.slide-info-price{
+    float: right;
+    width: 150px;
+    box-sizing: border-box;
+    text-align: center;
+    font: normal 20px ptSans;
+    padding: 15px;
+}
+.slide-info-price span{
+    font: normal 16px ptSans;
+}
+.slide-info-title{
+    margin: 0 150px 0 0;
+    padding: 15px;
+    font: bold 20px ptSans;
+}
+.game{
+    position: relative;
+}
+.game:nth-child(2n-1){
+    background: #f9f9f9;
+}
+.game-list .game:last-child{
+    border-bottom: solid 3px #CCC;
+    margin: 0 0 10px 0; 
+}
+.game-link{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.game-img{
+    float: left;
+    width: 200px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+.game-img img{
+    display: block;
+}
+.game-info{
+    margin: 0 0 0 200px;
+    min-height: 99px;
+}
+.game-info-price{
+    float: right;
+    width: 150px;
+    font: normal 20px ptSans;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 30px 15px;
+}
+.game-info-price span {
+    font: normal 16px ptSans;
+}
+.game-info-detail{
+    margin: 0 150px 0 0;
+    box-sizing: border-box;
+    padding: 15px;
+}
+.game-info-title{
+    font: normal 18px ptSans;
+    margin: 0 0 8px 0;
+}
+.game-mini-activation{
+    display: block;
+    width: 26px;
+    height: 26px;
+    background: #ccc;
+}
+.steam{
+    background: url(../images/steam-list-icon.png) top center repeat;
+}
+.main-tabs{
+    list-style: none;
+    margin: 0 0 15px 0;
+    padding: 0;
+    display: block;
+    background: #4f4f4f;
+}
+.main-tabs li{
+    padding: 0;
+    float: left;
+}
+
+.main-tabs li a{
+    display: block;
+    padding: 10px 20px;
+    font: normal 16px ptSans;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.main-tabs li a.active{
+    background: #e66700;
+}
+
+
+
+
+.list-pager{
+    padding: 10px 0; 
+}
+.list-pager ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.list-pager ul li{
+    display: inline-block;
+    min-width: 30px;
+    height: 39px;
+    font: bold 14px/30px Roboto;
+    margin: 0 2px; 
+}
+.list-pager ul li a{
+    text-decoration: none;
+    color: #4f4f4f;
+    display: block;
+    min-width: 30px;
+    height: 30px;
+    font: bold 14px/30px Roboto;
+}
+
+.list-pager ul li a:hover{
+    background: #4f4f4f;
+    color: #FFF;
+}
+.list-pager ul li.current{
+    background: url(../images/current.png) top center repeat;
+}
+
+.list-pager ul li.current span{
+    color: #FFF;
+}
+.prev a, .next a{
+    padding: 0 5px;
+}
+.magaz-info{
+    padding: 25px;
+    font: normal 12px/18px Roboto;
+}
+.game-object-head{
+    background: url(../images/pix.png) top center repeat;
+    border-bottom: solid 45px #2f2f2f;
+}
+.game-object h1{
+    font: bold 25px Roboto;
+    background: #FFF;
+    margin: 0;
+    padding: 25px;
+    border-top: solid 3px #000;
+}
+.game-object-head-foto img{
+    display: block;
+}
+.game-description, .game-order{
+    background: #FFF;
+    color: #333;
+    padding: 25px;
+    font: normal 15px/21px Roboto;
+}
+.game-description a, .game-order a{
+    color: #ff6000;
+}
+.game-description a:hover, .game-order a:hover{
+    text-decoration: none;
+}
+
+.game-description-left{
+    box-sizing: border-box;
+    padding: 0 25px 0 0;
+    width: 70%;
+    float: left;
+}
+.game-description-right{
+    width: 30%;
+    float: right;
+}
+
+
+
+
+
+.game-object-head-foto{
+    width: 460px;
+    float: left;
+}
+.game-object-head-foto img {
+    width: 100%;
+}
+.game-object-head-detail{
+    margin: 0 0 0 460px;
+    padding: 0 0 75px 0;
+    box-sizing: border-box;
+    min-height: 215px;
+    position: relative;
+}
+a.readmore{
+    background: #EEE;
+    display: block;
+    width: 120px!important;
+    padding: 8px 10px;
+    margin: 18px 0 0 0;
+    color: #333;
+    font: normal 13px Roboto;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+a:hover.readmore{
+    color: #FFF;
+    box-shadow: inset 0 0 0 30px #e66700;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.price-buy{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 25px 25px 25px;
+}
+.buy{
+    width: 250px;
+    float: right;
+    background: url(../images/green-button.png) 0 -50px repeat-x;
+    height: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.percent{
+    margin-right: 250px;
+    text-align: left;
+    font: bold 23px Roboto;
+    box-sizing: border-box;
+    padding: 10px 0 0 0;
+    color: #FFF;
+    text-shadow: 1px 1px 2px #333;
+}
+.percent span{
+    color: #ff6000;
+}
+.coast{
+    width: 50%;
+    height: 50px;
+    float: left;
+    font: bold 26px Roboto;
+    color: #FFF;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 8px 0 0 0;
+    text-shadow: 2px 2px 2px #5bab3d;
+}
+.coast span{
+    font: normal 14px Roboto;
+}
+a.buy-button{
+    width: 50%;
+    height: 50px;
+    float: left;
+    text-align: center;
+    font: bold 23px Roboto;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #5bab3d;
+    color: #FFF;
+    box-sizing: border-box;
+    padding: 10px 0 0 0;
+    background: url(../images/green-button.png) 0 -50px repeat-x;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+a.buy-button:hover{
+    background: url(../images/green-button.png) 0 0 repeat-x;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.game-mini-detail{
+    padding: 15px 25px;
+    font: normal 13px/21px Roboto;
+    color: #c0c0c0;
+}
+.game-mini-detail a{
+    color: #c0c0c0;
+}
+.game-mini-detail a:hover{
+    color: #dfdfdf;
+}
+.description{
+    margin: 0 0 25px 0;
+    padding: 30px;
+    background: #EEE;
+}
+.gallery{
+    padding: 0 0 0 0;
+}
+.gallery-item{
+    width: 49%;
+    float: left;
+    margin:0 1px 1px 0; 
+}
+.gallery-item a img{
+    width: 100%;
+    display: block;
+}
+.instruction{
+    margin: 0 0 25px 0;
+}
+.instruction ol{
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+.footer{
+    background: url(../images/pix.png) top center repeat;
+    min-height: 200px;
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    box-sizing: border-box;
+    padding: 25px;
+    border-top: solid 3px #ff6000;
+}
+.footer-col{
+    margin: 0 45px 25px 0;
+    float: left;
+}
+.footer-col span{
+    display: block;
+    font: bold 16px/21px Roboto;
+    color: #fff;
+    margin: 0 0 10px 0;
+}
+.footer-col ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.footer-col ul li{
+    line-height: 24px;
+}
+.footer-col ul li a{
+    font: normal 14px/21px Roboto;
+    color: #c4c4c4;
+    text-decoration: none;
+}
+.footer-col ul li a:hover{
+    color: #FFF;
+}
+.footer-logo{
+    width: 200px;
+    float: right;
+}
+.footer-copy{
+    background: #000;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    font: normal 12px/21px Roboto;
+    color: #929292;
+    text-align: center;
+}
+.pay-block{
+    float: left;
+    width: 25%;
+    padding: 0 10px 10px 0;
+    box-sizing: border-box;
+}
+.pay-box{
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    box-sizing:border-box;
+    background: #EEE;
+    border-top: solid 3px #CCC;
+    height: 170px;
+}
+.pay-name{
+    font: normal 15px/21px Roboto;
+}
+.pay-percent{
+    font: normal 12px/21px Roboto;
+}
+.text-content h2{
+    font: bold 15px/21px Roboto;
+}
+.pay-block .radio_button{
+    display: none;
+}
+.pay-block .label_button {
+    display: block;
+}
+.pay-block .label_button:hover{
+    cursor: pointer;
+}
+.pay-block input[type=radio]:checked + label.label_button .pay-box {
+    background: #ffdbb1;
+}
+.game-order-head{
+    background: url(../images/pix.png) top left repeat;
+}
+.game-order-image img{
+    width: 100%;
+    display: block;
+}
+.game-order-image{
+    width: 300px;
+    padding: 15px;
+    float: left;
+}
+.game-order-info{
+    margin: 0 0 0 300px;
+    padding: 35px 20px;
+    min-height: 140px;
+    box-sizing: border-box;
+}
+.game-order-title{
+    font: bold 30px Roboto;
+    color: #FFF;
+}
+.game-order-title span{
+    font: bold 20px Roboto;
+    display: block;
+    color: #ff6000;
+}
+.order-mail-box{
+    background: #EEE;
+    padding: 25px;
+    margin: 25px 0 0 0;
+}
+.order-mail-form{
+    max-width: 600px;
+    margin: 0 auto;
+}
+.order-mail-mail{
+    width: 65%;
+    padding: 0 20px 0 0;
+    float: left;
+    box-sizing: border-box;
+}
+.order-mail-mail input{
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    margin: 0;
+    border: none;
+    background: #FFF;
+    box-shadow: inset 1px 1px 3px 0px #ccc;
+    box-sizing: border-box;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.order-mail-submit{
+    width: 35%;
+    float: left;
+}
+.order-mail-submit input{
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    display: block;
+    float: right;
+    background: url(../images/green-button.png) 0 -50px repeat-x;
+    border: none;
+    cursor: pointer;
+    font: bold 18px Roboto;
+    text-shadow: 2px 2px 2px #5bab3d;
+    color: #FFF;
+    border-radius: 5px;
+    box-sizing: border-box;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.order-mail-submit input:hover{
+    background: url(../images/green-button.png) 0 0 repeat-x;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.order-mail-text{
+    padding: 25px 0 0 0;
+    text-align: center;
+}
+.order-mail-mail input.field-error{
+    background: #ff9191;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+input.place:focus::-webkit-input-placeholder {
+    color:transparent;
+    outline: none;
+}
+input.place:focus::-moz-placeholder {
+    color:transparent;
+}
+input.place:focus:-ms-input-placeholder {
+    color:transparent;
+}
+input.place:focus{
+    outline: none;
+}
+
+
+

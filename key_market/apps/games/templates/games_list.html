@@ -10,22 +10,32 @@
 {% block center_column %}
     {% if game_list %}
         <h2 class="list_title">{{ page_title }}</h2>
-        <div class="game_list">
+        <div class="game-list">
             {% for games in object_list %}
-                <div class="game_list_element clear-block">
-                    <span class="foto">
+                
 
-                        {% thumbnail games.image "160x75" as im %}
-                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
 
-                    </span>
-                    <div class="game_list_element_name">
-                        <span class="name">{{ games.title }}</span>
-                        <div>{{ games.get_store_activation_display }} ключ</div>
-                    </div>
-                    <span class="price">{{ games.my_coast }} р.</span>
-                    <a href="{% url 'games:detail' games.slug %}"></a>
+
+
+            <div class="game">
+                <div class="game-img">
+                    {% thumbnail games.image "190x89" as im %}
+                    <img src="{{ im.url }}" width="100%">
                 </div>
+                <div class="game-info clear-block">
+                    <div class="game-info-price">{{ games.my_coast }} <span>руб.</span></div>
+                    <div class="game-info-detail">
+                        <div class="game-info-title">{{ games.title }}</div>
+                        <div class="game-mini-info">
+                            <span class="game-mini-activation {{ games.get_store_activation_display }}"></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="{% url 'games:detail' games.slug %}" class="game-link"></a>
+            </div>
+
+
+
             {% endfor %}
         </div>
     {% else %}

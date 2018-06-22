@@ -6,6 +6,9 @@
 {% block extra-scripts %}<script type="text/javascript" src="{% static 'frontend/js/slideshow.js' %}"></script>{% endblock extra-scripts %}
 
 {% block center_column %}
+
+
+<!--
     <div class="slshow" id="slideshow">
         <div id="slideshowWindow">
             {% for slide in slides %}
@@ -19,62 +22,78 @@
             {% endfor %}
         </div>
     </div>
-    <div class="tab_menu">
-        <ul class="tabs tabs_main">
-            <li><a href="#tab1" class="active">Популярное</a></li>
-            <li><a href="#tab2">Новое на сайте</a></li>
+-->
+    <div class="tab-menu">
+        <ul class="tabs main-tabs clear-block">
+            <li><a href="#tab1" class="active">Новое на сайте</a></li>
+            <li><a href="#tab2">По дешевке</a></li>
+            <li><a href="#tab3">Скоро</a></li>
         </ul>
-
         <div id="tab1" style="display: block;">
-            <div class="game_cards">
-                
+            <div class="game-list">
                 {% for game in games_favorite %}
-
-                    <div class="game_list_element clear-block">
-                        <span class="foto">
-                            {% thumbnail game.image "160x75" as im %}
-                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-                        </span>
-                        <div class="game_list_element_name">
-                            <span class="name">{{ game.title }}</span>
-                             <div>{{ game.get_store_activation_display }} ключ</div>
+                    <div class="game">
+                        <div class="game-img">
+                            {% thumbnail game.image "190x89" as im %}
+                            <img src="{{ im.url }}" width="100%">
                         </div>
-                        <span class="price">{{ game.my_coast }} р.</span>
-                        <a href="{% url 'games:detail' game.slug %}"></a>
+                        <div class="game-info clear-block">
+                            <div class="game-info-price">{{ game.my_coast }} <span>руб.</span></div>
+                            <div class="game-info-detail">
+                                <div class="game-info-title">{{ game.title }}</div>
+                                <div class="game-mini-info">
+                                    <span class="game-mini-activation steam"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{% url 'games:detail' game.slug %}" class="game-link"></a>
                     </div>
-
-
-
-
-
-                  
-
-                    
                 {% endfor %}
-
             </div>
+            <div class="list-pager">
+                <ul>
+                    <li class="prev"><a href="">...назад</a></li>
+                    <li class="current"><span>1</span></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li>...</li>
+                    <li><a href="">6</a></li>
+                    <li class="next"><a href="">далее...</a></li>
+                </ul>
+            </div>
+
+
+
+
         </div>
         <div id="tab2" style="display: none;">
-            <div class="game_list">
-                
+            <div class="game-list">
                 {% for game in games_new_on_site %}
-                    <div class="game_list_element clear-block">
-                        <span class="foto">
-                            {% thumbnail game.image "160x75" as im %}
-                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-                        </span>
-                        <div class="game_list_element_name">
-                            <span class="name">{{ game.title }}</span>
-                             <div>{{ game.get_store_activation_display }} ключ</div>
+                    <div class="game">
+                        <div class="game-img">
+                            {% thumbnail game.image "190x89" as im %}
+                            <img src="{{ im.url }}" width="100%">
                         </div>
-                        <span class="price">{{ game.my_coast }} р.</span>
-                        <a href="{% url 'games:detail' game.slug %}"></a>
+                        <div class="game-info clear-block">
+                            <div class="game-info-price">{{ game.my_coast }} <span>руб.</span></div>
+                            <div class="game-info-detail">
+                                <div class="game-info-title">{{ game.title }}</div>
+                                <div class="game-mini-info">
+                                    <span class="game-mini-activation steam"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{% url 'games:detail' game.slug %}" class="game-link"></a>
                     </div>
                 {% endfor %}
-
             </div>
         </div>
         <div id="tab3" style="display: none;">
+            1
         </div>
+    </div>
+    <div class="magaz-info">
+        Ищите, где купить дешевые лицензионные ключи steam для PC? Интернет-магазин компьютерных игр Steam-account.ru с радостью поможет Вам купить ключ для стим и избежать необходимости посещать десятки магазинов. Вы можете заказать любой ключ, не вставая со своего кресла, и он, в течение минуты, будет доставлен на указанный при покупке e-mail.
+        Ищите, где купить дешевые лицензионные ключи steam для PC? Интернет-магазин компьютерных игр Steam-account.ru с радостью поможет Вам купить ключ для стим и избежать необходимости посещать десятки магазинов. Вы можете заказать любой ключ, не вставая со своего кресла, и он, в течение минуты, будет доставлен на указанный при покупке e-mail.
     </div>
 {% endblock center_column %}

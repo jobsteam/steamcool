@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     'djangobower',
     'pipeline',
     'easy_thumbnails',
+    'rest_framework',
+    'django_filters',
     'lib',
     'news',
     'games',
@@ -117,6 +119,7 @@ STATICFILES_FINDERS += (
 BOWER_COMPONENTS_ROOT = path('static')
 
 BOWER_INSTALLED_APPS = (
+    'devbridge-autocomplete#1.4',
     'include-media#1.4',
     'normalize-scss#3',
 )
@@ -125,11 +128,8 @@ BOWER_INSTALLED_APPS = (
 # -----------------------------------------------------------------------------
 
 
-# REST FRAMEWORK SETTINGS -----------------------------------------------------
+# API -------------------------------------------------------------------------
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAdminUser',
-    ),
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
@@ -152,6 +152,19 @@ PIPELINE = {
     'STYLESHEETS': {
     },
     'JAVASCRIPT': {
+        'libs': {
+            'source_filenames': (
+                'bower_components/jquery/dist/jquery.min.js',
+                'bower_components/devbridge-autocomplete/dist/jquery.autocomplete.min.js',  # NOQA
+            ),
+            'output_filename': 'frontend/js/libs.js',
+        },
+        'frontend': {
+            'source_filenames': (
+                'frontend/coffee/autocomplete.coffee',
+            ),
+            'output_filename': 'frontend/js/frontend.js',
+        },
     },
     'COMPILERS': (
         'pipeline.compilers.coffee.CoffeeScriptCompiler',

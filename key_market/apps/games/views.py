@@ -6,7 +6,10 @@ from django.conf import settings
 from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, TemplateView
 
+from rest_framework.viewsets import ReadOnlyModelViewSet
+
 from games.models import Game, Genre, StoreActivation
+from games.serializers import SearchGameSerializer, SearchGameFilter
 
 from users.forms import MailForm
 
@@ -159,6 +162,14 @@ class IndexPage(TemplateView):
             'slides': slides,
             'games_all': Game.objects.all(),
             'games_new_on_site': Game.objects.order_by('-date_created')[:25],
-            'games_favorite': Game.objects.order_by('-date_release').filter(is_favorite=True)[:25],
+            'games_favorite': (Game.objects
+                                   .order_by('-date_release')
+                                   .filter(is_favorite=True)[:25]),
         })
         return context
+
+
+class SearchGameViewSet(ReadOnlyModelViewSet):
+    filter_class = SearchGameFilter
+    queryset = Game.objects.all()
+    serializer_class = SearchGameSerializer

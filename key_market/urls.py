@@ -5,14 +5,20 @@ from django.contrib import admin
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic import RedirectView, TemplateView
 
-from games.views import IndexPage
+from rest_framework import routers
 
+from games.views import IndexPage, SearchGameViewSet
+
+
+router = routers.DefaultRouter()
+router.register(r'search_game', SearchGameViewSet)
 
 urlpatterns = [
     url(r'^$', IndexPage.as_view(), name='index'),
     url(r'^', include('games.urls', namespace='games')),
     url(r'^a441a4cc8871.html$',
         TemplateView.as_view(template_name='yandex.html')),
+    url(r'^api/', include(router.urls, namespace='api')),
     url(r'^news/', include('news.urls', namespace='news')),
     url(r'^about/', include('pages.urls', namespace='pages')),
     url(r'^robots.txt$',
