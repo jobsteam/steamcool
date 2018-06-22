@@ -74,9 +74,13 @@
 
         <div class="game-description-left">
             <div class="description">
-                    <strong>Описание игры</strong>
-                    {{ game.description|safe }}
-            </div>            
+                    <h2>Описание игры</h2>
+                    <div class="description-content">
+                        {{ game.description|safe }}
+                    </div>
+            </div>
+            {{ game.gamevideo }}
+            
         </div>
         <div class="game-description-right">
             <div class="game-screenshot">
