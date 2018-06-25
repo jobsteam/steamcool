@@ -19,8 +19,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/responsive.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/fancybox.css' %}">
 
+    {% block extra-styles %}{% endblock extra-styles %}
 
-
+    {% block extra-scripts %}{% endblock extra-scripts %}
+    
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script> (adsbygoogle = window.adsbygoogle || []).push({
     google_ad_client: "ca-pub-5176307659670301",
@@ -29,7 +31,7 @@
     </script>
 
 
-    {% block extra-styles %}{% endblock extra-styles %}
+    
 </head>
 <body>
 
@@ -107,7 +109,7 @@
     <script type="text/javascript" src="{% static 'frontend/js/settings.js' %}"></script>
 {% endblock %}
 
-{% block extra-scripts %}{% endblock extra-scripts %}
+
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
