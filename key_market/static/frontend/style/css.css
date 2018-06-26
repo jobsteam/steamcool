@@ -398,6 +398,9 @@ body{
     width: 30%;
     float: right;
 }
+.video-content{
+    padding: 15px;
+}
 
 
 
@@ -768,4 +771,7 @@ input.place:focus{
     left:0;
     width:100%;
     height:100%;
+}
+.game-screenshot{
+    margin: 0 0 25px 0;
 }

@@ -241,7 +241,7 @@ class Game(models.Model):
     def gamevideo(self):
         if self.id_video:
             return mark_safe(
-                '<div class="description"><h2>Трейлер игры</h2><div class="description-content"><div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/{video}?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div></div>'.format(video=self.id_video))
+                '<div class="description"><h2>Трейлер игры</h2><div class="video-content"><div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/{video}?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div></div>'.format(video=self.id_video))
         return ''
 
     def get_absolute_url(self):

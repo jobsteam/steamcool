@@ -309,6 +309,18 @@
     .game-description{
         font: normal 13px/21px Roboto;
     }
+    .game-description-left{
+        padding: 0 0 0 0;
+        width: 100%;
+        float: none;
+    }
+    .game-description-right{
+        width: 100%;
+        float: none;
+    }
+    .gallery-item{
+        width: 24.8%;
+    }
 }
 @media screen and (min-width: 700px) and (max-width: 880px){
     .game-object-head-foto{
@@ -337,6 +349,18 @@
     }
     .game-description{
         font: normal 13px/21px Roboto;
+    }
+    .game-description-left{
+        padding: 0 0 0 0;
+        width: 100%;
+        float: none;
+    }
+    .game-description-right{
+        width: 100%;
+        float: none;
+    }
+    .gallery-item{
+        width: 33%;
     }
 }
 
@@ -385,10 +409,20 @@
         margin: 0 auto; 
         float: none;
     }
-}
-@media screen and (max-width: 700px){
     .gallery-item{
         width: calc( 50% - 2px );
+    }
+    .game-description-left{
+        padding: 0 0 0 0;
+        width: 100%;
+        float: none;
+    }
+    .game-description-right{
+        width: 100%;
+        float: none;
+    }
+    .gallery-item{
+        width: 49%;
     }
 }
 /*Подвал сайта*/
