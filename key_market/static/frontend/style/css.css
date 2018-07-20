@@ -775,3 +775,125 @@ input.place:focus{
 .game-screenshot{
     margin: 0 0 25px 0;
 }
+
+
+
+.luckypage{
+    background: #FFF;
+    border-top: solid 3px #000;
+}
+.luckypage h1{
+    font: bold 25px Roboto;
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    margin: 0;
+    padding: 30px;
+}
+.luckyinfo{
+    background: #eeeeee;
+    padding: 20px 10%;
+    font: normal 15px/21px Roboto;
+    text-align: center;
+}
+.lucky-boxs{
+    padding: 60px 50px;
+}
+.lucky-box{
+    text-align: center;
+    float: left;
+    width: calc(33.3% - 84px);
+    margin: 0 40px;
+}
+.silver{
+    border: solid 2px #4d4b4c;
+    background: #f8f8f8;
+}
+.gold {
+    border: solid 2px #f59b00;
+    background: #fffcf5;
+}
+.vip {
+    border: solid 2px #c92691;
+    background: #fdeef4;
+}
+.lucky-box h2{
+    font: bold 22px Roboto;
+    color: #4f4f4f;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    margin: 0;
+    padding: 28px 0;
+}
+.cristal{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+.silver .cristal{
+    background: url(../images/cristal.png) 0 0 no-repeat;
+}
+.gold .cristal{
+    background: url(../images/cristal.png) 0 -100px no-repeat;
+}
+.vip .cristal{
+    background: url(../images/cristal.png) 0 -200px no-repeat;
+}
+.lucky-box-price{
+    font: bold 35px Roboto;
+    color: #4f4f4f;
+    margin: 10px 0;
+}
+.lucky-box-price span{
+    font: normal 15px Roboto;
+    color: #4f4f4f;
+}
+.lucky-box-info{
+    font: bold 15px Roboto;
+    color: #4f4f4f;
+}
+.lucky-box-info div{
+    padding: 3px 0;
+}
+
+
+.lucky-box-buy{
+    padding: 45px 15px 15px 15px;
+}
+.lucky-box-buy a{
+    display: block;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font: bold 19px Roboto;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #5bab3d;
+    color: #FFF;
+    box-sizing: border-box;
+    padding: 15px 0 0 0;
+    background: url(../images/green-button.png) 0 -50px repeat-x;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.lucky-box-buy a:hover{
+    background: url(../images/green-button.png) 0 0 repeat-x;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.games-in-boxs{
+    padding: 0 50px 50px;
+    font: normal 15px/21px Roboto;
+    color: #4f4f4f;
+}
+.lucky-comments{
+    padding: 0 50px 50px;
+}

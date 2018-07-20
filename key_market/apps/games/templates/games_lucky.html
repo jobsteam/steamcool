@@ -2,6 +2,12 @@
 
 {% load static pipeline %}
 
+{% block title %}Купить испытай удачу, купить кейсы с ключами{% endblock title %}
+
+{% block keywords %}купить испытай удачу, случайный ключ, купить кейс с ключами{% endblock keywords %}
+
+{% block description %}Отличный шанс купить крутую игру, потратив минимальное количество денежных средств.{% endblock description %}
+
 {% block extra-scripts %}
     <script type="text/javascript" src="{% static 'frontend/js/jquery.fancybox.js' %}"></script>
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?151"></script>
@@ -11,140 +17,64 @@
 {% endblock extra-scripts %}
 
 {% block view_element %}
-    <div class="lucky">
-        <h1>Купить испытай удачу - случайный Steam ключ</h1>
+    <div class="luckypage">
+        <h1>Купить комплект с ключами</h1>
+        <div class="luckyinfo">
+            В данном разделе вы можете купить один из комплектов ключей, среди которых может находится очень дорогая игра. Данный раздел не является сервисом который можно приравнять к азартному. Комплекты постоянно пополняются. Каждый комплект может содержать игры новинки. В комплектах отсутствуют ключи на DLC или демо версии.
+        </div>
         <div class="lucky-boxs clear-block">
-            <div class="lucky-box">
-                <div class="lucky-icon"></div>
-                <div class="lucky-info">
-                    <h2>Обычный ключ</h2>
-                    <div class="price-lucky">
-                        35 <span>₽</span>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Шанс на призовую игру</div>
-                        <div class="lucky-value">5%</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Минимальная цена</div>
-                        <div class="lucky-value">69 р.</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Максимальная цена</div>
-                        <div class="lucky-value">999 р.</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">За одну покупку</div>
-                        <div class="lucky-value">1 игра</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Бонус при дубле</div>
-                        <div class="lucky-value">нет</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Бонус при низкой цене</div>
-                        <div class="lucky-value">да</div>
-                    </div>
+            <div class="lucky-box silver">
+                <h2>Silver box</h2>
+                <div class="cristal"></div>
+                <div class="lucky-box-price">
+                    39 <span>руб.</span>
                 </div>
-                <div class="lucky-buy">
-                    <a href="{% url 'games:order' 'ispyitaj-udachu-steam-obyichnyij-klyuch' %}">Купить ключ</a>
+                <div class="lucky-box-info">
+                    <div>кол-во ключей: 1-2</div>
+                    <div>игры до 599 руб.</div>
+                </div>
+                <div class="lucky-box-buy">
+                    <a href="{% url 'games:order' 'silver-box' %}">Купить бокс</a>
                 </div>
             </div>
-            <div class="lucky-box">
-                <div class="lucky-icon"></div>
-                <div class="lucky-info">
-                    <h2>Крутой ключ</h2>
-                    <div class="price-lucky">
-                        99 <span>₽</span>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Шанс на призовую игру</div>
-                        <div class="lucky-value">25%</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Минимальная цена</div>
-                        <div class="lucky-value">249 р.</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Максимальная цена</div>
-                        <div class="lucky-value">1499 р.</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">За одну покупку</div>
-                        <div class="lucky-value">1 игра</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Бонус при дубле</div>
-                        <div class="lucky-value">да</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Бонус при низкой цене</div>
-                        <div class="lucky-value">да</div>
-                    </div>
+            <div class="lucky-box gold">
+                <h2>Gold box</h2>
+                <div class="cristal"></div>
+                <div class="lucky-box-price">
+                    99 <span>руб.</span>
                 </div>
-                <div class="lucky-buy">
-                    <a href="{% url 'games:order' 'ispyitaj-udachu-steam-krutoj-klyuch' %}">Купить ключ</a>
+                <div class="lucky-box-info">
+                    <div>кол-во ключей: 1-5</div>
+                    <div>игры до 999 руб.</div>
+                </div>
+                <div class="lucky-box-buy">
+                    <a href="{% url 'games:order' 'gold-box' %}">Купить бокс</a>
                 </div>
             </div>
-            <div class="lucky-box">
-                <div class="lucky-icon"></div>
-                <div class="lucky-info">
-                    <h2>Супер ключ</h2>
-                    <div class="price-lucky">
-                        299 <span>₽</span>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Шанс на призовую игру</div>
-                        <div class="lucky-value">55%</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Минимальная цена</div>
-                        <div class="lucky-value">349 р.</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Максимальная цена</div>
-                        <div class="lucky-value">1999 р.</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">За одну покупку</div>
-                        <div class="lucky-value">1-2 игры</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Бонус при дубле</div>
-                        <div class="lucky-value">да</div>
-                    </div>
-                    <div class="lucky-texts clear-block">
-                        <div class="lucky-text">Бонус при низкой цене</div>
-                        <div class="lucky-value">да</div>
-                    </div>
+            <div class="lucky-box vip">
+                <h2>Vip box</h2>
+                <div class="cristal"></div>
+                <div class="lucky-box-price">
+                    249 <span>руб.</span>
                 </div>
-                <div class="lucky-buy">
-                    <a href="{% url 'games:order' 'ispyitaj-udachu-steam-super-klyuch' %}">Купить ключ</a>
+                <div class="lucky-box-info">
+                    <div>кол-во ключей: 1-2</div>
+                    <div>игры до 1999 руб.</div>
+                </div>
+                <div class="lucky-box-buy">
+                    <a href="{% url 'games:order' 'vip-box' %}">Купить бокс</a>
                 </div>
             </div>
         </div>
-        <div class="lucky-infotext">
-            <h2>Что такое Испытай удачу Steam и почему стоит ее купить?</h2>
-            <p>Испытай удачу Steam - это простой но весьма эффективный способ, с помощью которого можно купить ключ от крутой игры по оптимально низкой цене. Согласитесь, приятно было бы купить ключ GTA 5 всего за 99 рублей. Наш магазин лицензионных ключей дает вам такой шанс. В нашем магазине вы можете купить Испытай удачу, или как его еще называют Рандом ключ, за 35 рублей, за 99 рублей и за 199 рублей. Чем выше стоимость выбранного вами рандомного ключа, тем больше шанс того что вам выпадет очень дорогая игра.  Игры загруженные в нашу рулетку в Steam имеют стоимость выше чем в Steam, поэтому после покупки вы гарантированно останетесь в плюсе.</p>
-
-            <p>
-                Внимание! Помимо steam ключей в рулетку загружены Uplay и Origin ключи. Все ключи подписаны!
-            </p>
+        <div class="games-in-boxs">
+            <p><strong>В любом кейсе может попасться:</strong></p>
+            <p>Grand Theft Auto 5, Watch Dogs 2, Battlefield 4, Battlefield 3, Battlefield 1, Far Cry 4, Far Cry Primal, Far Cry 3, Mortal Kombat XL, Mortal Kombat X, Mortal Kombat Komplete Edition, The Evil Within 2, Warhammer 40,000: Dawn of War III, Quantum Break, Alien: Isolation, TEKKEN 7, Elex, Middle-earth: Shadow of War, Middle-earth: Shadow of Mordor, Injustice 2, Injustice: Gods Among Us Ultimate Edition, Mafia III, Fallout 4, Batman Arkham Knight, Assassin's Creed Origins, Assassin's Creed Unity, Assassin's Creed Black Flag, Assassin's Creed Syndicate, DOOM, Tom Clancy's The Division, Tom Clancy's Rainbow Six Siege, Dying Light, Prey, Dead Rising 3, Dead Rising 4, The Witcher 3: Wild Hunt, Call of Duty WWII, Call of Duty: Advanced Warfare, Call of Duty: Infinite Warfare, Call of Duty: Black Ops 3, Call of Duty: Black Ops 2, Call of Duty: Black Ops, Call of Duty: Ghosts, Call of Duty: Modern Warfare 2, Rise of the Tomb Raider, BioShock Infinite, RUST, The Forest, Ghost Recon Wildlands, Wolfenstein II: The New Colossus и др.</p>
         </div>
-        <div class="lucky-infotext">
-            <h2>Какие призовые игры загружены в рулетку?</h2>
-            <p>
-            <strong style="color: #ca004a;">Grand Theft Auto 5</strong>, <strong style="color: #ca004a;">Watch Dogs 2</strong>, Battlefield 4, Battlefield 3, <strong style="color: #ca004a;">Battlefield 1</strong>, Far Cry 4, Far Cry Primal, Far Cry 3, <strong style="color: #ca004a;">Mortal Kombat XL</strong>, Mortal Kombat X, Mortal Kombat Komplete Edition, The Evil Within 2, Warhammer 40,000: Dawn of War III, Quantum Break, Alien: Isolation, TEKKEN 7, Elex, <strong style="color: #ca004a;">Middle-earth: Shadow of War</strong>, Middle-earth: Shadow of Mordor, <strong style="color: #ca004a;">Injustice 2</strong>, Injustice: Gods Among Us Ultimate Edition, Mafia III, <strong style="color: #ca004a;">Fallout 4</strong>, Batman Arkham Knight, Assassin's Creed Origins, Assassin's Creed Unity, Assassin's Creed Black Flag, Assassin's Creed Syndicate, <strong style="color: #ca004a;">DOOM</strong>, Tom Clancy's The Division, Tom Clancy's Rainbow Six Siege, Dying Light, Prey, Dead Rising 3, Dead Rising 4, The Witcher 3: Wild Hunt, <strong style="color: #ca004a;">Call of Duty WWII</strong>, Call of Duty: Advanced Warfare, <strong style="color: #ca004a;">Call of Duty: Infinite Warfare</strong>, Call of Duty: Black Ops 3, Call of Duty: Black Ops 2, Call of Duty: Black Ops, Call of Duty: Ghosts, Call of Duty: Modern Warfare 2, Rise of the Tomb Raider, BioShock Infinite, RUST, The Forest, <strong style="color: #ca004a;">Ghost Recon Wildlands</strong>, <strong style="color: #ca004a;">Wolfenstein II: The New Colossus</strong> и др.
-            </p>
+        <div class="lucky-comments">
+            <div id="vk_comments"></div>
+            <script type="text/javascript">
+                VK.Widgets.Comments("vk_comments", {limit: 40, attach: "photo"});
+            </script>
         </div>
     </div>
 {% endblock view_element %}
-
-{% block block_comments %}
-<div class="comments">
-    <div id="vk_comments"></div>
-    <script type="text/javascript">
-        VK.Widgets.Comments("vk_comments", {limit: 20, attach: "photo"});
-    </script>
-</div>
-{% endblock %}
