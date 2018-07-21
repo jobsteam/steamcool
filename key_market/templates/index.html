@@ -16,10 +16,14 @@
     <div class="swiper-wrapper">
         {% for slide in slides %}
         <div class="swiper-slide">
-            <a href="{% url 'games:detail' slide.slug %}"><img src="{{ slide.image_slide.url }}"></a>
-            <div class="slide_info clear-block">
-                <a class="slide_title" href="{% url 'games:detail' slide.slug %}">{{ slide.title }}</a>
-                <div class="slide_price">{{ slide.my_coast }} РУБ.</div>
+            <div class="slide">
+                <a href="{% url 'games:detail' slide.slug %}">
+                    <img src="{{ slide.image_slide.url }}" width="100%">
+                </a>
+            </div>
+            <div class="slide-info clear-block">
+                <div class="slide-info-price">{{ slide.my_coast }} <span>руб.</span></div>
+                <div class="slide-info-title">{{ slide.title }}</div>
             </div>
         </div>
         {% endfor %}
@@ -36,9 +40,8 @@
 
     <div class="tab-menu">
         <ul class="tabs main-tabs clear-block">
-            <li><a href="#tab1" class="active">Новое на сайте</a></li>
-            <li><a href="#tab2">По дешевке</a></li>
-            <li><a href="#tab3">Скоро</a></li>
+            <li><a href="#tab1" class="active">Популярное</a></li>
+            <li><a href="#tab2">Пополнение в магазине</a></li>
         </ul>
         <div id="tab1" style="display: block;">
             <div class="game-list">
@@ -98,9 +101,6 @@
                     </div>
                 {% endfor %}
             </div>
-        </div>
-        <div id="tab3" style="display: none;">
-            1
         </div>
     </div>
     <div class="magaz-info">
