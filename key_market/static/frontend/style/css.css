@@ -897,3 +897,28 @@ input.place:focus{
 .lucky-comments{
     padding: 0 50px 50px;
 }
+.autocomplete-suggestions{
+    background: #5c5c5c;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+}
+.autocomplete-suggestion{
+    font: normal 14px Roboto;
+    color: #FFF;
+    padding: 8px 15px;
+    border-bottom: solid 1px #777777;
+}
+.autocomplete-suggestion strong{
+    font: normal 14px Roboto;
+    color: #ee7c2c;
+}
+.autocomplete-suggestion:last-child{
+    border-bottom: none;
+}
+.autocomplete-selected{
+    background: #ee7c2c;
+    cursor: pointer;
+}
+.autocomplete-selected strong{
+    color: #FFF;
+}
