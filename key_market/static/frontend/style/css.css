@@ -143,6 +143,7 @@ body{
 }
 .block{
     background: url(../images/pix.png) top center repeat;
+    margin: 0 0 10px 0;
 }
 .left{
     float: left;
@@ -921,4 +922,34 @@ input.place:focus{
 }
 .autocomplete-selected strong{
     color: #FFF;
+}
+.lucky-button{
+    padding: 12px;
+}
+.lucky-button a{
+    display: block;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font: bold 19px Roboto;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #5bab3d;
+    color: #FFF;
+    box-sizing: border-box;
+    padding: 15px 0 0 0;
+    background: url(../images/green-button.png) 0 -50px repeat-x;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.lucky-button a:hover{
+    background: url(../images/green-button.png) 0 0 repeat-x;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
