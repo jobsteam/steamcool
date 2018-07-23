@@ -114,9 +114,14 @@ class GameAdmin(admin.ModelAdmin):
     readonly_fields = [
         'field_thumbnail',
         'field_slide_thumbnail',
-        'slug',
         'in_stock',
     ]
+
+    prepopulated_fields = {
+        'slug': (
+            'title',
+        )
+    }
 
     def business_rival_price(self, instance, business_rival):
         price = self.business_rival_prices[instance.pk][business_rival]

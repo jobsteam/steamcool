@@ -231,7 +231,8 @@ class Game(models.Model):
         super().save(*args, **kwargs)
 
     def autoslug(self):
-        self.slug = slugify(self.title)
+        if not self.slug:
+            self.slug = slugify(self.title)
 
     @property
     def percent(self):
