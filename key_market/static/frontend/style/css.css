@@ -228,6 +228,21 @@ body{
 .slide-info-price span{
     font: normal 16px ptSans;
 }
+.slide-info-soon{
+    float: right;
+    width: 150px;
+    box-sizing: border-box;
+    text-align: center;
+    font: normal 17px ptSans;
+    padding: 15px;
+}
+.slide-info-soon span{
+    background: #ee5b02;
+    display: block;
+    padding: 3px 5px;
+    color: #FFF;
+    border-radius: 5px;
+}
 .slide-info-title{
     margin: 0 150px 0 0;
     padding: 15px;
@@ -952,4 +967,28 @@ input.place:focus{
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+.nonal{
+    float: left;
+    width: 125px;
+    height: 50px;
+    background: #748082;
+    font: bold 16px Roboto;
+    text-align: center;
+    color: #FFF;
+    box-sizing: border-box;
+    padding: 15px 0 0 0;
+}
+.soon{
+    float: left;
+    width: 125px;
+    height: 50px;
+    background: #079e00;
+    font: bold 16px Roboto;
+    text-align: center;
+    color: #FFF;
+    box-sizing: border-box;
+    padding: 15px 0 0 0;
+    text-shadow: 2px 2px 2px #467534;
+    text-transform: uppercase;
 }

@@ -30,6 +30,9 @@
     </div>
 
 
+
+
+
     <div class="game-object-head clear-block">
         <div class="game-object-head-foto">
             {% thumbnail game.image "460x215" as main_image %}
@@ -62,7 +65,20 @@
             <div class="price-buy">
                 <div class="buy">
                     <div class="coast">{{ game.my_coast }} <span>руб.</span></div>
+
+
+
+
+                {% if game.in_stock %}
                     <a href="{% url 'games:order' game.slug %}" class="buy-button">Купить</a>
+                {% elif game.is_soon %}
+                    <div class="soon">Скоро!</div>
+                {% else %}
+                    <div class="nonal">Закончился!</div>
+                {% endif %}
+
+
+
                 </div>
                 <div class="percent">СКИДКА <span>- {{ game.percent }}%</span></div>
             </div>

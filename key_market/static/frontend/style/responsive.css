@@ -264,11 +264,17 @@
     .game-description{
         font: normal 13px/21px Roboto;
     }
+    .nonal{
+        width: 90px;
+        height: 50px;
+        font: bold 13px Roboto;
+        padding: 10px 0 0 0;
+    }
 }
 @media screen and (min-width: 880px) and (max-width: 970px){
     .big-center{
         float: left;
-        width: 100%;
+        width: calc(100% - 200px);
     }
     .game-object-head-foto{
         width: 400px;
@@ -315,8 +321,18 @@
     .gallery-item{
         width: 24.8%;
     }
+    .nonal{
+        width: 90px;
+        height: 50px;
+        font: bold 13px Roboto;
+        padding: 10px 0 0 0;
+    }
 }
 @media screen and (min-width: 700px) and (max-width: 880px){
+    .big-center{
+        float: left;
+        width: calc(100% - 200px);
+    }
     .game-object-head-foto{
         padding: 15px;
         float: none;

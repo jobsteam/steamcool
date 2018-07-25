@@ -22,7 +22,15 @@
                 </a>
             </div>
             <div class="slide-info clear-block">
-                <div class="slide-info-price">{{ slide.my_coast }} <span>руб.</span></div>
+
+                {% if slide.is_soon %}
+                    <div class="slide-info-soon">
+                        <span>Скоро!</span>
+                    </div>
+                {% else %}
+                    <div class="slide-info-price">{{ slide.my_coast }} <span>руб.</span></div>    
+                {% endif %}
+
                 <div class="slide-info-title">{{ slide.title }}</div>
             </div>
         </div>
