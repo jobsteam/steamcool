@@ -985,3 +985,6 @@ input.place:focus{
     text-shadow: 2px 2px 2px #467534;
     text-transform: uppercase;
 }
+.vk_users{
+    padding: 12px;
+}
