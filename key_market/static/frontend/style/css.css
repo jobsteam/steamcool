@@ -233,15 +233,8 @@ body{
     width: 150px;
     box-sizing: border-box;
     text-align: center;
-    font: normal 17px ptSans;
+    font: bold 17px ptSans;
     padding: 15px;
-}
-.slide-info-soon span{
-    background: #ee5b02;
-    display: block;
-    padding: 3px 5px;
-    color: #FFF;
-    border-radius: 5px;
 }
 .slide-info-title{
     margin: 0 150px 0 0;
