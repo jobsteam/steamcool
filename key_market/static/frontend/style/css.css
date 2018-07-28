@@ -988,3 +988,40 @@ input.place:focus{
 .vk_users{
     padding: 12px;
 }
+.best-price-block{
+    padding: 15px;
+}
+.best-price-block h3{
+    text-transform: uppercase;
+    font: bold 16px ptSans;
+    color: #666;
+    border-bottom: solid 2px #666;
+    margin: 0 0 10px 0;
+    padding: 5px 0 10px 0;
+}
+.sale-per{
+    float: left;
+    width: 100px;
+    background: #ff6000;
+    box-sizing: border-box;
+    padding: 6px 5px;
+    font: bold 13px Roboto;
+    color: #FFF;
+}
+.sale-coast{
+    float: left;
+    width: calc(100% - 100px);
+    text-align: right;
+    background: #cacaca;
+    font: bold 13px Roboto;
+    color: #FFF;
+    box-sizing: border-box;
+    padding: 6px 5px;
+    color: #333;
+}
+.sale-per-foto img{
+    display: block;
+}
+.special-box {
+    margin: 0 0 15px 0;
+}

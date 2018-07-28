@@ -1,21 +1,21 @@
 
 {% load thumbnail %}
-<!--
-<div class="white_block">
+
+<div class="block best-price-block">
     <h3>Лучшая цена</h3>
     {% for special_game in special_block_1 %}
         <div class="special-box">
 
             <div class="sale-per-foto">
-                {% thumbnail special_game.image "170x79" crop="center" as im %}
+                {% thumbnail special_game.image "250x116" crop="center" as im %}
                 <a class="sale-foto" href="{% url 'games:detail' special_game.slug %}">
-                    <img src="{{ im.url }}" width="{{ im.width }}" alt="">
+                    <img src="{{ im.url }}" width="100%" alt="">
                 </a>
             </div>
             <div class="clear-block">
-                <div class="sale-per">-{{ special_game.percent }}%</div>
-                <div class="sale-title">
-                    <a href="{% url 'games:detail' special_game.slug %}">{{ special_game.my_coast }} руб.</a>
+                <div class="sale-per">Скидка -{{ special_game.percent }}%</div>
+                <div class="sale-coast">
+                    {{ special_game.my_coast }} руб.
                 </div>
             </div>
             
@@ -23,4 +23,3 @@
         </div>
     {% endfor %}
 </div>
--->
