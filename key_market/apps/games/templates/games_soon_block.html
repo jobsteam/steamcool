@@ -2,8 +2,8 @@
 {% load thumbnail %}
 
 <div class="block best-price-block">
-    <h3>Лучшая цена</h3>
-    {% for special_game in special_block_1 %}
+    <h3>Скоро в продаже</h3>
+    {% for special_game in soon_block %}
         <div class="special-box">
 
             <div class="sale-per-foto">
@@ -13,7 +13,7 @@
                 </a>
             </div>
             <div class="clear-block">
-                <div class="sale-per">Скидка -{{ special_game.percent }}%</div>
+                <div class="sale-per">Скоро</div>
                 <div class="sale-coast">
                     {{ special_game.my_coast }} руб.
                 </div>

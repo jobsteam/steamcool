@@ -1,0 +1,25 @@
+
+{% load thumbnail %}
+
+<div class="block best-price-block">
+    <h3>Лучшая цена</h3>
+    {% for special_game in special_block %}
+        <div class="special-box">
+
+            <div class="sale-per-foto">
+                {% thumbnail special_game.image "250x116" crop="center" as im %}
+                <a class="sale-foto" href="{% url 'games:detail' special_game.slug %}">
+                    <img src="{{ im.url }}" width="100%" alt="">
+                </a>
+            </div>
+            <div class="clear-block">
+                <div class="sale-per">Скидка -{{ special_game.percent }}%</div>
+                <div class="sale-coast">
+                    {{ special_game.my_coast }} руб.
+                </div>
+            </div>
+            
+
+        </div>
+    {% endfor %}
+</div>

@@ -52,8 +52,7 @@ class GameAdmin(admin.ModelAdmin):
                 'is_free',
                 'is_slide',
                 'is_soon',
-                'is_special_block_1',
-                'is_special_block_2',
+                'is_special_block',
                 'is_favorite',
             )
         }),
