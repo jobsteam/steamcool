@@ -575,3 +575,50 @@
         font: normal 13px/19px Roboto;
     }
 }
+
+
+/*Адаптация удачи*/
+@media screen and (min-width: 850px) and (max-width: 1050px){
+    .lucky-box{
+        text-align: center;
+        float: left;
+        width: calc(33.3% - 24px);
+        margin: 0 10px;
+    }
+    .cristal{
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+    }
+    .silver .cristal{
+        background: url(../images/cristal.png) -100px 0 no-repeat;
+    }
+    .gold .cristal{
+        background: url(../images/cristal.png) -100px -100px no-repeat;
+    }
+    .vip .cristal{
+        background: url(../images/cristal.png) -100px -200px no-repeat;
+    }
+}
+@media screen and (min-width: 300px) and (max-width: 850px){
+    .lucky-box{
+        float: none;
+        width: 100%;
+        margin: 10px 0;
+    }
+    .cristal{
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+    }
+    .silver .cristal{
+        background: url(../images/cristal.png) -100px 0 no-repeat;
+    }
+    .gold .cristal{
+        background: url(../images/cristal.png) -100px -100px no-repeat;
+    }
+    .vip .cristal{
+        background: url(../images/cristal.png) -100px -200px no-repeat;
+    }
+}
+}
