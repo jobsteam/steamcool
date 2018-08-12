@@ -85,41 +85,66 @@
         </div>
     </div>
     <div class="game-description clear-block">
-
-    <div class="game-desc clear-block">
-        <div class="game-description-left">
-            <div class="description">
-                    <h2>Описание игры</h2>
-                    <div class="description-content">
-                        {{ game.description|safe }}
-                    </div>
-            </div>
-            {{ game.gamevideo }}
-            
-        </div>
-        <div class="game-description-right">
-            <div class="game-screenshot">
-                <div class="gallery clear-block">
-                    {% for screenshot in game.screenshots.all %}
-                        <div class="gallery-item">
-                            <a data-fancybox="gallery" href="{{ screenshot.image.url }}">
-                                {% thumbnail screenshot.image "297x167" as im %}
-                                <img src="{{ im.url }}">
-                            </a>
+        <div class="game-desc clear-block">
+            <div class="game-description-left">
+                <div class="description">
+                        <h2>Описание игры</h2>
+                        <div class="description-content">
+                            {{ game.description|safe }}
                         </div>
-                    {% endfor %}
+                </div>
+                <div class="system">
+                    <h2>Системные требования</h2>
+                    <div class="system-content">
+                        <div class="system-element">
+                            <span>Операционная система:</span>
+                            {{ game.os }}
+                        </div>
+
+                        <div class="system-element">
+                            <span>Процессор:</span>
+                            {{ game.processor }}
+                        </div>
+                        <div class="system-element">
+                            <span>Опертивная память:</span>
+                            {{ game.ozu }}
+                        </div>
+                        <div class="system-element">
+                            <span>Видеокарта:</span>
+                            {{ game.video_card }}
+                        </div>
+                        <div class="system-element">
+                            <span>Жесткий диск:</span>
+                            {{ game.hdd }}
+                        </div>
+                    </div>
+                </div>
+                {{ game.gamevideo }}
+                
+            </div>
+            <div class="game-description-right">
+                <div class="game-screenshot">
+                    <div class="gallery clear-block">
+                        {% for screenshot in game.screenshots.all %}
+                            <div class="gallery-item">
+                                <a data-fancybox="gallery" href="{{ screenshot.image.url }}">
+                                    {% thumbnail screenshot.image "297x167" as im %}
+                                    <img src="{{ im.url }}">
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <div class="comments">
-        <div id="vk_comments"></div>
-        <script type="text/javascript">
-            VK.Widgets.Comments("vk_comments", {limit: 20, attach: "photo"});
-        </script>
-    </div>
+        <div class="comments">
+            <div id="vk_comments"></div>
+            <script type="text/javascript">
+                VK.Widgets.Comments("vk_comments", {limit: 20, attach: "photo"});
+            </script>
+        </div>
 
 
 
@@ -181,6 +206,5 @@
 
 
 
-
-    </div>
+</div>
 {% endblock %}
