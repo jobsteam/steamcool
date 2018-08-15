@@ -81,23 +81,29 @@
     .main-tabs li a{
         font: normal 14px ptSans;
     }
+
+
+
+
     .game-img{
         width: 150px;
     }
     .game-info{
-        margin: 0 0 0 150px;
         min-height: 0;
     }
-    .game-info-detail{
-        padding: 25px 7px 0px 7px;
-    }
-    .game-info-price{
-        padding: 25px 15px;
+
+    .game-info-title{
         font: normal 16px ptSans;
     }
-    .game-mini-activation{
-        display: none;
+    .game-info-price{
+        font: normal 16px ptSans;
     }
+
+
+
+
+
+
 }
 @media screen and (min-width: 700px) and (max-width: 970px){
     .wrapper{
@@ -114,23 +120,27 @@
         float: left;
         width: calc(100% - 200px); 
     }
+
+
+
+
     .game-img{
         width: 150px;
     }
     .game-info{
-        margin: 0 0 0 150px;
         min-height: 0;
     }
-    .game-info-detail{
-        padding: 25px 7px 0px 7px;
+    .game-info-title{
+        font: normal 16px ptSans;
     }
     .game-info-price{
         padding: 25px 15px;
-        font: normal 16px ptSans;
+        font: bold 16px ptSans;
     }
-    .game-mini-activation{
-        display: none;
-    }
+
+
+
+
 }
 @media screen and (min-width: 520px) and (max-width: 700px){
     .wrapper{
@@ -146,34 +156,33 @@
         float: none;
         width: 100%; 
     }
-    .game-img{
-        width: 120px;
-    }
-    .game-info{
-        margin: 0 0 0 120px;
-        min-height: 0;
-    }
-    .game-info-detail{
-        padding: 10px 7px 0px 7px;
-        margin: 0 100px 0 0;
-    }
-    .game-info-price{
-        width: 100px;
-        padding: 20px 15px;
-        font: normal 16px ptSans;
-    }
-    .game-mini-activation{
-        display: none;
-    }
-    .game-info-title{
-        font: normal 14px ptSans;
-    }
     .main-tabs li a{
         font: normal 14px ptSans;
         padding: 6px 10px;
     }
+
+
+
+
+    .game-img{
+        width: 150px;
+    }
+    .game-info{
+        min-height: 0;
+    }
+    .game-info-title{
+        font: normal 16px ptSans;
+    }
+    .game-info-price{
+        padding: 25px 15px;
+        font: bold 16px ptSans;
+    }
+
+
+
+    
 }
-@media screen and (max-width: 520px){
+@media screen and (min-width: 330px) and (max-width: 520px){
     .wrapper{
         width: 100%;
     }
@@ -187,32 +196,63 @@
         float: none;
         width: 100%; 
     }
+    .main-tabs li a{
+        font: normal 14px ptSans;
+        padding: 6px 10px;
+    }
+
+
     .game-img{
-        width: 80px;
+        width: 100px;
     }
     .game-info{
-        margin: 0 0 0 80px;
         min-height: 0;
     }
-    .game-info-detail{
-        padding: 10px 7px 0px 7px;
-        margin: 0 100px 0 0;
+    .game-info-title{
+    padding: 0 20px 0 10px;
+        font: normal 14px ptSans;
     }
     .game-info-price{
-        width: 100px;
-        padding: 10px 15px;
-        font: normal 16px ptSans;
+        font: normal 14px ptSans;
     }
-    .game-mini-activation{
+
+}
+
+
+@media screen and (max-width: 330px){
+    .wrapper{
+        width: 100%;
+    }
+    .right{
         display: none;
     }
-    .game-info-title{
-        font: normal 14px ptSans;
+    .left{
+        display: none;
+    }
+    .center{
+        float: none;
+        width: 100%; 
     }
     .main-tabs li a{
         font: normal 14px ptSans;
         padding: 6px 10px;
     }
+
+
+    .game-img{
+        display: none;
+    }
+    .game-info{
+        min-height: 0;
+    }
+    .game-info-title{
+    padding: 10px 20px 10px 10px;
+        font: normal 14px ptSans;
+    }
+    .game-info-price{
+        font: normal 14px ptSans;
+    }
+
 }
 
 
@@ -621,4 +661,44 @@
         background: url(../images/cristal.png) -100px -200px no-repeat;
     }
 }
+
+
+
+/*Адаптация слайда*/
+@media screen and (max-width: 550px){
+
+    .slide-info{
+        justify-content: flex-end;
+        flex-direction: column-reverse;
+    }
+
+    .slide-info-title{
+        width: 100%;
+        text-align: center;
+        font: bold 16px ptSans;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+    .slide-info-price{
+        width: 150px;
+        text-align: center;
+        font: normal 20px ptSans;
+        box-sizing: border-box;
+        padding: 5px 0 5px 0;
+        margin: 15px 0 0 0;
+        background: #46ac2c;
+        color: #FFF;
+    }
+    .slide-info-soon{
+        width: 150px;
+        text-align: center;
+        font: bold 17px ptSans;
+        box-sizing: border-box;
+        padding: 5px;
+        background: #46ac2c;
+        margin: 15px 0 0 0;
+        background: #46ac2c;
+        color: #FFF;
+    }
+    
 }

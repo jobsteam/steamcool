@@ -9,40 +9,41 @@
 
 {% block center_column %}
     {% if game_list %}
-        <h2 class="list_title">{{ page_title }}</h2>
+        <h1 class="list_title">Экшены</h1>
         <div class="game-list">
             {% for games in object_list %}
-                
-
-
-
-
-            <div class="game">
-                <div class="game-img">
-                    {% thumbnail games.image "190x89" as im %}
-                    <img src="{{ im.url }}" width="100%">
-                </div>
-                <div class="game-info clear-block">
-                    <div class="game-info-price">{{ games.my_coast }} <span>руб.</span></div>
-                    <div class="game-info-detail">
-                        <div class="game-info-title">{{ games.title }}</div>
-                        <div class="game-mini-info">
-                            <span class="game-mini-activation {{ games.get_store_activation_display }}"></span>
-                        </div>
+                <div class="game">
+                    <div class="game-img">
+                        {% thumbnail games.image "190x89" as im %}
+                        <img src="{{ im.url }}" width="100%">
                     </div>
+                    <div class="game-info">
+                        <div class="game-info-title">
+                            {{ games.title }}
+                        </div>
+                        <div class="game-info-price">{{ games.my_coast }}р.</div>
+                        <div class="game-info-percent">{{ games.percent }}%</div>
+                    </div>
+                    <a href="{% url 'games:detail' games.slug %}" class="game-link"></a>
                 </div>
-                <a href="{% url 'games:detail' games.slug %}" class="game-link"></a>
-            </div>
-
-
-
             {% endfor %}
         </div>
-    {% else %}
-        {% if is_alphabet %}
-            На такую букву игр не нашлось
         {% else %}
-            В разделе {{ section }} нет ни одной игры. Приходите позже, они обязательно появятся
+            {% if is_alphabet %}
+                На такую букву игр не нашлось
+            {% else %}
+                В разделе {{ section }} нет ни одной игры. Приходите позже, они обязательно появятся
+            {% endif %}
         {% endif %}
-    {% endif %}
+        <div class="list-pager">
+            <ul>
+                <li class="prev"><a href="">...назад</a></li>
+                <li class="current"><span>1</span></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li>...</li>
+                <li><a href="">6</a></li>
+                <li class="next"><a href="">далее...</a></li>
+            </ul>
+        </div>
 {% endblock %}

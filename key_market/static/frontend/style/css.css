@@ -23,7 +23,7 @@
     font-style: normal;
 }
 body{
-    background: url(https://i0.wp.com/leadergamer.com.tr/img/haber-foto/2016/10/3-10.jpg) top center no-repeat fixed;
+    background: url(../images/fon2.jpg) top center no-repeat fixed;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -214,93 +214,137 @@ body{
 .last-pay{
     padding: 15px;
 }
+
+
+
+
+
+
+
+
 .slide img{
     display: block;
-}
-.slide-info-price{
-    float: right;
-    width: 150px;
-    box-sizing: border-box;
-    text-align: center;
-    font: normal 20px ptSans;
-    padding: 15px;
 }
 .slide-info-price span{
     font: normal 16px ptSans;
 }
-.slide-info-soon{
-    float: right;
-    width: 150px;
-    box-sizing: border-box;
-    text-align: center;
-    font: bold 17px ptSans;
-    padding: 15px;
+.slide-info{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
 }
 .slide-info-title{
-    margin: 0 150px 0 0;
-    padding: 15px;
+    width: 100%;
     font: bold 20px ptSans;
+    box-sizing: border-box;
+    padding: 15px;
 }
+.slide-info-price{
+    width: 150px;
+    text-align: center;
+    font: normal 20px ptSans;
+    box-sizing: border-box;
+    padding: 15px;
+}
+.slide-info-soon{
+    width: 150px;
+    text-align: center;
+    font: bold 17px ptSans;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+
+
+
+
+
+
+h1.list_title{
+    display: block;
+    margin: 0;
+    padding: 15px;
+    font: bold 25px ptSans;
+}
+
 .game{
+    overflow: hidden;
     position: relative;
+    display: flex;
+    flex-direction: row;
 }
 .game:nth-child(2n-1){
     background: #f9f9f9;
 }
-.game-list .game:last-child{
-    border-bottom: solid 3px #CCC;
-    margin: 0 0 10px 0; 
+.game:hover{
+    background: #eeeeee;
 }
 .game-link{
-    display: block;
     position: absolute;
+    display: block;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
+    bottom: 0;
 }
 .game-img{
-    float: left;
     width: 200px;
-    box-sizing: border-box;
     padding: 5px;
 }
 .game-img img{
     display: block;
 }
 .game-info{
-    margin: 0 0 0 200px;
-    min-height: 99px;
-}
-.game-info-price{
-    float: right;
-    width: 150px;
-    font: normal 20px ptSans;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 30px 15px;
-}
-.game-info-price span {
-    font: normal 16px ptSans;
-}
-.game-info-detail{
-    margin: 0 150px 0 0;
-    box-sizing: border-box;
-    padding: 15px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items:center;
 }
 .game-info-title{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
     font: normal 18px ptSans;
-    margin: 0 0 8px 0;
 }
-.game-mini-activation{
-    display: block;
-    width: 26px;
-    height: 26px;
-    background: #ccc;
+.game-info-price{
+    width: 120px;
+    font: bold 18px ptSans;
 }
-.steam{
-    background: url(../images/steam-list-icon.png) top center repeat;
+.game-info-percent{
+    position: absolute;
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    padding: 3px 3px 0 0;
+    background: url(../images/perсent.png) top left no-repeat;
+    top: 0;
+    right: 0;
+    text-align: right;
+    font: normal 14px ptSans;
+    color: #FFF;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .main-tabs{
     list-style: none;
     margin: 0 0 15px 0;
@@ -328,7 +372,7 @@ body{
 
 
 .list-pager{
-    padding: 10px 0; 
+    padding: 25px 0; 
 }
 .list-pager ul{
     list-style: none;
