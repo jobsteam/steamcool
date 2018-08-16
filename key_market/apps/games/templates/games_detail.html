@@ -35,7 +35,7 @@
 
     <div class="game-object-head clear-block">
         <div class="game-object-head-foto">
-            {% thumbnail game.image "460x215" as main_image %}
+            {% thumbnail game.image "460x215" quality=100 as main_image %}
                 <img src="{{ main_image.url }}">
         </div>
         <div class="game-object-head-detail">
