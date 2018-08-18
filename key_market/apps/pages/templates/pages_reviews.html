@@ -13,19 +13,23 @@
 {% block ogdescription %}Отзывы людей которые делали в нашем интернет магазине покупки.{% endblock ogdescription %}
 
 {% block view_element %}
-    <div class="text">
+
+    <div class="reviews">
         <h1>Отзывы покупателей</h1>
-        <p>Отзывы, которые оставляют нам наши покупатели защищены системой oplata.info. Это сторонняя система, никак не зависящая от нас. Поэтому МЫ НЕ МОЖЕМ изменить, добавить или удалить какой-либо отзыв. Можете быть уверены, все отзывы, присутствующие на странице написаны живыми людьми. Убедительная просьба, оставляйте отзыв после покупки товара у нас. Каждый отзыв улучшает наш магазин и позволяет наполнять наш каталог новыми играми.</p>
-        <div class="rev-count">
-            Общее количество отзывов:
-            <strong>151</strong>
-        </div>
+        <div class="reviews-text"><span class="orange">Отзывы</span>, которые оставляют нам наши покупатели защищены системой <span class="orange">oplata.info</span>. Это сторонняя система, никак не зависящая от нас. Поэтому <span class="orange">мы не можем изменить, добавить или удалить какой-либо отзыв</span>. Можете быть уверены, все отзывы, присутствующие на странице написаны живыми людьми. Убедительная просьба, оставляйте отзыв после покупки товара у нас. Каждый отзыв улучшает наш магазин и позволяет наполнять наш каталог новыми играми.</div>
+        <div class="reviews-count">Всего отзывов: 1568</div>
+        <div class="list-reviews">
         {% for review in reviews %}
-            <div class="review clear-block">
-                <div class="review-ic"></div>
+            <div class="review">
                 <div class="review-date">{{ review.date }}</div>
-                <div class="review-info">{{ review.info }}</div>
+                <div class="review-text">{{ review.info }}</div>
             </div>
         {% endfor %}
-    </div> 
+        </div>
+        <div class="another-button">
+            <span>Качество для нас привыше всего ...</span>
+            <a href="{% url 'pages:guarantees' %}">Гарантии качества</a>
+        </div>
+    </div>
+
 {% endblock %}

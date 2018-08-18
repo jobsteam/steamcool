@@ -702,3 +702,27 @@
     }
     
 }
+/*Адаптация кнопки another-button*/
+@media screen and (max-width: 850px){
+    .garant{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px 25px;
+        font: normal 15px Roboto;
+    }
+}
+@media screen and (max-width: 550px){
+    .another-button a{
+        width: 70%;
+    }
+}
+/*Адаптация отзывы*/
+@media screen and (max-width: 850px){
+    .review-date{
+        font: normal 14px ptSans;
+    }
+    .review-text{
+        font: normal 14px ptSans;
+        padding: 8px 10px;
+    }
+}

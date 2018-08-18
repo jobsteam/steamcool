@@ -1091,3 +1091,116 @@ input.place:focus{
 .system-element{
     padding: 0 0 10px 0;
 }
+.reviews{
+    background: #FFF;
+    padding: 0 0 25px 0;
+}
+.reviews h1{
+    font: bold 25px Roboto;
+    background: #FFF;
+    margin: 0;
+    padding: 25px;
+    border-top: solid 3px #000;
+}
+.reviews-text{
+    padding: 0 25px;
+    margin: 0 0 25px 0;
+    font: normal 16px ptSans;
+}
+.list-reviews{
+    padding: 0 25px;
+    margin: 0 0 25px 0;
+}
+.review{
+    display: flex;
+    flex-direction: row;
+}
+.review-date{
+    width: 100px;
+    background: #EEE;
+    text-align: center;
+    padding: 8px;
+    font: normal 14px ptSans;
+}
+.review-text{
+    width: 100%;
+    padding: 8px 20px;
+    font: normal 16px ptSans;
+}
+.review:nth-child(2n-1){
+    background: #F9F9F9;
+}
+.reviews-count{
+    font: normal 16px ptSans;
+    margin: 0 25px 25px 25px;
+    border-bottom: solid 3px #ff6000;
+    width: 170px;
+    padding: 5px 5px 5px 0;
+}
+.orange{
+    color: #ff6000;
+}
+.another-button{
+    padding: 15px 0;
+}
+.another-button span{
+    display: block;
+    font: normal 14px Roboto;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+.another-button a{
+    display: block;
+    width: 33.3%;
+    margin: 0 auto;
+    padding: 8px 0;
+    text-align: center;
+    background: #ffebdf;
+    border: solid 1px #ff6000;
+    color: #000;
+    font: normal 14px Roboto;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.another-button a:hover{
+    color: #FFF;
+    box-shadow: inset 0 0 0 30px #ff6000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.garants{
+    background: #FFF;
+    padding: 0 0 25px 0;
+}
+.garants h1{
+    font: bold 25px Roboto;
+    background: #FFF;
+    margin: 0;
+    padding: 25px;
+    border-top: solid 3px #000;
+}
+
+.list-garants{
+    margin: 0 0 25px 0;
+    display: flex;
+    flex-directtion: row;
+    flex-wrap: wrap
+}
+.garant{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 15px 25px;
+    font: normal 15px Roboto;
+}
+.garant h2{
+    font: bold 18px Roboto;
+    padding: 0 0 0 30px;
+    background: url(../images/good.png) top left no-repeat;
+}
