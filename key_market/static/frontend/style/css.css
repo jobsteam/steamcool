@@ -1070,6 +1070,14 @@ input.place:focus{
     margin: 0 0 15px 0;
 }
 
+
+
+
+
+
+
+
+
 .system{
     margin: 0 0 25px 0;
     background: #EEE;
@@ -1086,11 +1094,47 @@ input.place:focus{
 }
 .system-element span{
     display: block;
-    font: bold 15px Roboto;
 }
 .system-element{
-    padding: 0 0 10px 0;
+    display: flex;
 }
+.system-element:nth-child(2n-1) {
+    background: #F9F9F9;
+}
+.system-element div{
+    box-sizing: border-box;
+}
+.system-name{
+    font: bold 14px Roboto;
+    width: 70px;
+    background: #fff;
+    padding: 10px;
+}
+.system-value{
+    font: normal 14px Roboto;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .reviews{
     background: #FFF;
     padding: 0 0 25px 0;
