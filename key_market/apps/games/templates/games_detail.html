@@ -27,184 +27,166 @@
 {% block view_element %}
     <div class="game-object">
         <h1>{{ game.seo_title }}</h1>
-    </div>
-
-
-
-
-
-    <div class="game-object-head clear-block">
-        <div class="game-object-head-foto">
-            {% thumbnail game.image "460x215" quality=100 as main_image %}
-                <img src="{{ main_image.url }}">
-        </div>
-        <div class="game-object-head-detail">
-            <div class="game-mini-detail">
-                Жанр:
-                    {% for genre in game.genre.all%}
-                        <a href="{% url 'games:genre_list' genre.slug %}">{{ genre.title }}</a>
-                    {% endfor %}
-                    <br />
-
-                Язык:
-                    {{ game.get_language_display }}
-                    <br />
-
-                Активация:
-                    <a href="{% url 'games:store_list' game.get_store_activation_display %}">{{ game.get_store_activation_display }}</a>
-                    <br />
-
-                Дата выхода:
-                    {{ game.date_release|date:"SHORT_DATE_FORMAT" }}
-                    <br />
-
-                Издатель:
-                    {{ game.publisher }}
-                    <br />
+        <div class="game-object-head clear-block">
+            <div class="game-object-head-foto">
+                {% thumbnail game.image "460x215" quality=100 as main_image %}
+                    <img src="{{ main_image.url }}">
             </div>
-            <div class="price-buy">
-                <div class="buy">
-                    <div class="coast">{{ game.my_coast }} <span>руб.</span></div>
-
-
-
-
-                {% if game.in_stock %}
-                    <a href="{% url 'games:order' game.slug %}" class="buy-button">Купить</a>
-                {% elif game.is_soon %}
-                    <div class="soon">Скоро!</div>
-                {% else %}
-                    <div class="nonal">Закончился!</div>
-                {% endif %}
-
-
-
-                </div>
-                <div class="percent">СКИДКА <span>- {{ game.percent }}%</span></div>
-            </div>
-        </div>
-    </div>
-    <div class="game-description clear-block">
-        <div class="game-desc clear-block">
-            <div class="game-description-left">
-                <div class="description">
-                        <h2>Описание игры</h2>
-                        <div class="description-content">
-                            {{ game.description|safe }}
-                        </div>
-                </div>
-                <div class="system">
-                    <h2>Системные требования</h2>
-                    <div class="system-content">
-                        <div class="system-element">
-                            <div class="system-name">ОС</div>
-                            <div class="system-value">{{ game.os }}</div>
-                        </div>
-
-                        <div class="system-element">
-                            <div class="system-name">CPU</div>
-                            <div class="system-value">{{ game.processor }}</div>
-                        </div>
-                        <div class="system-element">
-                            <div class="system-name">ОЗУ</div>
-                            <div class="system-value">{{ game.ozu }}</div>
-                        </div>
-                        <div class="system-element">
-                            <div class="system-name">HDD</div>
-                            <div class="system-value">{{ game.hdd }}</div>
-                        </div>
-                        <div class="system-element">
-                            <div class="system-name">Video</div>
-                            <div class="system-value">{{ game.video_card }}</div>
-                        </div>
-                    </div>
-                </div>
-                {{ game.gamevideo }}
-                
-            </div>
-            <div class="game-description-right">
-                <div class="game-screenshot">
-                    <div class="gallery clear-block">
-                        {% for screenshot in game.screenshots.all %}
-                            <div class="gallery-item">
-                                <a data-fancybox="gallery" href="{{ screenshot.image.url }}">
-                                    {% thumbnail screenshot.image "297x167" as im %}
-                                    <img src="{{ im.url }}">
-                                </a>
-                            </div>
+            <div class="game-object-head-detail">
+                <div class="game-mini-detail">
+                    Жанр:
+                        {% for genre in game.genre.all%}
+                            <a href="{% url 'games:genre_list' genre.slug %}">{{ genre.title }}</a>
                         {% endfor %}
+                        <br />
+                    Язык:
+                        {{ game.get_language_display }}
+                        <br />
+                    Активация:
+                        <a href="{% url 'games:store_list' game.get_store_activation_display %}">{{ game.get_store_activation_display }}</a>
+                        <br />
+                    Дата выхода:
+                        {{ game.date_release|date:"SHORT_DATE_FORMAT" }}
+                        <br />
+
+                    Издатель:
+                        {{ game.publisher }}
+                        <br />
+                </div>
+                <div class="price-buy">
+                    <div class="buy">
+                        <div class="coast">{{ game.my_coast }} <span>руб.</span></div>
+
+
+
+
+                    {% if game.in_stock %}
+                        <a href="{% url 'games:order' game.slug %}" class="buy-button">Купить</a>
+                    {% elif game.is_soon %}
+                        <div class="soon">Скоро!</div>
+                    {% else %}
+                        <div class="nonal">Закончился!</div>
+                    {% endif %}
+
+
+
                     </div>
+                    <div class="percent">СКИДКА <span>- {{ game.percent }}%</span></div>
                 </div>
             </div>
         </div>
+        <div class="game-description clear-block">
+            <div class="game-desc clear-block">
+                <div class="game-description-left">
+                    <div class="description">
+                            <h2>Описание игры</h2>
+                            <div class="description-content">
+                                {{ game.description|safe }}
+                            </div>
+                    </div>
+                    <div class="system">
+                        <h2>Системные требования</h2>
+                        <div class="system-content">
+                            <div class="system-element">
+                                <div class="system-name">ОС</div>
+                                <div class="system-value">{{ game.os }}</div>
+                            </div>
+
+                            <div class="system-element">
+                                <div class="system-name">CPU</div>
+                                <div class="system-value">{{ game.processor }}</div>
+                            </div>
+                            <div class="system-element">
+                                <div class="system-name">ОЗУ</div>
+                                <div class="system-value">{{ game.ozu }}</div>
+                            </div>
+                            <div class="system-element">
+                                <div class="system-name">HDD</div>
+                                <div class="system-value">{{ game.hdd }}</div>
+                            </div>
+                            <div class="system-element">
+                                <div class="system-name">Video</div>
+                                <div class="system-value">{{ game.video_card }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ game.gamevideo }}
 
 
-        <div class="comments">
-            <div id="vk_comments"></div>
-            <script type="text/javascript">
-                VK.Widgets.Comments("vk_comments", {limit: 20, attach: "photo"});
-            </script>
+                    <div class="description">
+                        <h2>Активация продукта:</h2>
+                        <div class="activation-content">
+                            <ol>
+                            {% if game.method_activation == 1 %}
+                                <li>Если у Вас нет аккаунта Steam, вам необходимо создать его;</li>
+                                <li>Перейдите по купленной ключ-ссылке;</li>
+                                <li>Перейдя по ссылке, вы попадете на сайт Steam, где Вам будет предложено авторизоваться;</li>
+                                <li>Авторизуйтесь, используя ваш логин и пароль;</li>
+                                <li>Выберите активацию игры в библиотеки;</li>
+                                <li>После этого игра отобразится в разделе «Библиотека», и вы сможете <strong>скачать {{ game.title }}</strong> из своей библиотеки;</li>
+                                <li>Приятной игры.</li>
+                            {% elif game.method_activation == 2 %}
+                                <li>Если у Вас нет аккаунта Steam, вам необходимо создать его;</li>
+                                <li>Скачайте и установите себе Steam;</li>
+                                <li>Запустите Steam и авторизуйтесь, используя ваш логин и пароль;</li>
+                                <li>В Steam воспользуйтесь меню "Игры - Активировать через Steam";</li>
+                                <li>В открывшемся окне введите лицензионный ключ к игре;</li>
+                                <li>После этого игра отобразится в разделе «Библиотека», и вы сможете <strong>скачать {{ game.title }}</strong> из своей библиотеки;</li>
+                                <li>Приятной игры.</li>
+                            {% elif game.method_activation == 3 %}
+                                <li>Если не установлен Origin клиент, скачайте и установите его;</li>
+                                <li>Войдите в свой аккаунт Origin или зарегистрируйте новый, если у вас его еще нет;</li>
+                                <li>Воспользуйтесь функцией «Активировать код продукта»;</li>
+                                <li>Введите ключ активации;</li>
+                                <li>После этого игра отобразится в разделе "Мои игры", и вы сможете <strong>скачать {{ game.title }}</strong>;</li>
+                                <li>Приятной игры.</li>
+                            {% elif game.method_activation == 4 %}
+                                <li>Если у Вас не установлен Uplay клиент, скачайте и установите его;</li>
+                                <li>Войдите в свой аккаунт Uplay или зарегистрируйте новый, если у вас его еще нет;</li>
+                                <li>Нажмите на изображение «Шестерёнки» и выберите «Активировать продукт»;</li>
+                                <li>Введите ключ активации;</li>
+                                <li>После этого игра отобразится в библиотеке игр, и вы сможете <strong>скачать {{ game.title }}</strong>;</li>
+                                <li>Приятной игры.</li>
+                            {% elif game.method_activation == 5 %}
+                                <li>Если у Вас нет аккаунта <a href="https://ru.socialclub.rockstargames.com/profile/signin">Social Club</a>, вам необходимо создать его;</li>
+                                <li>Перейдите по <a href="https://ru.socialclub.rockstargames.com/games/activate/index-signin">ссылке</a> и нажмите на кнопку "Использовать код активации Rockstar";</li>
+                                <li>После того как вы активируете ключ, вместо кнопки "Приобрести" будет доступно "Зугрузить для Windows". <strong>Скачатей игру {{ game.title }}</strong> на PC и запустите setup.exe.</li>
+                                <li>После окончании установки вы сможете играть.</li>
+                            {% endif %}
+                            </ol>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="game-description-right">
+                    <div class="game-screenshot">
+                        <div class="gallery clear-block">
+                            {% for screenshot in game.screenshots.all %}
+                                <div class="gallery-item">
+                                    <a data-fancybox="gallery" href="{{ screenshot.image.url }}">
+                                        {% thumbnail screenshot.image "297x167" as im %}
+                                        <img src="{{ im.url }}">
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comments">
+                <div id="vk_comments"></div>
+                <script type="text/javascript">
+                    VK.Widgets.Comments("vk_comments", {limit: 20, attach: "photo"});
+                </script>
+            </div>
         </div>
+    </div>
+
+{% endblock %}
 
 
-
-
-
-
-<!--
-
-        <div class="instruction">
-            <p>
-                <strong>Активация продукта:</strong>
-            </p>
-            <ol>
-            {% if game.method_activation == 1 %}
-                <li> Если у Вас нет аккаунта Steam, вам необходимо создать его;</li>
-                <li> Перейдите по купленной ключ-ссылке;</li>
-                <li> Перейдя по ссылке, вы попадете на сайт Steam, где Вам будет предложено авторизоваться;</li>
-                <li> Авторизуйтесь, используя ваш логин и пароль;</li>
-                <li> Выберите активацию игры в библиотеки;</li>
-                <li> После этого игра отобразится в разделе «Библиотека», и вы сможете <strong>скачать {{ game.title }}</strong> из своей библиотеки;</li>
-                <li> Приятной игры.</li>
-            {% elif game.method_activation == 2 %}
-
-                <li> Если у Вас нет аккаунта Steam, вам необходимо создать его;</li>
-                <li> Скачайте и установите себе Steam;</li>
-                <li> Запустите Steam и авторизуйтесь, используя ваш логин и пароль;</li>
-                <li> В Steam воспользуйтесь меню "Игры - Активировать через Steam";</li>
-                <li> В открывшемся окне введите лицензионный ключ к игре;</li>
-                <li> После этого игра отобразится в разделе «Библиотека», и вы сможете <strong>скачать {{ game.title }}</strong> из своей библиотеки;</li>
-                <li> Приятной игры.</li>
-            {% elif game.method_activation == 3 %}
-
-                <li> Если не установлен Origin клиент, скачайте и установите его;</li>
-                <li> Войдите в свой аккаунт Origin или зарегистрируйте новый, если у вас его еще нет;</li>
-                <li> Воспользуйтесь функцией «Активировать код продукта»;</li>
-                <li> Введите ключ активации;</li>
-                <li> После этого игра отобразится в разделе "Мои игры", и вы сможете <strong>скачать {{ game.title }}</strong>;</li>
-                <li> Приятной игры.</li>
-            {% elif game.method_activation == 4 %}
-
-                <li> Если у Вас не установлен Uplay клиент, скачайте и установите его;</li>
-                <li> Войдите в свой аккаунт Uplay или зарегистрируйте новый, если у вас его еще нет;</li>
-                <li> Нажмите на изображение «Шестерёнки» и выберите «Активировать продукт»;</li>
-                <li> Введите ключ активации;</li>
-                <li> После этого игра отобразится в библиотеке игр, и вы сможете <strong>скачать {{ game.title }}</strong>;</li>
-                <li> Приятной игры.</li>
-            {% elif game.method_activation == 5 %}
-
-                <li> Если у Вас нет аккаунта <a href="https://ru.socialclub.rockstargames.com/profile/signin">Social Club</a>, вам необходимо создать его;</li>
-                <li> Перейдите по <a href="https://ru.socialclub.rockstargames.com/games/activate/index-signin">ссылке</a> и нажмите на кнопку "Использовать код активации Rockstar";</li>
-                <li> После того как вы активируете ключ, вместо кнопки "Приобрести" будет доступно "Зугрузить для Windows". <strong>Скачатей игру {{ game.title }}</strong> на PC и запустите setup.exe.</li>
-                <li> После окончании установки вы сможете играть.</li>
-            {% endif %}
-            </ol>
-        </div>
-
-
--->
-
-
-
-</div>
+{% block another_element %}
+{% include "games_card_special_block.html" %}
 {% endblock %}

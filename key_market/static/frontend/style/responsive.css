@@ -726,3 +726,45 @@
         padding: 8px 10px;
     }
 }
+/*Адаптация специального блока под описанием товара*/
+@media screen and (max-width: 550px){
+    .special-game{
+        display: block;
+        max-width: 460px;
+        margin: 0 0 10px 0;
+    }
+    .special-game-foto{
+        width: 100%;
+    }
+    .special-game-info{
+        display: block;
+    }
+    .special-game-info .title{
+        text-align: center;
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+        font: bold 14px Roboto;
+    }
+    .special-game-info .price{
+        width: 100px;
+        font: normal 14px Roboto;
+        text-align: center;
+        margin: 0 auto;
+        background: #46ac2c;
+        padding: 5px 0;
+        color: #FFF;
+    }
+    .special-game:nth-child(2n-1){
+        background: none;
+    }
+    .special-game:hover{
+        background: none;
+    }
+    .special-game .skidka{
+        display: none;
+    }
+    .special-games h2{
+        text-align: center;
+    }
+}
