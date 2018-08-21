@@ -1109,6 +1109,7 @@ input.place:focus{
     width: 70px;
     background: #fff;
     padding: 10px;
+    text-align: right;
 }
 .system-value{
     font: normal 14px Roboto;
@@ -1226,4 +1227,11 @@ input.place:focus{
     font: bold 18px Roboto;
     padding: 0 0 0 30px;
     background: url(../images/good.png) top left no-repeat;
+}
+.activ-content{
+    padding: 15px 30px;
+}
+.activ-content ol{
+    padding: 0 10px;
+    margin: 0;
 }
