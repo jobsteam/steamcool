@@ -414,9 +414,6 @@ h1.list_title{
     padding: 25px;
     font: normal 12px/18px Roboto;
 }
-.game-object{
-    margin: 0 0 35px 0;
-}
 .game-object-head{
     background: url(../images/pix.png) top center repeat;
     border-bottom: solid 45px #2f2f2f;
@@ -1093,7 +1090,7 @@ input.place:focus{
     color: #212121;
 }
 .system-content{
-    padding: 15px 30px;
+    padding: 15px;
 }
 .system-element span{
     display: block;
@@ -1118,26 +1115,6 @@ input.place:focus{
     width: 100%;
     padding: 10px 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .reviews{
     background: #FFF;
     padding: 0 0 25px 0;
@@ -1233,7 +1210,6 @@ input.place:focus{
     padding: 25px;
     border-top: solid 3px #000;
 }
-
 .list-garants{
     margin: 0 0 25px 0;
     display: flex;
@@ -1251,88 +1227,3 @@ input.place:focus{
     padding: 0 0 0 30px;
     background: url(../images/good.png) top left no-repeat;
 }
-.activation-content{
-    padding: 15px 30px;
-}
-.activation-content ol{
-    padding: 0 10px;
-    margin: 0;
-}
-
-
-
-
-
-
-.special-games{
-    background: #FFF;
-}
-.special-games h2{
-    font: bold 15px/21px Roboto;
-    padding: 10px 20px;
-    margin: 0;
-    background: #e00000;
-    color: #FFFFFF;
-}
-.special-content{
-    padding: 15px;
-}
-.special-game{
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-    position: relative;
-}
-.special-game:nth-child(2n-1){
-    background: #F9F9F9;
-}
-.special-game:hover{
-    background: #eeeeee;
-}
-.special-game-foto{
-    width: 200px;
-    box-sizing: border-box;
-    padding: 5px;
-}
-.special-game-foto img{
-    width: 100%;
-    display: block;
-}
-.special-game-info{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-}
-.special-game-info .title{
-    width: 100%;
-    padding: 0 25px;
-    box-sizing: border-box;
-    font: bold 16px Roboto;
-}
-.special-game-info .price{
-    width: 100px;
-    font: bold 16px Roboto;
-}
-.special-game .skidka{
-    position: absolute;
-    box-sizing: border-box;
-    width: 50px;
-    height: 50px;
-    padding: 3px 3px 0 0;
-    background: url(../images/perсent.png) top left no-repeat;
-    top: 0;
-    right: 0;
-    text-align: right;
-    font: normal 14px ptSans;
-    color: #FFF;
-}
-.special-game .link{
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
