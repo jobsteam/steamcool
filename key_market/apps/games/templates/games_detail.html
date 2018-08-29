@@ -173,6 +173,30 @@
                             {% endfor %}
                         </div>
                     </div>
+
+
+
+                {% if not game.in_stock and not game.is_soon and game.is_case %}
+                    <div class="game-in-case" id="border-animation">
+                        <div class="game-in-case-foto">
+                            <a href="{% url 'games:lucky' %}">
+                                {% thumbnail game.image "250x117" quality=100 as incase_image %}
+                                    <img src="{{ incase_image.url }}">
+                            </a>
+                        </div>
+                        <div class="game-in-case-info">
+                            Не успел <strong>купить {{ game.title }}?</strong><br />
+                            Эта игра есть в CASE<br /><strong>за 99 рублей</strong>.
+                        </div>
+                        <div class="in-cases-link">
+                            <a href="{% url 'games:lucky' %}">Подробнее...</a>
+                        </div>
+                    </div>
+                {% endif %}
+
+
+
+
                 </div>
             </div>
             <div class="comments">

@@ -189,6 +189,10 @@ class Game(models.Model):
         'Скоро в продаже',
         default=False)
 
+    is_case = models.BooleanField(
+        'Наличие в Case',
+        default=False)
+
     is_special_block = models.BooleanField(
         'В специальный блок',
         default=False)

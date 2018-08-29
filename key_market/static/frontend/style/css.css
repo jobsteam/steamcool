@@ -596,7 +596,7 @@ a.buy-button:hover{
 .gallery-item{
     width: 49%;
     float: left;
-    margin:0 1px 1px 0; 
+    margin:1px; 
 }
 .gallery-item a img{
     width: 100%;
@@ -1234,4 +1234,155 @@ input.place:focus{
 .activ-content ol{
     padding: 0 10px;
     margin: 0;
+}
+
+
+
+
+.game-in-case{
+    padding: 10px;
+    margin: 0 0 25px 0;
+    background: #efc0a3
+}
+.game-in-case-foto img{
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+}
+.game-in-case-info{
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+.in-cases-link a{
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    background: #e66700;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+    font: normal 16px ptSans;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.in-cases-link a:hover {
+    box-shadow: inset 0 0 0 30px #4f4f4f;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+.live-border {
+    position: relative;
+    overflow: visible;
+}
+
+.live-border .border {
+    position: absolute;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+.live-border .border.top {
+    height: 3px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.live-border .border.right {
+    height: 100%;
+    width: 3px;
+    top: 0px;
+    right: 0px;
+}
+
+.live-border .border.bottom {
+    height: 3px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+}
+
+.live-border .border.left {
+    height: 100%;
+    width: 3px;
+    top: 0px;
+    left: 0px;
+}
+
+.live-border .border .bar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #FF6000;
+    left: 0px;
+    top: 0px;
+    z-index: 99;
+}
+
+.live-border .border.top .bar {
+    left: 100%;
+    animation: live-border-animate-top 2s linear 2s infinite;
+}
+
+.live-border .border.right .bar {
+    top: 100%;
+    animation: live-border-animate-right 2s linear 1s infinite;
+}
+
+.live-border .border.bottom .bar {
+    left: -100%;
+    animation: live-border-animate-bottom 2s linear 0s infinite;
+}
+
+.live-border .border.left .bar {
+    top: -100%;
+    animation: live-border-animate-left 2s linear 3s infinite;
+}
+
+@keyframes live-border-animate-top {
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: -100%;
+    }
+}
+
+@keyframes live-border-animate-right {
+    0%{
+        top: 100%;
+    }
+    100%{
+        top: -100%;
+    }
+}
+
+@keyframes live-border-animate-bottom {
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+@keyframes live-border-animate-left {
+    0%{
+        top: -100%;
+    }
+    100%{
+        top: 100%;
+    }
 }

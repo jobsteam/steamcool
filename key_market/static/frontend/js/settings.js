@@ -1,12 +1,8 @@
 $(document).ready(function() {
 
-    /*Читать далее кнопка*/
-    $('article').readmore({
-        speed: 500,
-        maxHeight: 200,
-        moreLink: '<a class="readmore" href="#">читать далее...</a>',
-        lessLink: '<a class="readmore" href="#">скрыть...</a>'
-    });
+    jQuery.fn.exists = function() {
+        return $(this).length;
+    }
 
     /*Плавная анимация до формы*/
     $('.label_button').click(function(){
@@ -32,15 +28,34 @@ $(document).ready(function() {
     });
 
     /*Swiper_slider*/
-    var mySwiper = new Swiper('.swiper-container', {
-        speed: 400,
-        spaceBetween: 0,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 3000,
-        },
-    });
+    if($(".swiper-container").exists()) {
+        console.log("Существует слайдер");
+
+        var mySwiper = new Swiper('.swiper-container', {
+            speed: 400,
+            spaceBetween: 0,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000,
+            },
+        });
+
+    }
+    /*Анимация бордюра*/
+    if($("#border-animation").exists()) {
+        console.log("Существует Бордер");
+        $(function(){
+            $("#border-animation").liveBorder({
+                top: true,
+                right: true,
+                bottom: true,
+                left: true
+            });
+        });
+    }
+
+
 });
