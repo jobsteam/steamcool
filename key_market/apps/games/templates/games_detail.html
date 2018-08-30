@@ -176,7 +176,7 @@
 
 
 
-                {% if not game.in_stock and not game.is_soon and game.is_case %}
+                {% if not game.is_soon and game.is_case %}
                     <div class="game-in-case" id="border-animation">
                         <div class="game-in-case-foto">
                             <a href="{% url 'games:lucky' %}">
