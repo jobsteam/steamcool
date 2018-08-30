@@ -78,6 +78,57 @@
         <div class="game-description clear-block">
             <div class="game-desc clear-block">
                 <div class="game-description-left">
+                {% if game.method_activation == 1 %}
+                    <div class="game-activation">
+                        <div class="game-activation-icon steam">
+                            <img src="{% static 'frontend/images/steam.png' %}">
+                        </div>
+                        <div class="game-activation-info">
+                            <strong>После покупки вы получите steam gift</strong>.<br />
+                            Как активировать лицензионный steam gift подробно расписано написано на <a href="{% url 'pages:activation' %}">специальной странице</a>. 
+                        </div>
+                    </div>
+                {% elif game.method_activation == 2 %}
+                    <div class="game-activation">
+                        <div class="game-activation-icon steam">
+                            <img src="{% static 'frontend/images/steam.png' %}">
+                        </div>
+                        <div class="game-activation-info">
+                            <strong>После покупки вы получите лизензионный steam ключ</strong>.<br />
+                            Как активировать лицензионный steam ключ подробно расписано написано на <a href="{% url 'pages:activation' %}">специальной странице</a>. 
+                        </div>
+                    </div>
+                {% elif game.method_activation == 3 %}
+                    <div class="game-activation">
+                        <div class="game-activation-icon origin">
+                            <img src="{% static 'frontend/images/origin.png' %}">
+                        </div>
+                        <div class="game-activation-info">
+                            <strong>После покупки вы получите лизензионный origin ключ</strong>.<br />
+                            Как активировать лицензионный origin ключ подробно расписано написано на <a href="{% url 'pages:activation' %}">специальной странице</a>. 
+                        </div>
+                    </div>
+                {% elif game.method_activation == 4 %}
+                    <div class="game-activation">
+                        <div class="game-activation-icon uplay">
+                            <img src="{% static 'frontend/images/uplay.png' %}">
+                        </div>
+                        <div class="game-activation-info">
+                            <strong>После покупки вы получите лизензионный uplay ключ</strong>.<br />
+                            Как активировать лицензионный uplay ключ подробно расписано написано на <a href="{% url 'pages:activation' %}">специальной странице</a>. 
+                        </div>
+                    </div>
+                {% elif game.method_activation == 5 %}
+                    <div class="game-activation">
+                        <div class="game-activation-icon rockstar">
+                            <img src="{% static 'frontend/images/rockstar.png' %}">
+                        </div>
+                        <div class="game-activation-info">
+                            <strong>После покупки вы получите лизензионный rockstar social club ключ</strong>.<br />
+                            Как активировать лицензионный rockstar social club ключ подробно расписано написано на <a href="#">специальной странице</a>. 
+                        </div>
+                    </div>
+                {% endif %}
                     <div class="description">
                             <h2>Описание игры</h2>
                             <div class="description-content">
@@ -111,54 +162,6 @@
                         </div>
                     </div>
                     {{ game.gamevideo }}
-
-
-                    <div class="description">
-                        <h2>Активация продукта:</h2>
-                        <div class="activ-content">
-                            <ol>
-                            {% if game.method_activation == 1 %}
-                                <li>Если у Вас нет аккаунта Steam, вам необходимо создать его;</li>
-                                <li>Перейдите по купленной ключ-ссылке;</li>
-                                <li>Перейдя по ссылке, вы попадете на сайт Steam, где Вам будет предложено авторизоваться;</li>
-                                <li>Авторизуйтесь, используя ваш логин и пароль;</li>
-                                <li>Выберите активацию игры в библиотеки;</li>
-                                <li>После этого игра отобразится в разделе «Библиотека», и вы сможете <strong>скачать {{ game.title }}</strong> из своей библиотеки;</li>
-                                <li>Приятной игры.</li>
-                            {% elif game.method_activation == 2 %}
-                                <li>Если у Вас нет аккаунта Steam, вам необходимо создать его;</li>
-                                <li>Скачайте и установите себе Steam;</li>
-                                <li>Запустите Steam и авторизуйтесь, используя ваш логин и пароль;</li>
-                                <li>В Steam воспользуйтесь меню "Игры - Активировать через Steam";</li>
-                                <li>В открывшемся окне введите лицензионный ключ к игре;</li>
-                                <li>После этого игра отобразится в разделе «Библиотека», и вы сможете <strong>скачать {{ game.title }}</strong> из своей библиотеки;</li>
-                                <li>Приятной игры.</li>
-                            {% elif game.method_activation == 3 %}
-                                <li>Если не установлен Origin клиент, скачайте и установите его;</li>
-                                <li>Войдите в свой аккаунт Origin или зарегистрируйте новый, если у вас его еще нет;</li>
-                                <li>Воспользуйтесь функцией «Активировать код продукта»;</li>
-                                <li>Введите ключ активации;</li>
-                                <li>После этого игра отобразится в разделе "Мои игры", и вы сможете <strong>скачать {{ game.title }}</strong>;</li>
-                                <li>Приятной игры.</li>
-                            {% elif game.method_activation == 4 %}
-                                <li>Если у Вас не установлен Uplay клиент, скачайте и установите его;</li>
-                                <li>Войдите в свой аккаунт Uplay или зарегистрируйте новый, если у вас его еще нет;</li>
-                                <li>Нажмите на изображение «Шестерёнки» и выберите «Активировать продукт»;</li>
-                                <li>Введите ключ активации;</li>
-                                <li>После этого игра отобразится в библиотеке игр, и вы сможете <strong>скачать {{ game.title }}</strong>;</li>
-                                <li>Приятной игры.</li>
-                            {% elif game.method_activation == 5 %}
-                                <li>Если у Вас нет аккаунта <a href="https://ru.socialclub.rockstargames.com/profile/signin">Social Club</a>, вам необходимо создать его;</li>
-                                <li>Перейдите по <a href="https://ru.socialclub.rockstargames.com/games/activate/index-signin">ссылке</a> и нажмите на кнопку "Использовать код активации Rockstar";</li>
-                                <li>После того как вы активируете ключ, вместо кнопки "Приобрести" будет доступно "Зугрузить для Windows". <strong>Скачатей игру {{ game.title }}</strong> на PC и запустите setup.exe.</li>
-                                <li>После окончании установки вы сможете играть.</li>
-                            {% endif %}
-                            </ol>
-                        </div>
-                    </div>
-
-
-
                 </div>
                 <div class="game-description-right">
                     <div class="game-screenshot">
@@ -173,9 +176,6 @@
                             {% endfor %}
                         </div>
                     </div>
-
-
-
                 {% if not game.is_soon and game.is_case %}
                     <div class="game-in-case" id="border-animation">
                         <div class="game-in-case-foto">
@@ -193,10 +193,6 @@
                         </div>
                     </div>
                 {% endif %}
-
-
-
-
                 </div>
             </div>
             <div class="comments">

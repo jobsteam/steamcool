@@ -1240,7 +1240,7 @@ input.place:focus{
 
 
 .game-in-case{
-    padding: 10px;
+    padding: 0px;
     margin: 0 0 25px 0;
     background: #efc0a3
 }
@@ -1385,4 +1385,52 @@ input.place:focus{
     100%{
         top: 100%;
     }
+}
+
+.game-activation{
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 25px 0;
+}
+.game-activation-icon{
+    width: 100px;
+}
+.game-activation-icon img{
+    width: 100px;
+    display: block;
+}
+.game-activation-info{
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+    background: #EEE;
+    font: normal 14px/21px Roboto;
+}
+.steam{
+    background: #356f95;
+}
+.origin{
+    background: #ee5921;
+}
+.uplay{
+    background: #1b93e1;
+}
+.rockstar{
+    background: #fcb205;
+}
+
+.activation-page{
+    background: #FFF;
+    padding: 0 0 25px 0;
+}
+.activation-page h1{
+    font: bold 25px Roboto;
+    background: #FFF;
+    margin: 0;
+    padding: 25px;
+    border-top: solid 3px #000;
+}
+.activation-page-content{
+    padding: 0 25px;
+    font: normal 16px ptSans;
 }

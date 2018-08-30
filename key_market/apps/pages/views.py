@@ -7,6 +7,10 @@ class AgreementDoc(TemplateView):
     template_name = "pages_agreement.html"
 
 
+class ActivationPage(TemplateView):
+    template_name = "pages_activation.html"
+
+
 class GuaranteePage(TemplateView):
     template_name = "pages_guarantee.html"
 
