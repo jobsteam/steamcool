@@ -61,6 +61,26 @@
         {% endfor %}
     </div>
 </div>
+
+
+<div class="top-navigation">
+    <a class="open-menu" href="#"></a>
+    <div class="top-navigation-container">
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'pages:reviews' %}">Отзывы</a></li>
+                <li><a href="{% url 'pages:instruction' %}">Как купить</a></li>
+                <li><a href="{% url 'pages:guarantees' %}">Гарантии</a></li>
+                <li><a href="{% url 'pages:support' %}">Поддержка</a></li>
+                <li><a href="{% url 'pages:payment' %}">Способы оплаты</a></li>
+                <li><a href="https://www.oplata.info/info/">Мои покупки</a></li>
+            </ul>
+        </div>
+        <div class="lucky-button"><a href="{% url 'games:lucky' %}">Испытай удачу</a></div>
+    </div>
+</div>
+
+
 <div class="wrapper clear-block">
     {% block content %}{% endblock content %}
 </div>

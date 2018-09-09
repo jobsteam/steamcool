@@ -29,8 +29,6 @@ $(document).ready(function() {
 
     /*Swiper_slider*/
     if($(".swiper-container").exists()) {
-        console.log("Существует слайдер");
-
         var mySwiper = new Swiper('.swiper-container', {
             speed: 400,
             spaceBetween: 0,
@@ -42,11 +40,10 @@ $(document).ready(function() {
                 delay: 3000,
             },
         });
-
     }
+
     /*Анимация бордюра*/
     if($("#border-animation").exists()) {
-        console.log("Существует Бордер");
         $(function(){
             $("#border-animation").liveBorder({
                 top: true,
@@ -56,6 +53,17 @@ $(document).ready(function() {
             });
         });
     }
+
+    /*Показываем / Скрываем сэндвич меню*/
+    $(".open-menu").click(function(){
+        if($(".top-navigation-container").is(":visible")){
+            $(".top-navigation-container").hide();
+        }
+        else{
+            $(".top-navigation-container").show();
+        }
+        event.preventDefault();
+    });
 
 
 });

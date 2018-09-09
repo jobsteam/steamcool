@@ -163,8 +163,7 @@ body{
     width: 950px;
 }
 .ganre-menu h3{
-    text-transform: uppercase;
-    font: bold 16px ptSans;
+    font: normal 20px ptSans;
     color: #666;
     border-bottom: solid 2px #666;
     margin: 0 0 10px 0;
@@ -189,8 +188,7 @@ body{
     padding: 15px;
 }
 .last-pay h3{
-    text-transform: uppercase;
-    font: bold 16px ptSans;
+    font: normal 20px ptSans;
     color: #666;
     border-bottom: solid 2px #666;
     margin: 0 0 10px 0;
@@ -289,7 +287,6 @@ h1.list_title{
 }
 .game-img{
     width: 200px;
-    padding: 5px;
 }
 .game-img img{
     display: block;
@@ -576,6 +573,19 @@ a.buy-button:hover{
 .game-mini-detail a:hover{
     color: #dfdfdf;
 }
+
+
+
+
+.game-mini-detail a.method-activation{
+    color: #ff6000;
+}
+.game-mini-detail a.method-activation:hover{
+    color: #ff6000;
+}
+
+
+
 .description{
     margin: 0 0 25px 0;
     background: #EEE;
@@ -975,36 +985,6 @@ input.place:focus{
 .autocomplete-selected strong{
     color: #FFF;
 }
-.lucky-button{
-    padding: 12px;
-}
-.lucky-button a{
-    display: block;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    font: bold 19px Roboto;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-shadow: 2px 2px 2px #5bab3d;
-    color: #FFF;
-    box-sizing: border-box;
-    padding: 15px 0 0 0;
-    background: url(../images/green-button.png) 0 -50px repeat-x;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.lucky-button a:hover{
-    background: url(../images/green-button.png) 0 0 repeat-x;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
 .nonal{
     float: left;
     width: 125px;
@@ -1240,7 +1220,7 @@ input.place:focus{
 
 
 .game-in-case{
-    padding: 0px;
+    padding: 10px;
     margin: 0 0 25px 0;
     background: #efc0a3
 }
@@ -1387,37 +1367,6 @@ input.place:focus{
     }
 }
 
-.game-activation{
-    display: flex;
-    flex-direction: row;
-    margin: 0 0 25px 0;
-}
-.game-activation-icon{
-    width: 100px;
-}
-.game-activation-icon img{
-    width: 100px;
-    display: block;
-}
-.game-activation-info{
-    box-sizing: border-box;
-    padding: 15px;
-    width: 100%;
-    background: #EEE;
-    font: normal 14px/21px Roboto;
-}
-.steam{
-    background: #356f95;
-}
-.origin{
-    background: #ee5921;
-}
-.uplay{
-    background: #1b93e1;
-}
-.rockstar{
-    background: #fcb205;
-}
 
 .activation-page{
     background: #FFF;
@@ -1433,4 +1382,144 @@ input.place:focus{
 .activation-page-content{
     padding: 0 25px;
     font: normal 16px ptSans;
+}
+
+
+
+
+.top-navigation{
+    width: 1200px;
+    margin: 0 auto;
+    background: #f1f1f1 url(../images/menu.png) top left repeat-x;
+    min-height: 40px;
+    position: relative;
+}
+.open-menu{
+    display: none;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background: url(../images/sandvich.png) 100% 9px no-repeat;
+}
+.top-navigation-container{
+    position: relative;
+}
+.menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 40px;
+}
+.menu ul li a{
+    line-height: 40px;
+    display: block;
+    padding: 0 10px;
+    font: normal 16px/40px ptSans;
+    text-decoration: none;
+    color: #333;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.menu ul li a:hover{
+    background: #e66700;
+    color: #FFF;
+}
+
+
+
+.lucky-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 200px;
+}
+.lucky-button a{
+    display: block;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font: bold 16px Roboto;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #5bab3d;
+    color: #FFF;
+    box-sizing: border-box;
+    padding: 12px 0 0 0;
+    background: url(../images/green-button.png) 0 -50px repeat-x;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.lucky-button a:hover{
+    background: url(../images/green-button.png) 0 0 repeat-x;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.special-game{
+    padding: 15px;
+    position: relative;
+}
+.special-game a{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.special-game-foto img{
+    width: 100%;
+    display: block;
+}
+.special-game-info{
+    background: #333;
+    text-align: center;
+    padding: 15px;
+    font: bold 18px Roboto;
+    color: #FFF;
+}
+.special-game-info span{
+    color: #e66700;
+}
+.more-games{
+    padding: 15px;
+}
+.more-games a{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    border: solid 1px #e66700;
+    color: #e66700;
+    text-decoration: none;
+    padding: 10px 0;
+    font: normal 16px Roboto;
+    background: #ffebdb;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.more-games a:hover{
+    color: #FFF;
+    background: #e66700;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }

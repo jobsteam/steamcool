@@ -43,7 +43,7 @@
                         {{ game.get_language_display }}
                         <br />
                     Активация:
-                        <a href="{% url 'games:store_list' game.get_store_activation_display %}">{{ game.get_store_activation_display }}</a>
+                        <a class="method-activation" href="{% url 'games:store_list' game.get_store_activation_display %}">{{ game.get_method_activation_display }}</a>&nbsp;(<a href="{% url 'pages:activation' %}">инструкция</a>)
                         <br />
                     Дата выхода:
                         {{ game.date_release|date:"SHORT_DATE_FORMAT" }}
@@ -78,57 +78,7 @@
         <div class="game-description clear-block">
             <div class="game-desc clear-block">
                 <div class="game-description-left">
-                {% if game.method_activation == 1 %}
-                    <div class="game-activation">
-                        <div class="game-activation-icon steam">
-                            <img src="{% static 'frontend/images/steam.png' %}">
-                        </div>
-                        <div class="game-activation-info">
-                            <strong>После покупки вы получите steam gift</strong>.<br />
-                            Как активировать лицензионный steam gift подробно расписано написано на <a href="{% url 'pages:activation' %}">специальной странице</a>. 
-                        </div>
-                    </div>
-                {% elif game.method_activation == 2 %}
-                    <div class="game-activation">
-                        <div class="game-activation-icon steam">
-                            <img src="{% static 'frontend/images/steam.png' %}">
-                        </div>
-                        <div class="game-activation-info">
-                            <strong>После покупки вы получите лизензионный steam ключ</strong>.<br />
-                            Как активировать лицензионный steam ключ подробно расписано написано на <a href="{% url 'pages:activation' %}">специальной странице</a>. 
-                        </div>
-                    </div>
-                {% elif game.method_activation == 3 %}
-                    <div class="game-activation">
-                        <div class="game-activation-icon origin">
-                            <img src="{% static 'frontend/images/origin.png' %}">
-                        </div>
-                        <div class="game-activation-info">
-                            <strong>После покупки вы получите лизензионный origin ключ</strong>.<br />
-                            Как активировать лицензионный origin ключ подробно расписано написано на <a href="{% url 'pages:activation' %}">специальной странице</a>. 
-                        </div>
-                    </div>
-                {% elif game.method_activation == 4 %}
-                    <div class="game-activation">
-                        <div class="game-activation-icon uplay">
-                            <img src="{% static 'frontend/images/uplay.png' %}">
-                        </div>
-                        <div class="game-activation-info">
-                            <strong>После покупки вы получите лизензионный uplay ключ</strong>.<br />
-                            Как активировать лицензионный uplay ключ подробно расписано написано на <a href="{% url 'pages:activation' %}">специальной странице</a>. 
-                        </div>
-                    </div>
-                {% elif game.method_activation == 5 %}
-                    <div class="game-activation">
-                        <div class="game-activation-icon rockstar">
-                            <img src="{% static 'frontend/images/rockstar.png' %}">
-                        </div>
-                        <div class="game-activation-info">
-                            <strong>После покупки вы получите лизензионный rockstar social club ключ</strong>.<br />
-                            Как активировать лицензионный rockstar social club ключ подробно расписано написано на <a href="#">специальной странице</a>. 
-                        </div>
-                    </div>
-                {% endif %}
+                
                     <div class="description">
                             <h2>Описание игры</h2>
                             <div class="description-content">

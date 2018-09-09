@@ -35,10 +35,10 @@ class MethodActivation(object):
         ROCKSTAR_KEY = 5
         CHOICES = (
             (STEAM_GIFT, 'steam gift'),
-            (STEAM_KEY, 'steam key'),
-            (ORIGIN_KEY, 'origin key'),
-            (UPLAY_KEY, 'uplay key'),
-            (ROCKSTAR_KEY, 'rockstar key'),
+            (STEAM_KEY, 'steam ключ'),
+            (ORIGIN_KEY, 'origin ключ'),
+            (UPLAY_KEY, 'uplay ключ'),
+            (ROCKSTAR_KEY, 'rockstar ключ'),
         )
 
 
@@ -113,6 +113,11 @@ class Game(models.Model):
 
     image_slide = models.ImageField(
         'Изображение для слайда',
+        blank=True, null=True,
+        upload_to='gamescover/')
+
+    image_banner = models.ImageField(
+        'Баннер для спец. блока',
         blank=True, null=True,
         upload_to='gamescover/')
 
@@ -193,8 +198,12 @@ class Game(models.Model):
         'Наличие в Case',
         default=False)
 
-    is_special_block = models.BooleanField(
-        'В специальный блок',
+    is_special_block_1 = models.BooleanField(
+        'В специальный блок №1',
+        default=False)
+
+    is_special_block_2 = models.BooleanField(
+        'В специальный блок №2',
         default=False)
 
     is_favorite = models.BooleanField(

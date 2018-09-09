@@ -52,6 +52,56 @@
         display: none;
     }
 }
+/*Адаптация menu*/
+@media screen and (min-width: 1150px) and (max-width: 1250px){
+    .top-navigation{
+        width: 1100px;
+    }
+}
+@media screen and (min-width: 970px) and (max-width: 1150px){
+    .top-navigation{
+        width: 950px;
+    }
+}
+@media screen and (max-width: 970px){
+    .top-navigation{
+        width: 100%;
+    }
+    .top-navigation-container{
+        display: none;
+        padding: 15px;
+    }
+    .menu{
+        display: block;
+    }
+    .menu ul{
+        height: auto;
+        display: block;
+    }
+    .menu ul li{
+        display: block;
+        width: 75%;
+        margin: 0 auto;
+        padding-bottom: 1px;
+        box-sizing: border-box;
+    }
+    .menu ul li a{
+        text-align: center;
+        background: #FFF;
+    }
+    .lucky-button{
+        margin: 15px auto;
+        position: static;
+    }
+
+    .open-menu{
+        display: block;
+    }
+}
+
+
+
+
 /*Адаптация wrapper left, right, center и список игр*/
 @media screen and (min-width: 1150px) and (max-width: 1250px){
     .wrapper{
@@ -134,7 +184,7 @@
         font: normal 16px ptSans;
     }
     .game-info-price{
-        padding: 25px 15px;
+        padding:15px;
         font: bold 16px ptSans;
     }
 
@@ -174,7 +224,7 @@
         font: normal 16px ptSans;
     }
     .game-info-price{
-        padding: 25px 15px;
+        padding: 15px;
         font: bold 16px ptSans;
     }
 
@@ -766,5 +816,11 @@
     }
     .special-games h2{
         text-align: center;
+    }
+}
+/*Кнопка весь каталог игр*/
+@media screen and (max-width: 600px){
+    .more-games a{
+        width: 85%;
     }
 }

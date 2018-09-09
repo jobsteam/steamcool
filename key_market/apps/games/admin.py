@@ -52,7 +52,8 @@ class GameAdmin(admin.ModelAdmin):
                 'is_free',
                 'is_slide',
                 'is_soon',
-                'is_special_block',
+                'is_special_block_1',
+                'is_special_block_2',
                 'is_favorite',
                 'is_case'
             )
@@ -70,6 +71,8 @@ class GameAdmin(admin.ModelAdmin):
                 'field_thumbnail',
                 'image_slide',
                 'field_slide_thumbnail',
+                'image_banner',
+                'image_banner_thumbnail',
                 'id_video',
             )
         }),
@@ -114,6 +117,7 @@ class GameAdmin(admin.ModelAdmin):
     readonly_fields = [
         'field_thumbnail',
         'field_slide_thumbnail',
+        'image_banner_thumbnail',
         'in_stock',
     ]
 
@@ -182,6 +186,14 @@ class GameAdmin(admin.ModelAdmin):
             '<img src="{url}" title="{title}" />'.format(url=thumb.url,
                                                          title=instance.title))
     field_slide_thumbnail.short_description = 'Превью слайда'
+
+    def image_banner_thumbnail(self, instance):
+        options = {'size': (200, 0), 'quality': 80}
+        thumb = get_thumbnailer(instance.image_banner).get_thumbnail(options)
+        return mark_safe(
+            '<img src="{url}" title="{title}" />'.format(url=thumb.url,
+                                                         title=instance.title))
+    image_banner_thumbnail.short_description = 'Превью баннера'
 
     def get_urls(self):
         info = self.model._meta.app_label, self.model._meta.model_name

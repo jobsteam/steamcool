@@ -12,7 +12,8 @@ def sitewide(request):
         'genre_list': Genre.objects.all(),
         'store_list': [store[1] for store in StoreActivation.CHOICES],
         'soon': Game.objects.filter(is_soon=True)[:3],
-        'special_block': Game.objects.filter(is_special_block=True)[:3],
+        'special_block_1': Game.objects.filter(is_special_block_1=True)[:1],
+        'special_block_2': Game.objects.filter(is_special_block_2=True)[:1],
         'soon_block': Game.objects.filter(is_soon=True)[:3]
     }
 
