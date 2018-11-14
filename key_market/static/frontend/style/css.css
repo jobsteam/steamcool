@@ -290,6 +290,7 @@ h1.list_title{
 }
 .game-img img{
     display: block;
+    padding: 8px;
 }
 .game-info{
     position: relative;
