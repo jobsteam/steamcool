@@ -48,42 +48,26 @@ class GameAdmin(admin.ModelAdmin):
                 'description',
                 'language',
                 'date_release',
-                'publisher',
-                'is_free',
-                'is_slide',
-                'is_soon',
-                'is_special_block_1',
-                'is_special_block_2',
-                'is_favorite',
-                'is_case'
+                'publisher'
             )
         }),
-        ('Настройка активации', {
+        ('Обложка игры', {
+            'classes': ('wide',),
+            'fields': (
+                'image',
+                'field_thumbnail',
+            )
+        }),
+        ('Настройки активации', {
+            'classes': ('wide',),
             'fields': (
                 'store_activation',
                 'method_activation',
                 'region',
             )
         }),
-        ('Мультимедия', {
-            'fields': (
-                'image',
-                'field_thumbnail',
-                'image_slide',
-                'field_slide_thumbnail',
-                'image_banner',
-                'image_banner_thumbnail',
-                'id_video',
-            )
-        }),
-        ('СЕО', {
-            'fields': (
-                'seo_title',
-                'seo_keywords',
-                'seo_description',
-            )
-        }),
         ('Системные требования', {
+            'classes': ('wide',),
             'fields': (
                 'os',
                 'processor',
@@ -92,19 +76,41 @@ class GameAdmin(admin.ModelAdmin):
                 'hdd',
             )
         }),
-        ('Настройка цены', {
+        ('СЕО', {
+            'classes': ('wide',),
             'fields': (
+                'seo_title',
+                'seo_keywords',
+                'seo_description',
+            )
+        }),
+        ('Настрока отображения', {
+            'classes': ('wide',),
+            'fields': (
+                'is_soon',
+                'on_main_page'
+            )
+        }),
+        ('Настройка слайда', {
+            'classes': ('wide',),
+            'fields': (
+                'is_slide',
+                'image_slide',
+                'field_slide_thumbnail',
+                'slide_text'
+            )
+        }),
+        ('Цена / Digiseller', {
+            'classes': ('wide',),
+            'fields': (
+                'digiseller_id',
                 'my_coast',
                 'store_coast',
                 'in_stock',
             )
         }),
-        ('Digiseller', {
-            'fields': (
-                'digiseller_id',
-            )
-        }),
         ('Анализ цен конкурентов', {
+            'classes': ('wide',),
             'fields': (
                 'sp_id',
                 'sb_id',
@@ -112,12 +118,17 @@ class GameAdmin(admin.ModelAdmin):
                 'zz_id',
             )
         }),
+        ('Трейлер игры', {
+            'classes': ('wide',),
+            'fields': (
+                'id_video',
+            )
+        }),
     )
 
     readonly_fields = [
         'field_thumbnail',
         'field_slide_thumbnail',
-        'image_banner_thumbnail',
         'in_stock',
     ]
 
@@ -186,14 +197,6 @@ class GameAdmin(admin.ModelAdmin):
             '<img src="{url}" title="{title}" />'.format(url=thumb.url,
                                                          title=instance.title))
     field_slide_thumbnail.short_description = 'Превью слайда'
-
-    def image_banner_thumbnail(self, instance):
-        options = {'size': (200, 0), 'quality': 80}
-        thumb = get_thumbnailer(instance.image_banner).get_thumbnail(options)
-        return mark_safe(
-            '<img src="{url}" title="{title}" />'.format(url=thumb.url,
-                                                         title=instance.title))
-    image_banner_thumbnail.short_description = 'Превью баннера'
 
     def get_urls(self):
         info = self.model._meta.app_label, self.model._meta.model_name

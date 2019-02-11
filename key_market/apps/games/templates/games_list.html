@@ -10,19 +10,25 @@
 {% block center_column %}
     {% if game_list %}
         <h1 class="list_title">{{ page_title }}</h1>
+
+
+
         <div class="game-list">
             {% for games in object_list %}
                 <div class="game">
                     <div class="game-img">
-                        {% thumbnail games.image "190x89" as im %}
+                        {% thumbnail games.image "250x117" as im %}
                         <img src="{{ im.url }}" width="100%">
                     </div>
                     <div class="game-info">
+                        
                         <div class="game-info-title">
-                            {{ games.title }}
+                            <div class="game-name">{{ games.title }}</div>
+                            <div class="game-key">Steam ключ</div>
                         </div>
-                        <div class="game-info-price">{{ games.my_coast }}р.</div>
-                        <div class="game-info-percent">{{ games.percent }}%</div>
+                        <div class="game-info-coast">
+                            <div class="game-info-price">{{ games.my_coast }} <span>руб.</span></div>
+                        </div>
                     </div>
                     <a href="{% url 'games:detail' games.slug %}" class="game-link"></a>
                 </div>

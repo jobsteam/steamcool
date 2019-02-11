@@ -23,7 +23,7 @@
     font-style: normal;
 }
 body{
-    background: url(../images/fon2.jpg) top center no-repeat fixed;
+    background: url(../images/fon.jpg) top center no-repeat fixed;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -54,7 +54,7 @@ body{
     width: 1200px;
     height:100px;
     margin: 0 auto;
-    background: #FFF;
+    background: url(../images/pix.png) top center repeat;
     position: relative;
 }
 .logo{
@@ -130,7 +130,7 @@ body{
     text-align: center;
     font: normal 14px/20px ptSans;
     text-decoration: none;
-    color: #333;
+    color: #fff;
     border-radius: 2px;
 }
 .book a:hover{
@@ -174,6 +174,11 @@ body{
     margin: 0;
     padding: 0;
 }
+.ganre-menu ul li {
+    background: #333;
+    margin: 0 0 1px 0;
+    padding: 0 10px;
+}
 .ganre-menu ul li a{
     display: block;
     padding: 5px 0;
@@ -199,6 +204,11 @@ body{
     margin: 0;
     padding: 0;
 }
+.last-pay ul li {
+    background: #333;
+    margin: 0 0 1px 0;
+    padding: 0 10px;
+}
 .last-pay ul li a{
     display: block;
     padding: 5px 0;
@@ -217,41 +227,66 @@ body{
 
 
 
-
+.slide{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 
 .slide img{
     display: block;
+    width: 100%;
 }
-.slide-info-price span{
-    font: normal 16px ptSans;
+.slide-foto{
+    width: 50%;
+    background: url(../images/pix.png) top center repeat;
 }
 .slide-info{
+    width: 50%;
+    background: #333;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 25px 15px 85px 15px;
+    position: relative;
+}
+.slide-title{
+    font: bold 25px ptSans;
+    margin: 0 0 15px 0;
+    position: relative;
+}
+.slide-price{
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
     display: flex;
     flex-direction: row;
-    align-items:center;
+    overflow: hidden;
+    border-radius: 10px;
 }
-.slide-info-title{
-    width: 100%;
-    font: bold 20px ptSans;
-    box-sizing: border-box;
-    padding: 15px;
+.slide-coast{
+    padding: 8px 10px;
+    font: bold 26px Roboto;
+    text-shadow: 2px 2px 2px #5bab3d;
+    background: url(../images/green-button.png) 0 -50px repeat-x;
 }
-.slide-info-price{
-    width: 150px;
-    text-align: center;
-    font: normal 20px ptSans;
-    box-sizing: border-box;
-    padding: 15px;
+.slide-coast span {
+    font: normal 14px Roboto;
 }
-.slide-info-soon{
-    width: 150px;
-    text-align: center;
-    font: bold 17px ptSans;
-    box-sizing: border-box;
-    padding: 15px;
+.slide-percent{
+    padding: 8px 15px;
+    font: bold 26px Roboto;
+    text-shadow: 1px 1px 1px #cf5308;
+    background: #ff6000;
 }
-
+.slide-percent span {
+    font: normal 18px Roboto;
+}
+.slide-text{
+    font: normal 14px ptSans;
+    color: #c6c6c6;
+}
 
 
 
@@ -265,106 +300,151 @@ h1.list_title{
     font: bold 25px ptSans;
 }
 
-.game{
-    overflow: hidden;
-    position: relative;
+
+
+
+.game-list{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
 }
-.game:nth-child(2n-1){
-    background: #f9f9f9;
+.game{
+    position: relative;
+    width: calc(100% - 10px);
+    box-sizing: border-box;
+    margin: 5px;
+    background: #efefef;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
-.game:hover{
-    background: #eeeeee;
-}
-.game-link{
+.game a.game-link{
     position: absolute;
-    display: block;
     top: 0;
-    left: 0;
     right: 0;
+    left: 0;
     bottom: 0;
 }
+
+
+
+.game:hover{
+    box-shadow: 3px 3px 3px #ddd;
+}
+
+
+
 .game-img{
-    width: 200px;
+    flex-basis: 250px;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 .game-img img{
     display: block;
-    padding: 8px;
+    width: 100%;
 }
 .game-info{
-    position: relative;
     width: 100%;
     display: flex;
-    align-items:center;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 .game-info-title{
+    font: normal 14px ptSans;
     width: 100%;
+    color: #333;
+    padding: 0 15px;
     box-sizing: border-box;
-    padding: 0 20px;
-    font: normal 18px ptSans;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+.game-name{
+    font: bold 18px Roboto;
+    width: 100%;
+}
+.game-key{
+    width: 100%;
+    color: #808080;
+}
+.game-info-coast{
+    display: flex;
+    flex-basis: 110px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items:center;
+    padding: 0 15px 0 0;
 }
 .game-info-price{
-    width: 120px;
-    font: bold 18px ptSans;
-}
-.game-info-percent{
-    position: absolute;
+    width: 100%;
     box-sizing: border-box;
-    width: 50px;
-    height: 50px;
-    padding: 3px 3px 0 0;
-    background: url(../images/perсent.png) top left no-repeat;
-    top: 0;
-    right: 0;
-    text-align: right;
-    font: normal 14px ptSans;
+    padding: 10px 0;
+    background: #71cb4a;
+    border-radius: 5px;
+    font: bold 18px Roboto;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 1px 1px 1px #60a343;
+}
+.game-info-price span{
+    font: normal 14px Roboto;
+}
+.game-info-percent span{
+    font: normal 14px Roboto;
+}
+
+
+
+
+.big-game{
+    width: calc(50% - 10px);
+    box-sizing: border-box;
+    margin: 5px;
+    background: #e2e2e2;
+}
+.big-game .game-info-price{
+    box-sizing: border-box;
+    padding: 8px 15px;
+    background: #71cb4a;
+    border-radius: 5px 0 0 5px;
+    font: normal 16px Roboto;
+    color: #FFF;
+}
+.big-game .game-info-percent{
+    box-sizing: border-box;
+    padding: 8px 15px;
+    background: #ff6000;
+    border-radius: 0 5px 5px 0;
+    font: normal 16px Roboto;
     color: #FFF;
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.main-tabs{
-    list-style: none;
-    margin: 0 0 15px 0;
-    padding: 0;
-    display: block;
+.game-list-head h2{
     background: #4f4f4f;
-}
-.main-tabs li{
-    padding: 0;
-    float: left;
-}
-
-.main-tabs li a{
-    display: block;
-    padding: 10px 20px;
-    font: normal 16px ptSans;
-    text-decoration: none;
+    margin: 0;
+    padding: 10px;
+    font: bold 18px Roboto;
     color: #FFFFFF;
 }
-.main-tabs li a.active{
-    background: #e66700;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -602,11 +682,14 @@ a.buy-button:hover{
     padding: 15px 30px;
 }
 .gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 0 0 0 0;
 }
 .gallery-item{
-    width: 49%;
-    float: left;
+    width: calc(50% - 2px);
     margin:1px; 
 }
 .gallery-item a img{
@@ -1415,12 +1498,31 @@ input.place:focus{
     flex-wrap: wrap;
     height: 40px;
 }
+.menu ul li{
+    flex-grow: 1;
+    border-left: solid 1px #dfdfdf;
+    border-right: solid 1px #ffffff;
+}
+.menu ul li:first-child{
+    border-left: none;
+    border-right: solid 1px #ffffff;
+}
+.menu ul li:nth-last-child(2){
+    border-left: solid 1px #dfdfdf;
+    border-right: none;
+}
+.menu ul li:last-child{
+    border-left: none;
+    border-right: none;
+}
 .menu ul li a{
     line-height: 40px;
     display: block;
     padding: 0 10px;
-    font: normal 16px/40px ptSans;
+    font: bold 13px/40px Roboto;
+    text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     color: #333;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -1435,25 +1537,11 @@ input.place:focus{
 
 
 
-.lucky-button{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 40px;
-    width: 200px;
-}
-.lucky-button a{
-    display: block;
-    width: 100%;
-    height: 40px;
+.menu ul li a.lucky-button{
     text-align: center;
-    font: bold 16px Roboto;
-    text-transform: uppercase;
-    text-decoration: none;
+    font: normal 16px/40px Roboto;
     text-shadow: 2px 2px 2px #5bab3d;
     color: #FFF;
-    box-sizing: border-box;
-    padding: 12px 0 0 0;
     background: url(../images/green-button.png) 0 -50px repeat-x;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -1461,7 +1549,7 @@ input.place:focus{
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.lucky-button a:hover{
+.menu ul li a.lucky-button:hover{
     background: url(../images/green-button.png) 0 0 repeat-x;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -1518,6 +1606,66 @@ input.place:focus{
 .more-games a:hover{
     color: #FFF;
     background: #e66700;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+
+
+
+.key-boxs{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.key-box{
+    width: calc(33.3% - 10px);
+    margin: 5px;
+    background: #314453 url(../images/strelki.png) top center no-repeat;
+    text-align: center;
+    padding: 25px 0;
+}
+.key-box-text{
+    font: bold 17px Roboto;
+    text-transform: uppercase;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #171717;
+}
+.key-box-coast{
+    font: bold 35px Roboto;
+    text-transform: none;
+    color: #ff6000;
+    padding: 4px 0 14px 0;
+}
+.key-box-coast span{
+    font: bold 17px Roboto;
+    color: #FFFFFF;
+}
+.key-box-button a{
+    display: block;
+    padding: 10px;
+    background: url(../images/green-button.png) 0 -50px repeat-x;
+    width: 65%;
+    margin: 0 auto;
+    border-radius: 10px;
+    font: bold 17px Roboto;
+    color: #FFF;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #196117;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.key-box-button a:hover{
+    background: url(../images/green-button.png) 0 0 repeat-x;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;

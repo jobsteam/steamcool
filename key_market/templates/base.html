@@ -68,20 +68,25 @@
     <div class="top-navigation-container">
         <div class="menu">
             <ul>
+                <li><a href="/">Главная</a></li>
                 <li><a href="{% url 'pages:reviews' %}">Отзывы</a></li>
                 <li><a href="{% url 'pages:instruction' %}">Как купить</a></li>
                 <li><a href="{% url 'pages:guarantees' %}">Гарантии</a></li>
                 <li><a href="{% url 'pages:support' %}">Поддержка</a></li>
                 <li><a href="{% url 'pages:payment' %}">Способы оплаты</a></li>
                 <li><a href="https://www.oplata.info/info/">Мои покупки</a></li>
+                <li>
+                    <a class="lucky-button" href="{% url 'games:genre_list' 'ispyitaj-udachu' %}">  Испытай удачу
+                    </a>
+                </li>
             </ul>
         </div>
-        <div class="lucky-button"><a href="{% url 'games:lucky' %}">Испытай удачу</a></div>
     </div>
 </div>
 
 
 <div class="wrapper clear-block">
+    {% block slider %}{% endblock slider %}
     {% block content %}{% endblock content %}
 </div>
 <div class="footer clear-block">
@@ -126,7 +131,6 @@
     {% javascript 'libs' %}
     {% javascript 'frontend' %}
     <script type="text/javascript" src="{% static 'frontend/js/jquery.js' %}"></script>
-    <script type="text/javascript" src="{% static 'frontend/js/tabs.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/js/fancybox.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/js/swiper.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/js/live-border.js' %}"></script>

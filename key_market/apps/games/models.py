@@ -116,11 +116,6 @@ class Game(models.Model):
         blank=True, null=True,
         upload_to='gamescover/')
 
-    image_banner = models.ImageField(
-        'Баннер для спец. блока',
-        blank=True, null=True,
-        upload_to='gamescover/')
-
     my_coast = models.IntegerField(
         'Стоимость в рублях',
         blank=True, null=True)
@@ -182,32 +177,21 @@ class Game(models.Model):
         max_length=1000,
         blank=True, null=True)
 
-    is_free = models.BooleanField(
-        'Игра даром',
-        default=False)
-
     is_slide = models.BooleanField(
         'Показать в слайде',
         default=False)
+
+    slide_text = models.TextField(
+        'Текст для слайда',
+        max_length=300,
+        blank=True)
 
     is_soon = models.BooleanField(
         'Скоро в продаже',
         default=False)
 
-    is_case = models.BooleanField(
-        'Наличие в Case',
-        default=False)
-
-    is_special_block_1 = models.BooleanField(
-        'В специальный блок №1',
-        default=False)
-
-    is_special_block_2 = models.BooleanField(
-        'В специальный блок №2',
-        default=False)
-
-    is_favorite = models.BooleanField(
-        'В популярное',
+    on_main_page = models.BooleanField(
+        'Показать на главной',
         default=False)
 
     sb_id = models.IntegerField(
