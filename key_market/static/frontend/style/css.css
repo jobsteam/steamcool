@@ -337,7 +337,7 @@ h1.list_title{
 
 
 .game-img{
-    flex-basis: 250px;
+    flex-basis: 200px;
     flex-grow: 0;
     flex-shrink: 0;
 }
@@ -1169,14 +1169,14 @@ input.place:focus{
     box-sizing: border-box;
 }
 .system-name{
-    font: bold 14px Roboto;
+    font: bold 14px/23px Roboto;
     width: 70px;
     background: #fff;
     padding: 10px;
     text-align: right;
 }
 .system-value{
-    font: normal 14px Roboto;
+    font: normal 14px/23px Roboto;
     width: 100%;
     padding: 10px 20px;
 }
@@ -1628,7 +1628,8 @@ input.place:focus{
     margin: 5px;
     background: #314453 url(../images/strelki.png) top center no-repeat;
     text-align: center;
-    padding: 25px 0;
+    padding: 15px 0;
+    border-radius: 10px;
 }
 .key-box-text{
     font: bold 17px Roboto;
@@ -1637,7 +1638,7 @@ input.place:focus{
     text-shadow: 1px 1px 1px #171717;
 }
 .key-box-coast{
-    font: bold 35px Roboto;
+    font: bold 25px Roboto;
     text-transform: none;
     color: #ff6000;
     padding: 4px 0 14px 0;
