@@ -24,7 +24,11 @@
                         
                         <div class="game-info-title">
                             <div class="game-name">{{ games.title }}</div>
-                            <div class="game-key">{{ games.get_store_activation_display }} / {{ games.genre.all | first }}</div>
+                            <div class="game-key">{{ games.get_store_activation_display }} | 
+                            {% for genre in games.genre.all %}
+                                {{ genre.title }}{% if not forloop.last %}, {% endif %} 
+                            {% endfor %}
+                            </div>
                         </div>
                         <div class="game-info-coast">
                             <div class="game-info-price">{{ games.my_coast }} <span>руб.</span></div>

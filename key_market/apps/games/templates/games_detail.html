@@ -36,7 +36,7 @@
                 <div class="game-mini-detail">
                     Жанр:
                         {% for genre in game.genre.all%}
-                            <a href="{% url 'games:genre_list' genre.slug %}">{{ genre.title }}</a>
+                            <a href="{% url 'games:genre_list' genre.slug %}">{{ genre.title }}</a>{% if not forloop.last %}, {% endif %}
                         {% endfor %}
                         <br />
                     Язык:
