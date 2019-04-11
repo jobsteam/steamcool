@@ -4,6 +4,8 @@ from django.core.cache import cache
 from django.shortcuts import redirect
 from django.utils.safestring import mark_safe
 
+from adminsortable2.admin import SortableAdminMixin
+
 from easy_thumbnails.files import get_thumbnailer
 
 from games import models as game_models
@@ -225,7 +227,7 @@ class GameAdmin(admin.ModelAdmin):
 
 
 @admin.register(game_models.Genre)
-class GenreAdmin(admin.ModelAdmin):
+class GenreAdmin(SortableAdminMixin, admin.ModelAdmin):
     readonly_fields = [
         'slug',
     ]

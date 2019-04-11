@@ -1,5 +1,5 @@
 {% extends "columns_3.html" %}
-{% load thumbnail %}
+{% load thumbnail common_tags %}
 
 {% block title %}{{ page_title }}{% endblock title %}
 
@@ -45,15 +45,7 @@
                 В разделе {{ section }} нет ни одной игры. Приходите позже, они обязательно появятся
             {% endif %}
         {% endif %}
-        <div class="list-pager">
-            <ul>
-                <li class="prev"><a href="">...назад</a></li>
-                <li class="current"><span>1</span></li>
-                <li><a href="">2</a></li>
-                <li><a href="">3</a></li>
-                <li>...</li>
-                <li><a href="">6</a></li>
-                <li class="next"><a href="">далее...</a></li>
-            </ul>
-        </div>
+        {% if is_paginated %}
+            {% paginator 2 %}
+        {% endif %}
 {% endblock %}

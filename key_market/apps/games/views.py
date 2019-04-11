@@ -51,6 +51,7 @@ class PageTitleMixin(object):
 class GamesList(PageTitleMixin, ListView):
     model = Game
     template_name = "games_list.html"
+    paginate_by = 10
 
     def get_queryset(self):
         qs = super().get_queryset()

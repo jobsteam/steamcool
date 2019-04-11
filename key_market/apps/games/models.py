@@ -277,9 +277,13 @@ class Genre(models.Model):
         'slug',
         blank=True)
 
+    order = models.PositiveSmallIntegerField(
+        'Порядок',
+        default=0, blank=False, null=False)
+
     class Meta:
         default_related_name = 'Без названия'
-        ordering = ['title']
+        ordering = ['order']
         verbose_name = 'Жанр'
         verbose_name_plural = 'Жанры'
 
