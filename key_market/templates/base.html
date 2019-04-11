@@ -20,6 +20,15 @@
     <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/fancybox.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/swiper.css' %}">
 
+    {% block scripts %}
+    {% javascript 'libs' %}
+    <script type="text/javascript" src="{% static 'frontend/js/fancybox.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/js/swiper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/js/live-border.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/js/settings.js' %}"></script>
+    {% javascript 'frontend' %}
+    {% endblock %}
+    
     {% block extra-styles %}{% endblock extra-styles %}
 
     {% block extra-scripts %}{% endblock extra-scripts %}
@@ -120,15 +129,7 @@
     Все права защищены. Полное или частичное копирование материалов сайта без согласования с администрацией запрещено!
 </div>
 
-{% block scripts %}
-    {% javascript 'libs' %}
-    {% javascript 'frontend' %}
-    <script type="text/javascript" src="{% static 'frontend/js/jquery.js' %}"></script>
-    <script type="text/javascript" src="{% static 'frontend/js/fancybox.js' %}"></script>
-    <script type="text/javascript" src="{% static 'frontend/js/swiper.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'frontend/js/live-border.js' %}"></script>
-    <script type="text/javascript" src="{% static 'frontend/js/settings.js' %}"></script>
-{% endblock %}
+
 
 
 
