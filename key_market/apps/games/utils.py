@@ -98,9 +98,13 @@ def fetch_last_pay():
     }
     xml_data = dicttoxml(data, custom_root='digiseller.request')
     headers = {'Content-Type': 'application/xml'}
-    r = requests.post(url, data=xml_data, headers=headers)
+    req = requests.post(url, data=xml_data, headers=headers)
 
-    xml_doc = ET.fromstring(r.text)
+    # На случай, если digiseller ничего не вернул.
+    if req.status_code != 200:
+        return []
+
+    xml_doc = ET.fromstring(req.text)
     return [id.text for id in xml_doc.findall('sales/sale/product/id')]
 
 
