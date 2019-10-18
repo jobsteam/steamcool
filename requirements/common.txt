@@ -23,7 +23,7 @@ psycopg2==2.7.1
 python-dateutil==2.6.0
 pytils==0.3
 pytz==2017.2
-pyyaml==3.12
+pyyaml==5.1
 raven==5.32.0
 requests==2.14.2
 Werkzeug==0.12.2
