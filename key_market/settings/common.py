@@ -19,7 +19,7 @@ sys.path.insert(1, path('.'))
 ROOT_URLCONF = 'key_market.urls'
 WSGI_APPLICATION = 'key_market.wsgi.application'
 
-ALLOWED_HOSTS = ['steamcool.ru', '89.223.26.151']
+ALLOWED_HOSTS = ['steamcool.ru']
 
 ADMINS = [
     ('Pavel Alekin', 'minidron@yandex.ru')

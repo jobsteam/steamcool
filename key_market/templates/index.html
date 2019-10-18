@@ -5,7 +5,13 @@
 
 {% block extra-scripts %}{% endblock extra-scripts %}
 
-{% block slider %}
+
+
+
+
+
+{% block center_column %}
+
     <div class="swiper-container">
         <div class="swiper-wrapper">
             {% for slide in slides %}
@@ -41,42 +47,7 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
     </div>
-{% endblock slider %}
 
-
-{% block lucky_boxs %}
-    <div class="key-boxs">
-        <div class="key-box">
-            <div class="key-box-text">
-                Испытай удачу
-                <div class="key-box-coast">39 <span>руб.</span></div>
-            </div>
-            <div class="key-box-button">
-                <a href="{% url 'games:detail' 'ispyitaj-udachu-39-rub' %}">Купить</a>
-            </div>
-        </div>
-        <div class="key-box">
-            <div class="key-box-text">
-                Испытай удачу
-                <div class="key-box-coast">99 <span>руб.</span></div>
-            </div>
-            <div class="key-box-button">
-                <a href="{% url 'games:detail' 'ispyitaj-udachu-99-rub' %}">Купить</a>
-            </div>
-        </div>
-        <div class="key-box">
-            <div class="key-box-text">
-                Испытай удачу
-                <div class="key-box-coast">299 <span>руб.</span></div>
-            </div>
-            <div class="key-box-button">
-                <a href="{% url 'games:detail' 'ispyitaj-udachu-299-rub' %}">Купить</a>
-            </div>
-        </div>
-    </div>
-{% endblock lucky_boxs %}
-
-{% block center_column %}
     <div class="game-list-head">
         <h2>Новинки / Популярное</h2>
     </div>
@@ -115,6 +86,36 @@
         {% endfor %}
     </div>
 
+
+
+
+
+
+
+        {% for game in games_new_on_site %}
+            <div class="game">
+                <div class="game-img">
+                    {% thumbnail game.image "250x117" as im %}
+                    <img src="{{ im.url }}" width="100%">
+                </div>
+                <div class="game-info">
+                    
+                    <div class="game-info-title">
+                        <div class="game-name">{{ game.title }}</div>
+                        <div class="game-key">
+                            {{ game.get_store_activation_display }} |  
+                            {% for genre in game.genre.all %}
+                                {{ genre.title }}{% if not forloop.last %}, {% endif %} 
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="game-info-coast">
+                        <div class="game-info-price">{{ game.my_coast }} <span>руб.</span></div>
+                    </div>
+                </div>
+                <a href="{% url 'games:detail' game.slug %}" class="game-link"></a>
+            </div>
+        {% endfor %}
 
 
 

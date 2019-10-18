@@ -29,7 +29,7 @@ class ScreenshotInlineAdmin (admin.StackedInline):
 class GameAdmin(admin.ModelAdmin):
     list_display = (
         'title',
-        'field_my_price',
+        'field_my_price'
     )
 
     inlines = [

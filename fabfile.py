@@ -5,10 +5,10 @@ from key_market.apps.fabric_utils.fabric_class import (
 
 
 class Fabric(DjangoFabric):
-    host = '89.223.26.151'
+    host = '89.223.88.86'
     app_name = 'key_market'
     repository = 'git@github.com:jobsteam/steamcool.git'
-    remote_db_name = 'steamcool'
+    remote_db_name = 'key_market'
     local_db_name = 'key_market'
     use_bower = True
     user = 'dimi'
