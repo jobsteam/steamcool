@@ -5,138 +5,153 @@
 
 {% block extra-scripts %}{% endblock extra-scripts %}
 
-
-
-
-
-
 {% block center_column %}
-
-    <div class="swiper-container">
+    <div class="slide-container">
         <div class="swiper-wrapper">
             {% for slide in slides %}
             <div class="swiper-slide">
                 <div class="slide">
-                    <div class="slide-foto">
-                        <a href="{% url 'games:detail' slide.slug %}">
-                            <img src="{{ slide.image_slide.url }}" width="100%">
-                        </a>
+                    <div class="slide_img">
+                        <img src="{{ slide.image_slide.url }}">
+                        <a href="{% url 'games:detail' slide.slug %}"></a>
                     </div>
-                    <div class="slide-info">
-                        <div class="slide-title">{{ slide.title }}</div>
-                        <div class="slide-text">
-                            {{ slide.slide_text }}
+                    <div class="slide_info">
+                        <div class="slide_name">
+                            {{ slide.title }}
                         </div>
-                        <div class="slide-price">
-                            
-
-                            {% if slide.is_soon %}
-                                Скоро!
-                            {% else %}
-                                <div class="slide-coast">{{ slide.my_coast }} <span>руб.</span></div>
-                                <div class="slide-percent">-50<span>%</span></div>    
-                            {% endif %}
-
-
-                        </div>
+                        {% if slide.is_soon %}
+                            <div class="slide_soon">Скоро!</div>
+                        {% else %}
+                            <div class="slide_coast">
+                                <div>
+                                    999 <span>руб.</span>
+                                </div>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="slide-prev">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        </div>
+        <div class="slide-next">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </div>
     </div>
-
-    <div class="game-list-head">
-        <h2>Новинки / Популярное</h2>
+    <div class="tabs_on_main">
+        <ul class="tab_menu">
+            <li class="active">Популярное</li>
+            <li>Новое на сайте</li>
+            <li>Скоро</li>
+        </ul>
     </div>
-
-
-
-
-
-
-
-
-    <div class="game-list">
-        {% for game in games_on_main_page %}
-            <div class="game">
-                <div class="game-img">
-                    {% thumbnail game.image "250x117" as im %}
-                    <img src="{{ im.url }}" width="100%">
-                </div>
-                <div class="game-info">
-                    
-                    <div class="game-info-title">
-                        <div class="game-name">{{ game.title }}</div>
-                        <div class="game-key">
-                            {{ game.get_store_activation_display }} |  
-                            {% for genre in game.genre.all %}
-                                {{ genre.title }}{% if not forloop.last %}, {% endif %} 
-                            {% endfor %}
+    <div class="tabs">
+        <div class="tab_content active">
+            <div class="game_list">
+                {% for game in games_on_main_page %}
+                    <div class="game">
+                        <a class="link" href="{% url 'games:detail' game.slug %}"></a>
+                        <div class="game_img">
+                            {% thumbnail game.image "250x117" as im %}
+                            <img src="{{ im.url }}">
                         </div>
-                    </div>
-                    <div class="game-info-coast">
-                        <div class="game-info-price">{{ game.my_coast }} <span>руб.</span></div>
-                    </div>
-                </div>
-                <a href="{% url 'games:detail' game.slug %}" class="game-link"></a>
-            </div>
-        {% endfor %}
-    </div>
-
-
-
-
-
-
-
-        {% for game in games_new_on_site %}
-            <div class="game">
-                <div class="game-img">
-                    {% thumbnail game.image "250x117" as im %}
-                    <img src="{{ im.url }}" width="100%">
-                </div>
-                <div class="game-info">
-                    
-                    <div class="game-info-title">
-                        <div class="game-name">{{ game.title }}</div>
-                        <div class="game-key">
-                            {{ game.get_store_activation_display }} |  
-                            {% for genre in game.genre.all %}
-                                {{ genre.title }}{% if not forloop.last %}, {% endif %} 
-                            {% endfor %}
+                        <div class="game_info">
+                            <div class="product">
+                                <div class="name">{{ game.title}}</div>
+                                <div class="store_info">
+                                    <img src="images/steam.png">
+                                </div>
+                            </div>
+                            <div class="status">
+                                {% if game.in_stock %}
+                                    <div class="coast">
+                                        <div class="percent">-33%</div>
+                                        <div class="price">
+                                            {{ game.my_coast }} <span>руб.</span>
+                                        </div>
+                                    </div>
+                                {% elif game.is_soon %}
+                                    <div class="soon">Скоро!</div>
+                                {% else %}
+                                    <div class="nonal">Закончился!</div>
+                                {% endif %}
+                            </div>
                         </div>
-                    </div>
-                    <div class="game-info-coast">
-                        <div class="game-info-price">{{ game.my_coast }} <span>руб.</span></div>
-                    </div>
-                </div>
-                <a href="{% url 'games:detail' game.slug %}" class="game-link"></a>
+                    </div> 
+                {% endfor %}
             </div>
-        {% endfor %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <div class="magaz-info">
-        Ищите, где купить дешевые лицензионные ключи steam для PC? Интернет-магазин компьютерных игр Steam-account.ru с радостью поможет Вам купить ключ для стим и избежать необходимости посещать десятки магазинов. Вы можете заказать любой ключ, не вставая со своего кресла, и он, в течение минуты, будет доставлен на указанный при покупке e-mail.
-        Ищите, где купить дешевые лицензионные ключи steam для PC? Интернет-магазин компьютерных игр Steam-account.ru с радостью поможет Вам купить ключ для стим и избежать необходимости посещать десятки магазинов. Вы можете заказать любой ключ, не вставая со своего кресла, и он, в течение минуты, будет доставлен на указанный при покупке e-mail.
+        </div>
+        <div class="tab_content">
+            <div class="game_list">
+                {% for game in games_new_on_site %}
+                    <div class="game">
+                        <a class="link" href="{% url 'games:detail' game.slug %}"></a>
+                        <div class="game_img">
+                            {% thumbnail game.image "250x117" as im %}
+                            <img src="{{ im.url }}">
+                        </div>
+                        <div class="game_info">
+                            <div class="product">
+                                <div class="name">{{ game.title}}</div>
+                                <div class="store_info">
+                                    <img src="images/steam.png">
+                                </div>
+                            </div>
+                            <div class="status">
+                                {% if game.in_stock %}
+                                    <div class="coast">
+                                        <div class="percent">-33%</div>
+                                        <div class="price">
+                                            {{ game.my_coast }} <span>руб.</span>
+                                        </div>
+                                    </div>
+                                {% elif game.is_soon %}
+                                    <div class="soon">Скоро!</div>
+                                {% else %}
+                                    <div class="nonal">Закончился!</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div> 
+                {% endfor %}
+            </div>
+        </div>
+        <div class="tab_content">
+            <div class="game_list">
+                {% for game in games_soon %}
+                    <div class="game">
+                        <a class="link" href="{% url 'games:detail' game.slug %}"></a>
+                        <div class="game_img">
+                            {% thumbnail game.image "250x117" as im %}
+                            <img src="{{ im.url }}">
+                        </div>
+                        <div class="game_info">
+                            <div class="product">
+                                <div class="name">{{ game.title}}</div>
+                                <div class="store_info">
+                                    <img src="images/steam.png">
+                                </div>
+                            </div>
+                            <div class="status">
+                                {% if game.in_stock %}
+                                    <div class="coast">
+                                        <div class="percent">-33%</div>
+                                        <div class="price">
+                                            {{ game.my_coast }} <span>руб.</span>
+                                        </div>
+                                    </div>
+                                {% elif game.is_soon %}
+                                    <div class="soon">Скоро!</div>
+                                {% else %}
+                                    <div class="nonal">Закончился!</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div> 
+                {% endfor %}
+            </div>
+        </div>
     </div>
-    
 {% endblock center_column %}

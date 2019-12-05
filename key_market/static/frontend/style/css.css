@@ -1,3 +1,4 @@
+/*Общие настройки*/
 @font-face{
     font-family: 'ptSans';
     src: url('../fonts/ptSansBold.woff') format('woff');
@@ -50,12 +51,75 @@ body{
     height:0;
     font-size:0;
 }
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 15px;
+}
+
+/*popup_window*/
+.head_popup{
+    display: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    height: 75px;
+    padding: 0 15px;
+}
+ span.close_popup_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    width: 55px;
+    font-size: 22px;
+    color: #fff;
+    background: #1d1d1d;
+    border-radius: 5px;
+    text-shadow: 0 1px 1px #00000070;
+    cursor: pointer;
+}
+.active_popup{
+    display: block!important;
+}
+.active_popup .head_popup{
+    display: flex;
+}
+
+/*Разметка колонок*/
+.columns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 0 50px 0;
+}
+.columns .left{
+    width: 250px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.columns .center{
+    width: 100%;
+}
+.columns .big_center{
+    width: 100%;
+}
+.columns .right{
+    width: 250px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.content{
+}
+
+/*Шапка сайта*/
 .head{
-    width: 1200px;
     height:100px;
     margin: 0 auto;
-    background: url(../images/pix.png) top center repeat;
+    background: #000000a8;
     position: relative;
+    z-index: 2;
 }
 .logo{
     width: 200px;
@@ -64,23 +128,47 @@ body{
     left: 25px;
     top: 15px;
 }
+.logo a{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.logo a img{
+    display: block;
+}
+.logo a img:nth-child(1){
+    width: 48px;
+    margin: 0 13px 0 0;
+}
+.logo a img:nth-child(2){
+    width: 139px;
+}
+.logo a img:nth-child(3){
+    width: 100%;
+    margin: 6px 0 0 0;
+}
 .search{
     width: 590px;
-    height: 40px;
     position: absolute;
     left: 275px;
     top: 30px;
+    z-index: 2;
+}
+.search form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 .search-text{
-    height: 40px;
-    margin:0 85px 0 0;
+    width: 100%;
     padding: 0 15px 0 0;
     box-sizing: border-box;
 }
 .search-submit{
+    flex-basis: 85px;
+    flex-grow: 0;
+    flex-shrink: 0;
     width: 85px;
-    height: 40px;
-    float: right;
 }
 .search-text input{
     display: block;
@@ -92,6 +180,19 @@ body{
     box-shadow: inset 1px 1px 3px 0px #ccc;
     box-sizing: border-box;
 }
+.search-text input.place:focus::-webkit-input-placeholder {
+    color:transparent;
+    outline: none;
+}
+.search-text input.place:focus::-moz-placeholder {
+    color:transparent;
+}
+.search-text input.place:focus:-ms-input-placeholder {
+    color:transparent;
+}
+.search-text input.place:focus{
+    outline: none;
+}
 .search-submit input{
     width: 100%;
     height: 40px;
@@ -101,11 +202,6 @@ body{
     color: #FFF;
     cursor: pointer;
     font: normal 14px ptSans;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
 .search-submit input:hover {
     box-shadow: inset 0 0 0 30px #e66700;
@@ -117,1559 +213,1048 @@ body{
 }
 .book{
     width: 260px;
-    height: 40px;
     position: absolute;
     right: 25px;
     top: 30px;
+    z-index: 2;
+}
+.books{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .book a{
     width: 20px;
     height: 20px;
-    display: block;
-    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font: normal 14px/20px ptSans;
+    font: normal 14px ptSans;
     text-decoration: none;
     color: #fff;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 .book a:hover{
     background: #e66700;
     color: #FFF;
 }
-.wrapper{
-    width: 1200px;
-    margin: 0 auto; 
-}
-.block{
-    background: url(../images/pix.png) top center repeat;
-    margin: 0 0 10px 0;
-}
-.left{
-    float: left;
-    width: 250px; 
-}
-.right{
-    float: left;
-    width: 250px;
-}
-.center{
-    background: #FFF;
-    float: left;
-    width: 700px; 
-}
-.big-center{
-    float: left;
-    width: 950px;
-}
-.ganre-menu h3{
-    font: normal 20px ptSans;
-    color: #666;
-    border-bottom: solid 2px #666;
-    margin: 0 0 10px 0;
-    padding: 5px 0 10px 0;
-}
-.ganre-menu ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.ganre-menu ul li {
-    background: #333;
-    margin: 0 0 1px 0;
-    padding: 0 10px;
-}
-.ganre-menu ul li a{
-    display: block;
-    padding: 5px 0;
-    font: normal 16px ptSans;
-    color: #FFF;
-    text-decoration: none;
-}
-.ganre-menu ul li a:hover{
-    color: #e66700;
-}
-.ganre-menu{
-    padding: 15px;
-}
-.last-pay h3{
-    font: normal 20px ptSans;
-    color: #666;
-    border-bottom: solid 2px #666;
-    margin: 0 0 10px 0;
-    padding: 5px 0 10px 0;
-}
-.last-pay ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.last-pay ul li {
-    background: #333;
-    margin: 0 0 1px 0;
-    padding: 0 10px;
-}
-.last-pay ul li a{
-    display: block;
-    padding: 5px 0;
-    font: normal 16px ptSans;
-    color: #FFF;
-    text-decoration: none;
-}
-.last-pay ul li a:hover{
-    color: #e66700;
-}
-.last-pay{
-    padding: 15px;
-}
-
-
-
-
-
-.slide{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-
-.slide img{
-    display: block;
+.books_head{
+    display: none;
     width: 100%;
-}
-.slide-foto{
-    width: 50%;
-    background: url(../images/pix.png) top center repeat;
-}
-.slide-info{
-    width: 50%;
-    background: #333;
+    text-align: center;
+    font: normal 20px Roboto;
     color: #fff;
-    box-sizing: border-box;
-    padding: 25px 15px 85px 15px;
-    position: relative;
-}
-.slide-title{
-    font: bold 25px ptSans;
-    margin: 0 0 15px 0;
-    position: relative;
-}
-.slide-price{
-    position: absolute;
-    bottom: 15px;
-    right: 25px;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    border-radius: 10px;
-}
-.slide-coast{
-    padding: 8px 10px;
-    font: bold 26px Roboto;
-    text-shadow: 2px 2px 2px #5bab3d;
-    background: url(../images/green-button.png) 0 -50px repeat-x;
-}
-.slide-coast span {
-    font: normal 14px Roboto;
-}
-.slide-percent{
-    padding: 8px 15px;
-    font: bold 26px Roboto;
-    text-shadow: 1px 1px 1px #cf5308;
-    background: #ff6000;
-}
-.slide-percent span {
-    font: normal 18px Roboto;
-}
-.slide-text{
-    font: normal 14px ptSans;
-    color: #c6c6c6;
-}
+    padding: 0 0 15px 0
 
-
-
-
-
-
-h1.list_title{
-    display: block;
-    margin: 0;
-    padding: 15px;
-    font: bold 25px ptSans;
 }
-
-
-
-
-.game-list{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 5px;
-}
-.game{
-    position: relative;
-    width: calc(100% - 10px);
-    box-sizing: border-box;
-    margin: 5px;
-    background: #efefef;
+.mobile_navigation{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
 }
-.game a.game-link{
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-}
-
-
-
-.game:hover{
-    box-shadow: 3px 3px 3px #ddd;
-}
-
-
-
-.game-img{
-    flex-basis: 200px;
-    flex-grow: 0;
-    flex-shrink: 0;
-}
-.game-img img{
-    display: block;
-    width: 100%;
-}
-.game-info{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-.game-info-title{
-    font: normal 14px ptSans;
-    width: 100%;
-    color: #333;
-    padding: 0 15px;
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
+.search_button{
+    display: none;
+    align-items: center;
     justify-content: center;
-    flex-direction: column;
-
-
-}
-.game-name{
-    font: bold 18px Roboto;
-    width: 100%;
-}
-.game-key{
-    width: 100%;
-    color: #808080;
-}
-.game-info-coast{
-    display: flex;
-    flex-basis: 110px;
-    flex-grow: 0;
     flex-shrink: 0;
-    align-items:center;
-    padding: 0 15px 0 0;
-}
-.game-info-price{
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px 0;
-    background: #71cb4a;
-    border-radius: 5px;
-    font: bold 18px Roboto;
-    color: #FFF;
-    text-align: center;
-    text-shadow: 1px 1px 1px #60a343;
-}
-.game-info-price span{
-    font: normal 14px Roboto;
-}
-.game-info-percent span{
-    font: normal 14px Roboto;
-}
-
-
-
-
-.big-game{
-    width: calc(50% - 10px);
-    box-sizing: border-box;
-    margin: 5px;
-    background: #e2e2e2;
-}
-.big-game .game-info-price{
-    box-sizing: border-box;
-    padding: 8px 15px;
-    background: #71cb4a;
-    border-radius: 5px 0 0 5px;
-    font: normal 16px Roboto;
-    color: #FFF;
-}
-.big-game .game-info-percent{
-    box-sizing: border-box;
-    padding: 8px 15px;
-    background: #ff6000;
-    border-radius: 0 5px 5px 0;
-    font: normal 16px Roboto;
-    color: #FFF;
-}
-
-
-
-
-.game-list-head h2{
-    background: #4f4f4f;
-    margin: 0;
-    padding: 10px;
-    font: bold 18px Roboto;
-    color: #FFFFFF;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.list-pager{
-    padding: 25px 0; 
-}
-.list-pager ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-.list-pager ul li{
-    display: inline-block;
-    min-width: 30px;
-    height: 39px;
-    font: bold 14px/30px Roboto;
-    margin: 0 2px; 
-}
-.list-pager ul li a{
-    text-decoration: none;
-    color: #4f4f4f;
-    display: block;
-    min-width: 30px;
-    height: 30px;
-    font: bold 14px/30px Roboto;
-}
-
-.list-pager ul li a:hover{
-    background: #4f4f4f;
-    color: #FFF;
-}
-.list-pager ul li.current{
-    background: url(../images/current.png) top center repeat;
-}
-
-.list-pager ul li.current span{
-    color: #FFF;
-}
-.prev a, .next a{
-    padding: 0 5px;
-}
-.magaz-info{
-    padding: 25px;
-    font: normal 12px/18px Roboto;
-}
-.game-object-head{
-    background: url(../images/pix.png) top center repeat;
-    border-bottom: solid 45px #2f2f2f;
-}
-.game-object h1{
-    font: bold 25px Roboto;
-    background: #FFF;
-    margin: 0;
-    padding: 25px;
-    border-top: solid 3px #000;
-}
-.game-object-head-foto img{
-    display: block;
-}
-.game-description, .game-order{
-    background: #FFF;
-    color: #333;
-    padding: 25px;
-    font: normal 15px/21px Roboto;
-}
-.game-description a, .game-order a{
-    color: #ff6000;
-}
-.game-description a:hover, .game-order a:hover{
-    text-decoration: none;
-}
-
-.game-description-left{
-    box-sizing: border-box;
-    padding: 0 25px 0 0;
-    width: 70%;
-    float: left;
-}
-.game-description-right{
-    width: 30%;
-    float: right;
-}
-.video-content{
-    padding: 15px;
-}
-
-
-
-
-
-.game-object-head-foto{
-    width: 460px;
-    float: left;
-}
-.game-object-head-foto img {
-    width: 100%;
-}
-.game-object-head-detail{
-    margin: 0 0 0 460px;
-    padding: 0 0 75px 0;
-    box-sizing: border-box;
-    min-height: 215px;
-    position: relative;
-}
-a.readmore{
-    background: #EEE;
-    display: block;
-    width: 120px!important;
-    padding: 8px 10px;
-    margin: 18px 0 0 0;
-    color: #333;
-    font: normal 13px Roboto;
-    text-decoration: none;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-a:hover.readmore{
-    color: #FFF;
-    box-shadow: inset 0 0 0 30px #e66700;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.price-buy{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 0 25px 25px 25px;
-}
-.buy{
-    width: 250px;
-    float: right;
-    background: url(../images/green-button.png) 0 -50px repeat-x;
-    height: 50px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-.percent{
-    margin-right: 250px;
-    text-align: left;
-    font: bold 23px Roboto;
-    box-sizing: border-box;
-    padding: 10px 0 0 0;
-    color: #FFF;
-    text-shadow: 1px 1px 2px #333;
-}
-.percent span{
-    color: #ff6000;
-}
-.coast{
-    width: 50%;
-    height: 50px;
-    float: left;
-    font: bold 26px Roboto;
-    color: #FFF;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 8px 0 0 0;
-    text-shadow: 2px 2px 2px #5bab3d;
-}
-.coast span{
-    font: normal 14px Roboto;
-}
-a.buy-button{
-    width: 50%;
-    height: 50px;
-    float: left;
-    text-align: center;
-    font: bold 23px Roboto;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-shadow: 2px 2px 2px #5bab3d;
-    color: #FFF;
-    box-sizing: border-box;
-    padding: 10px 0 0 0;
-    background: url(../images/green-button.png) 0 -50px repeat-x;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-a.buy-button:hover{
-    background: url(../images/green-button.png) 0 0 repeat-x;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.game-mini-detail{
-    padding: 15px 25px;
-    font: normal 13px/21px Roboto;
-    color: #c0c0c0;
-}
-.game-mini-detail a{
-    color: #c0c0c0;
-}
-.game-mini-detail a:hover{
-    color: #dfdfdf;
-}
-
-
-
-
-.game-mini-detail a.method-activation{
-    color: #ff6000;
-}
-.game-mini-detail a.method-activation:hover{
-    color: #ff6000;
-}
-
-
-
-.description{
-    margin: 0 0 25px 0;
-    background: #EEE;
-}
-.description h2{
-    font: bold 15px/21px Roboto;
-    padding: 10px 20px;
-    margin: 0;
-    background: #cacaca;
-    color: #212121;
-}
-.description-content{
-    padding: 15px 30px;
-}
-.gallery{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0 0 0 0;
-}
-.gallery-item{
-    width: calc(50% - 2px);
-    margin:1px; 
-}
-.gallery-item a img{
-    width: 100%;
-    display: block;
-}
-.instruction{
-    margin: 0 0 25px 0;
-}
-.instruction ol{
-    margin: 0;
-    padding: 0 0 0 15px;
-}
-.footer{
-    background: url(../images/pix.png) top center repeat;
-    min-height: 200px;
-    max-width: 1200px;
-    margin: 50px auto 0 auto;
-    box-sizing: border-box;
-    padding: 25px;
-    border-top: solid 3px #ff6000;
-}
-.footer-col{
-    margin: 0 45px 25px 0;
-    float: left;
-}
-.footer-col span{
-    display: block;
-    font: bold 16px/21px Roboto;
+    flex-grow: 0;
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
     color: #fff;
-    margin: 0 0 10px 0;
+    cursor: pointer;
 }
-.footer-col ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.book_button{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 55px;
+    height: 55px;
+    font:normal 16px Roboto;
+    color: #fff;
+    cursor: pointer;
 }
-.footer-col ul li{
-    line-height: 24px;
+.sandvich_button{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
 }
-.footer-col ul li a{
-    font: normal 14px/21px Roboto;
-    color: #c4c4c4;
-    text-decoration: none;
-}
-.footer-col ul li a:hover{
-    color: #FFF;
-}
-.footer-logo{
-    width: 200px;
-    float: right;
-}
-.footer-copy{
-    background: #000;
-    max-width: 1200px;
+
+/*Главное меню*/
+.navigation{
     margin: 0 auto;
-    padding: 10px;
-    box-sizing: border-box;
-    font: normal 12px/21px Roboto;
-    color: #929292;
-    text-align: center;
+    background: linear-gradient(to top, #fff, #eee);
+    border-bottom: solid 3px #333;
+    z-index: 2;
 }
-.pay-block{
-    float: left;
-    width: 25%;
-    padding: 0 10px 10px 0;
-    box-sizing: border-box;
+.navigation .menu ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
-.pay-box{
+.navigation .menu ul li{
     width: 100%;
+}
+.navigation .menu ul li a{
+    display: block;
+    padding: 10px 25px;
+    font: bold 13px Roboto;
     text-align: center;
-    padding: 25px;
-    box-sizing:border-box;
-    background: #EEE;
-    border-top: solid 3px #CCC;
-    height: 170px;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #333;
+    box-sizing: border-box;
+    width: 100%;
+    border-left: solid 1px #fff;
+    border-right: solid 1px #e2e2e2;
 }
-.pay-name{
-    font: normal 15px/21px Roboto;
+.navigation .menu ul li:first-child a{
+    border-left: none;
 }
-.pay-percent{
-    font: normal 12px/21px Roboto;
+.navigation .menu ul li:last-child a{
+    border-right: none;
 }
-.text-content h2{
-    font: bold 15px/21px Roboto;
+.navigation .menu ul li:nth-last-child(2) a{
+    border-right: none;
 }
-.pay-block .radio_button{
+.navigation .menu ul li a:hover{
+    text-decoration: underline;
+}
+.navigation .menu ul li a.lucky-button{
+    text-align: center;
+    font: bold 13px Roboto;
+    color: #FFF;
+    background: linear-gradient(to top, #71cb4a, #60a343);
+    border-left: none;
+    text-shadow: 1px 2px 1px #60a343;
+}
+.navigation .menu ul li a.lucky-button:hover{
+    text-decoration: none;
+    background: linear-gradient(to top, #71cb4a, #79af61);
+}
+
+
+/*Блок в колонке*/
+.block{
+    padding: 10px;
+    background: #000000a8;
+    margin: 0 0 15px 0;
+}
+.block h3{
+    font: bold 13px Roboto;
+    text-transform: uppercase;
+    color: #eee;
+    border-bottom: solid 2px #eee;
+    margin: 0 0 10px 0;
+    padding: 5px 0 10px 0;
+}
+.block ul.menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.block ul.menu li {
+    margin: 0 0 1px 0;
+}
+.block ul.menu li a {
+    display: block;
+    /*background: #1818288c;*/
+    background: #5050638c;
+    padding: 4px 10px;
+    font: normal 13px Roboto;
+    color: #fff;
+    text-decoration: none;
+}
+.block ul.menu li a:hover {
+    background: #8282828c;
+}
+
+
+
+/*Свойства для табов*/
+.tabs .tab_content{
     display: none;
 }
-.pay-block .label_button {
+.tabs div.active{
     display: block;
 }
-.pay-block .label_button:hover{
-    cursor: pointer;
-}
-.pay-block input[type=radio]:checked + label.label_button .pay-box {
-    background: #ffdbb1;
-}
-.game-order-head{
-    background: url(../images/pix.png) top left repeat;
-}
-.game-order-image img{
-    width: 100%;
-    display: block;
-}
-.game-order-image{
-    width: 300px;
-    padding: 15px;
-    float: left;
-}
-.game-order-info{
-    margin: 0 0 0 300px;
-    padding: 35px 20px;
-    min-height: 140px;
-    box-sizing: border-box;
-}
-.game-order-title{
-    font: bold 30px Roboto;
-    color: #FFF;
-}
-.game-order-title span{
-    font: bold 20px Roboto;
-    display: block;
-    color: #ff6000;
-}
-.order-mail-box{
-    background: #EEE;
-    padding: 25px;
-    margin: 25px 0 0 0;
-}
-.order-mail-form{
-    max-width: 600px;
-    margin: 0 auto;
-}
-.order-mail-mail{
-    width: 65%;
-    padding: 0 20px 0 0;
-    float: left;
-    box-sizing: border-box;
-}
-.order-mail-mail input{
-    display: block;
-    width: 100%;
-    height: 50px;
-    padding: 0 15px;
+
+
+/*Табы на главной*/
+.tabs_on_main .tab_menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background: linear-gradient(to top, #fff, #eee);
+    list-style: none;
     margin: 0;
-    border: none;
-    background: #FFF;
-    box-shadow: inset 1px 1px 3px 0px #ccc;
-    box-sizing: border-box;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.order-mail-submit{
-    width: 35%;
-    float: left;
-}
-.order-mail-submit input{
-    width: 100%;
-    height: 50px;
     padding: 0;
-    margin: 0;
-    display: block;
-    float: right;
-    background: url(../images/green-button.png) 0 -50px repeat-x;
-    border: none;
+}
+.tabs_on_main .tab_menu li{
+    padding: 10px 20px;
+    font: bold 13px Roboto;
+    text-transform: uppercase;
     cursor: pointer;
-    font: bold 18px Roboto;
-    text-shadow: 2px 2px 2px #5bab3d;
-    color: #FFF;
-    border-radius: 5px;
-    box-sizing: border-box;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
-.order-mail-submit input:hover{
-    background: url(../images/green-button.png) 0 0 repeat-x;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.order-mail-text{
-    padding: 25px 0 0 0;
-    text-align: center;
-}
-.order-mail-mail input.field-error{
-    background: #ff9191;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-input.place:focus::-webkit-input-placeholder {
-    color:transparent;
-    outline: none;
-}
-input.place:focus::-moz-placeholder {
-    color:transparent;
-}
-input.place:focus:-ms-input-placeholder {
-    color:transparent;
-}
-input.place:focus{
-    outline: none;
-}
-.video-container{
-    position:relative;
-    padding-bottom:50.25%;
-    padding-top:30px;
-    height:0;
-    overflow:hidden;
-}
-.video-container iframe,.video-container object, .video-container embed{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-}
-.game-screenshot{
-    margin: 0 0 25px 0;
+.tabs_on_main .tab_menu li.active {
+    background: #ee7928;
+    color: #fff;
 }
 
 
+/*Список игр*/
 
-.luckypage{
-    background: #FFF;
-    border-top: solid 3px #000;
+.head_game_list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 15px;
+    background: #eee;
 }
-.luckypage h1{
-    font: bold 25px Roboto;
-    color: #000;
-    text-align: center;
-    text-transform: uppercase;
+.head_game_list h1{
     display: block;
     margin: 0;
-    padding: 30px;
-}
-.luckyinfo{
-    background: #eeeeee;
-    padding: 20px 10%;
-    font: normal 15px/21px Roboto;
-    text-align: center;
-}
-.lucky-boxs{
-    padding: 60px 50px;
-}
-.lucky-box{
-    text-align: center;
-    float: left;
-    width: calc(33.3% - 84px);
-    margin: 0 40px;
-}
-.silver{
-    border: solid 2px #4d4b4c;
-    background: #f8f8f8;
-}
-.gold {
-    border: solid 2px #f59b00;
-    background: #fffcf5;
-}
-.vip {
-    border: solid 2px #c92691;
-    background: #fdeef4;
-}
-.lucky-box h2{
+    padding: 0;
     font: bold 22px Roboto;
-    color: #4f4f4f;
-    text-align: center;
-    text-transform: uppercase;
+    color: #333;
+}
+.head_game_list .filter_button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 55px;
+    height: 35px;
+    font-size: 22px;
+    color: #333;
+    cursor: pointer;
+}
+.game_list{
+    padding: 15px;
+    background: #fff;
+}
+.game_list .game{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    box-shadow: 0 1px 2px #00000036;
+    margin: 0 0 10px 0;
+    position: relative;
+}
+.game_list .game:hover{
+    background: #fdfdfd;
+}
+.game_list .game a{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.game_list .game:last-child{
+    margin: 0 0 0 0;
+}
+.game_list .game .game_img{
+    flex-basis: 180px;
+    flex-grow: 0;
+    flex-shrink: 0;
     display: block;
-    margin: 0;
-    padding: 28px 0;
+    width: 100%;
 }
-.cristal{
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
+.game_list .game .game_img img{
+    display: block;
+    width: 100%;
 }
-.silver .cristal{
-    background: url(../images/cristal.png) 0 0 no-repeat;
+.game_list .game .game_info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
 }
-.gold .cristal{
-    background: url(../images/cristal.png) 0 -100px no-repeat;
+.game_list .game .game_info .product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 0 15px;
 }
-.vip .cristal{
-    background: url(../images/cristal.png) 0 -200px no-repeat;
+.game_list .game .game_info .status{
+    display: flex;
+    flex-basis: 130px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    align-items: center;
+    padding: 0 15px 0 0;
+    box-sizing: border-box;
 }
-.lucky-box-price{
-    font: bold 35px Roboto;
-    color: #4f4f4f;
+.game_list .name{
+    font: normal 16px Roboto;
+    margin: 0 0 8px 0;
+}
+.game_list .store_info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.game_list .store_info img{
+    margin: 0 5px 0 0;
+}
+.game_list .coast{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.game_list .soon{
+    padding: 7px;
+    font: normal 14px Roboto;
+    width: 100%;
+    background: linear-gradient(to top, #4ca2c7, #43a39f);
+    text-align: center;
+    color: #fff;
+}
+.game_list .nonal{
+    padding: 7px;
+    font: normal 14px Roboto;
+    width: 100%;
+    text-align: center;
+    color: #333;
+}
+.game_list .percent{
+    font: normal 14px Roboto;
+    padding: 5px;
+    border: solid 2px #66b246;
+    color: #585858;
+    box-sizing: border-box;
+}
+.game_list .price{
+    width: 100%;
+    font: normal 14px Roboto;
+    padding: 5px;
+    background: #66b246;
+    border: solid 2px #66b246;
+    color: #fff;
+    text-align: center;
+}
+.game_list .price span{
+    font: normal 10px Roboto;
+}
+.game_list .show_more a{
+    display: block;
+    font: normal 14px Roboto;
+    text-align: center;
+    background: #f4f4f4;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+.game_list .show_more a:hover{
+    color: #4ba2c3;
+}
+
+/*Подвал сайта*/
+.footer{
+    min-height: 150px;
+    background: #000000a8;
+    border-top: solid 3px #ffffff;
+}
+.footer_columns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 45px 25px;
+}
+.footer_columns .menu{
+    width: 25%;
+    padding: 0 10px;
+}
+.footer_columns .footer_info{
+    width: 25%;
+    padding: 0 10px;
+    font: normal 13px Roboto;
+    color: #b3b3b3;
+}
+.footer_columns .footer_info span{
+    font: bold 13px Roboto;
+    text-transform: uppercase;
+    color: #f9f9f9;
+    display: block;
+}
+.footer_columns .footer_info div.mail{
+    font: bold 13px/21px Roboto;
     margin: 10px 0;
 }
-.lucky-box-price span{
-    font: normal 15px Roboto;
-    color: #4f4f4f;
+.footer_columns .footer_info div.mail i{
+    margin: 0 5px 0 0 ;
 }
-.lucky-box-info{
-    font: bold 15px Roboto;
-    color: #4f4f4f;
+.footer_columns .footer_info div.mail a{
+    color: #f9f9f9;
 }
-.lucky-box-info div{
-    padding: 3px 0;
+.footer_columns .menu span{
+    font: bold 13px Roboto;
+    text-transform: uppercase;
+    color: #f9f9f9;
+    display: block;
+}
+.footer_columns .menu ul{
+    list-style: none;
+    color: #fff;
+    padding: 15px 0;
+    margin: 0;
+    line-height: 21px;
+}
+.footer_columns .menu ul li{
+    margin: 0 0 1px 0;
+}
+.footer_columns .menu ul li a{
+    color: #fff;
+    font: normal 13px Roboto;
+    background: url(../images/pix.gif) 0px 6px no-repeat;
+    display: block;
+    background: #5050638c;
+    max-width: 180px;
+    padding: 4px 10px;
+    text-decoration: none;
+}
+.footer_columns .menu ul li a:hover {
+    background: #8282828c;
 }
 
 
-.lucky-box-buy{
-    padding: 45px 15px 15px 15px;
+
+
+
+/*Фильтр блок*/
+.filter_block{
+    z-index: 2;
 }
-.lucky-box-buy a{
+.price_detail{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 10px 0 0 0;
+}
+.price_detail span{
+    width: 15%;
+    font: normal 13px Roboto;
+    color: #fff;
+    text-align: center;
+}
+.price_detail div{
+    width: 25%;
+}
+.price_detail div input{
     display: block;
     width: 100%;
-    height: 50px;
-    text-align: center;
-    font: bold 19px Roboto;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-shadow: 2px 2px 2px #5bab3d;
-    color: #FFF;
+    border: none;
+    background: #5050638c;
+    color: #fff;
+    padding: 2px 4px;
     box-sizing: border-box;
-    padding: 15px 0 0 0;
-    background: url(../images/green-button.png) 0 -50px repeat-x;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    border: solid 1px #404040;
 }
-.lucky-box-buy a:hover{
-    background: url(../images/green-button.png) 0 0 repeat-x;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.games-in-boxs{
-    padding: 0 50px 50px;
-    font: normal 15px/21px Roboto;
-    color: #4f4f4f;
-}
-.lucky-comments{
-    padding: 0 50px 50px;
-}
-.autocomplete-suggestions{
-    background: #5c5c5c;
-    border-radius: 0 0 15px 15px;
-    overflow: hidden;
-}
-.autocomplete-suggestion{
-    font: normal 14px Roboto;
-    color: #FFF;
-    padding: 8px 15px;
-    border-bottom: solid 1px #777777;
-}
-.autocomplete-suggestion strong{
-    font: normal 14px Roboto;
-    color: #ee7c2c;
-}
-.autocomplete-suggestion:last-child{
-    border-bottom: none;
-}
-.autocomplete-selected{
-    background: #ee7c2c;
-    cursor: pointer;
-}
-.autocomplete-selected strong{
-    color: #FFF;
-}
-.nonal{
-    float: left;
-    width: 125px;
-    height: 50px;
-    background: #748082;
-    font: bold 16px Roboto;
-    text-align: center;
-    color: #FFF;
-    box-sizing: border-box;
-    padding: 15px 0 0 0;
-}
-.soon{
-    float: left;
-    width: 125px;
-    height: 50px;
-    background: #079e00;
-    font: bold 16px Roboto;
-    text-align: center;
-    color: #FFF;
-    box-sizing: border-box;
-    padding: 15px 0 0 0;
-    text-shadow: 2px 2px 2px #467534;
-    text-transform: uppercase;
-}
-.vk_users{
-    padding: 12px;
-}
-.best-price-block{
-    padding: 15px;
-}
-.best-price-block h3{
-    text-transform: uppercase;
-    font: bold 16px ptSans;
-    color: #666;
-    border-bottom: solid 2px #666;
-    margin: 0 0 10px 0;
-    padding: 5px 0 10px 0;
-}
-.sale-per{
-    float: left;
-    width: 100px;
-    background: #ff6000;
-    box-sizing: border-box;
-    padding: 6px 5px;
-    font: bold 13px Roboto;
-    color: #FFF;
-}
-.sale-coast{
-    float: left;
-    width: calc(100% - 100px);
-    text-align: right;
-    background: #cacaca;
-    font: bold 13px Roboto;
-    color: #FFF;
-    box-sizing: border-box;
-    padding: 6px 5px;
-    color: #333;
-}
-.sale-per-foto img{
-    display: block;
-}
-.special-box {
+.property {
     margin: 0 0 15px 0;
 }
-
-
-
-
-
-
-
-
-
-.system{
-    margin: 0 0 25px 0;
-    background: #EEE;
+.property_head{
+    font: normal 13px Roboto;
+    color: #fff;
+    margin: 0 0 15px 0;
+    background: #5050638c;
+    padding: 4px;
+    border-bottom: solid 2px #484848;
 }
-.system h2{
-    font: bold 15px/21px Roboto;
-    padding: 10px 20px;
-    margin: 0;
-    background: #cacaca;
-    color: #212121;
+
+.property_list div{
+    margin: 0 0 2px 0;
 }
-.system-content{
-    padding: 15px;
+.property_list input[type=checkbox]{
+    display: none;
 }
-.system-element span{
+.property_list label span{
+    font: normal 13px Roboto;
+    color: #fff;
+}
+.property_list label {
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+}
+.property_list label:before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background: #5050638c;
+    border: solid 1px #696969;
+}
+.property_list input[type=checkbox]:checked + label:before {
+    content: "\2713";
+    font-size: 12px;
+    color: #f3f3f3;
+    text-align: center;
+    line-height: 15px;
+}
+.block_button{
+    background: #5050638c;
+    padding: 10px;  
+}
+.block_button input{
+    background: #ff8d00;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 1px #efc3b0, 0 3px 6px -5px #BBB;
+    border: none;
     display: block;
+    padding: 8px 15px;
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
 }
-.system-element{
+
+
+/*Карточка игры*/
+.game_page{
+    
+}
+.game_page h1{
+    font: bold 25px Roboto;
+    background: #FFF;
+    margin: 0;
+    padding: 25px;
+}
+.game_page .game_head{
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background: #000000a8;
 }
-.system-element:nth-child(2n-1) {
-    background: #F9F9F9;
+.game_page .game_img{
+    flex-basis: 460px;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
-.system-element div{
-    box-sizing: border-box;
+.game_page .game_info{
+    position: relative;
+    width: 100%;
+    padding: 0 0 50px 0;
 }
-.system-name{
-    font: bold 14px/23px Roboto;
-    width: 70px;
-    background: #fff;
-    padding: 10px;
+.game_page .game_detail_info{
+    padding: 20px;
+}
+.game_page .game_detail_info div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background: #5050638c;
+    font: normal 13px Roboto;
+    margin: 0 0 1px 0;
+}
+.game_page .game_detail_info div span:first-child{
+    width: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    color: #fff;
     text-align: right;
 }
-.system-value{
-    font: normal 14px/23px Roboto;
+.game_page .game_detail_info div span{
     width: 100%;
-    padding: 10px 20px;
+    padding: 4px 10px;
+    color: #a0a0a0;
 }
-.reviews{
-    background: #FFF;
-    padding: 0 0 25px 0;
+.game_page .game_detail_info div span a{
+    color: #a0a0a0;
 }
-.reviews h1{
-    font: bold 25px Roboto;
-    background: #FFF;
-    margin: 0;
-    padding: 25px;
-    border-top: solid 3px #000;
+.game_page .game_detail_info div span a:hover{
+    color: #ffffff;
 }
-.reviews-text{
-    padding: 0 25px;
-    margin: 0 0 25px 0;
-    font: normal 16px ptSans;
-}
-.list-reviews{
-    padding: 0 25px;
-    margin: 0 0 25px 0;
-}
-.review{
-    display: flex;
-    flex-direction: row;
-}
-.review-date{
-    width: 100px;
-    background: #EEE;
-    text-align: center;
-    padding: 8px;
-    font: normal 14px ptSans;
-}
-.review-text{
-    width: 100%;
-    padding: 8px 20px;
-    font: normal 16px ptSans;
-}
-.review:nth-child(2n-1){
-    background: #F9F9F9;
-}
-.reviews-count{
-    font: normal 16px ptSans;
-    margin: 0 25px 25px 25px;
-    border-bottom: solid 3px #ff6000;
-    width: 170px;
-    padding: 5px 5px 5px 0;
-}
-.orange{
-    color: #ff6000;
-}
-.another-button{
-    padding: 15px 0;
-}
-.another-button span{
+
+
+
+
+
+
+
+.game_page .game_img img{
     display: block;
-    font: normal 14px Roboto;
-    text-align: center;
-    margin: 0 0 10px 0;
-}
-.another-button a{
-    display: block;
-    width: 33.3%;
-    margin: 0 auto;
-    padding: 8px 0;
-    text-align: center;
-    background: #ffebdf;
-    border: solid 1px #ff6000;
-    color: #000;
-    font: normal 14px Roboto;
-    text-decoration: none;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.another-button a:hover{
-    color: #FFF;
-    box-shadow: inset 0 0 0 30px #ff6000;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.garants{
-    background: #FFF;
-    padding: 0 0 25px 0;
-}
-.garants h1{
-    font: bold 25px Roboto;
-    background: #FFF;
-    margin: 0;
-    padding: 25px;
-    border-top: solid 3px #000;
-}
-.list-garants{
-    margin: 0 0 25px 0;
-    display: flex;
-    flex-directtion: row;
-    flex-wrap: wrap
-}
-.garant{
-    width: 50%;
-    box-sizing: border-box;
-    padding: 15px 25px;
-    font: normal 15px Roboto;
-}
-.garant h2{
-    font: bold 18px Roboto;
-    padding: 0 0 0 30px;
-    background: url(../images/good.png) top left no-repeat;
-}
-.activ-content{
-    padding: 15px 30px;
-}
-.activ-content ol{
-    padding: 0 10px;
-    margin: 0;
-}
-
-
-
-
-.game-in-case{
-    padding: 10px;
-    margin: 0 0 25px 0;
-    background: #efc0a3
-}
-.game-in-case-foto img{
-    box-sizing: border-box;
     width: 100%;
-    display: block;
 }
-.game-in-case-info{
-    text-align: center;
-    padding: 10px 0;
+.game_page .game_description{
+    background: #fff;
 }
-
-
-.in-cases-link a{
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    background: #e66700;
-    border: none;
-    color: #FFF;
-    cursor: pointer;
-    font: normal 16px ptSans;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.in-cases-link a:hover {
-    box-shadow: inset 0 0 0 30px #4f4f4f;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-
-.live-border {
-    position: relative;
-    overflow: visible;
-}
-
-.live-border .border {
-    position: absolute;
-    background: #FFFFFF;
-    overflow: hidden;
-}
-
-.live-border .border.top {
-    height: 3px;
-    width: 100%;
-    top: 0px;
-    left: 0px;
-}
-
-.live-border .border.right {
-    height: 100%;
-    width: 3px;
-    top: 0px;
-    right: 0px;
-}
-
-.live-border .border.bottom {
-    height: 3px;
-    width: 100%;
-    bottom: 0px;
-    left: 0px;
-}
-
-.live-border .border.left {
-    height: 100%;
-    width: 3px;
-    top: 0px;
-    left: 0px;
-}
-
-.live-border .border .bar {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #FF6000;
-    left: 0px;
-    top: 0px;
-    z-index: 99;
-}
-
-.live-border .border.top .bar {
-    left: 100%;
-    animation: live-border-animate-top 2s linear 2s infinite;
-}
-
-.live-border .border.right .bar {
-    top: 100%;
-    animation: live-border-animate-right 2s linear 1s infinite;
-}
-
-.live-border .border.bottom .bar {
-    left: -100%;
-    animation: live-border-animate-bottom 2s linear 0s infinite;
-}
-
-.live-border .border.left .bar {
-    top: -100%;
-    animation: live-border-animate-left 2s linear 3s infinite;
-}
-
-@keyframes live-border-animate-top {
-    0%{
-        left: 100%;
-    }
-    100%{
-        left: -100%;
-    }
-}
-
-@keyframes live-border-animate-right {
-    0%{
-        top: 100%;
-    }
-    100%{
-        top: -100%;
-    }
-}
-
-@keyframes live-border-animate-bottom {
-    0%{
-        left: -100%;
-    }
-    100%{
-        left: 100%;
-    }
-}
-
-@keyframes live-border-animate-left {
-    0%{
-        top: -100%;
-    }
-    100%{
-        top: 100%;
-    }
-}
-
-
-.activation-page{
-    background: #FFF;
-    padding: 0 0 25px 0;
-}
-.activation-page h1{
-    font: bold 25px Roboto;
-    background: #FFF;
-    margin: 0;
-    padding: 25px;
-    border-top: solid 3px #000;
-}
-.activation-page-content{
-    padding: 0 25px;
-    font: normal 16px ptSans;
-}
-
-
-
-
-.top-navigation{
-    width: 1200px;
-    margin: 0 auto;
-    background: #f1f1f1 url(../images/menu.png) top left repeat-x;
-    min-height: 40px;
-    position: relative;
-}
-.open-menu{
-    display: none;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 40px;
-    background: url(../images/sandvich.png) 100% 9px no-repeat;
-}
-.top-navigation-container{
-    position: relative;
-}
-.menu ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 40px;
-}
-.menu ul li{
-    flex-grow: 1;
-    border-left: solid 1px #dfdfdf;
-    border-right: solid 1px #ffffff;
-}
-.menu ul li:first-child{
-    border-left: none;
-    border-right: solid 1px #ffffff;
-}
-.menu ul li:nth-last-child(2){
-    border-left: solid 1px #dfdfdf;
-    border-right: none;
-}
-.menu ul li:last-child{
-    border-left: none;
-    border-right: none;
-}
-.menu ul li a{
-    line-height: 40px;
-    display: block;
-    padding: 0 10px;
-    font: bold 13px/40px Roboto;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #333;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-.menu ul li a:hover{
-    background: #e66700;
-    color: #FFF;
-}
-
-
-
-.menu ul li a.lucky-button{
-    text-align: center;
-    font: normal 16px/40px Roboto;
-    text-shadow: 2px 2px 2px #5bab3d;
-    color: #FFF;
-    background: url(../images/green-button.png) 0 -50px repeat-x;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.menu ul li a.lucky-button:hover{
-    background: url(../images/green-button.png) 0 0 repeat-x;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.special-game{
-    padding: 15px;
-    position: relative;
-}
-.special-game a{
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.special-game-foto img{
-    width: 100%;
-    display: block;
-}
-.special-game-info{
-    background: #333;
-    text-align: center;
-    padding: 15px;
-    font: bold 18px Roboto;
-    color: #FFF;
-}
-.special-game-info span{
-    color: #e66700;
-}
-.more-games{
-    padding: 15px;
-}
-.more-games a{
-    display: block;
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    border: solid 1px #e66700;
-    color: #e66700;
-    text-decoration: none;
-    padding: 10px 0;
-    font: normal 16px Roboto;
-    background: #ffebdb;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.more-games a:hover{
-    color: #FFF;
-    background: #e66700;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-
-
-
-
-.key-boxs{
-    padding: 5px;
+.game_page .game_description_columns{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
 }
-.key-box{
-    width: calc(33.3% - 10px);
-    margin: 5px;
-    background: #314453 url(../images/strelki.png) top center no-repeat;
-    text-align: center;
-    padding: 15px 0;
-    border-radius: 10px;
+.game_page .game_description_left{
+    width: 100%;
+    padding: 30px 15px 30px 30px;
 }
-.key-box-text{
-    font: bold 17px Roboto;
-    text-transform: uppercase;
-    color: #FFF;
-    text-shadow: 1px 1px 1px #171717;
+.game_page .game_description_right{
+    width: 250px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 30px 30px 30px 15px;
 }
-.key-box-coast{
-    font: bold 25px Roboto;
-    text-transform: none;
+.game_page .game_description_tabs ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 8px 8px 0 8px;
+    list-style: none;
+    background: #2f2f2f;
+}
+.game_page .game_description_tabs ul li{
+    background: #444444;
+    padding: 8px 15px;
+    font: normal 13px Roboto;
+    color: #eee;
+    cursor: pointer;
+    margin: 0 1px 0 0;
+}
+.game_page .game_description_tabs ul li.active{
+    background: #ee7928;
+    color: #fff;
+}
+.game_page .game_info .status{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+}
+.game_page .game_info .status .percent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    color: #fff;
+    font: bold 23px Roboto;
+}
+.game_page .game_info .status .percent span {
     color: #ff6000;
-    padding: 4px 0 14px 0;
 }
-.key-box-coast span{
-    font: bold 17px Roboto;
-    color: #FFFFFF;
+.game_page .game_info .status .buy{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 60%;
+    background: linear-gradient(to top, #71cb4a, #60a343);
+    border-radius: 15px 0 0 0;
+    overflow: hidden;
 }
-.key-box-button a{
-    display: block;
-    padding: 10px;
-    background: url(../images/green-button.png) 0 -50px repeat-x;
-    width: 65%;
-    margin: 0 auto;
-    border-radius: 10px;
-    font: bold 17px Roboto;
-    color: #FFF;
+.game_page .game_info .status .buy .coast{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: bold 25px Roboto;
+    color: #fff;
+    width: 50%;
+    text-shadow: 2px 2px 2px #5bab3d;
+}
+.game_page .game_info .status .buy .coast span{
+    font: normal 16px Roboto;
+}
+.game_page .game_info .status .buy a.buy_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font: normal 18px Roboto;
+    color: #fff;
     text-decoration: none;
-    text-shadow: 1px 1px 1px #196117;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+}
+.game_page .game_info .status .buy div.soon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font: normal 18px Roboto;
+    color: #fff;
+    background: linear-gradient(to top, #4ca2c7, #43a39f);
+}
+.game_page .game_info .status .buy div.nonal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font: normal 14px Roboto;
+    color: #fff;
+    background: #333;
+}
+.game_page .description_block h2{
+    font: bold 13px/21px Roboto;
+    text-transform: uppercase;
+    padding: 10px;
+    margin: 0;
+    background: #cacaca;
+    color: #333;
+}
+.game_page .description_content{
+    font: normal 13px/19px Roboto;
+    background: #eee;
+    color: #333;
+    padding: 15px;
+}
+.game_page .media_block{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.game_page .media_block .media_element img{
+    display: block;
+    width: 100%;
+}
+.game_page .media_block .media_element:first-child{
+    width: calc(100% - 2px);
+}
+.game_page .media_block .media_element{
+    width: calc(50% - 2px);
+    margin: 1px;
+    position: relative;
+}
+.game_page .media_block .media_element a{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.video_sticker{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #ee7928;
+    font: normal 13px Roboto;
+    padding: 3px 8px;
+    color: #fff;
+}
+.comments{
+    font: normal 14px Roboto;
+    padding: 0 30px 30px 30px;
 }
 
-.key-box-button a:hover{
-    background: url(../images/green-button.png) 0 0 repeat-x;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+
+/*Пейджкр*/
+.pager{
+    padding: 30px 15px;
+    background: #000000a8;
+    font: normal 14px Roboto;
 }
+.pager ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.pager ul li{
+    margin: 0 5px;
+    color: #fff;
+}
+.pager ul li a{
+    color: #fff;
+}
+.pager ul li a:hover{
+    color:#ff8d00;
+}
+
+/*Слайд на главной*/
+.slide-container {
+    width: 100%;
+}
+.swiper-wrapper {
+    width: 1px!important;
+}
+.slide .slide_img{
+    position: relative;
+}
+.slide .slide_img img{
+    width: 100%;
+    display: block;
+}
+.slide .slide_img a{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.slide .slide_info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background: linear-gradient(to top, #fff, #eee);
+}
+.slide .slide_info .slide_name{
+    width: 100%;
+    font: bold 13px Roboto;
+    text-transform: uppercase;
+    padding: 10px;
+}
+.slide .slide_info .slide_coast{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 150px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background: linear-gradient(to top, #71cb4a, #60a343);
+    font: normal 16px Roboto;
+    text-align: center;
+    color: #fff;
+}
+.slide .slide_info .slide_coast span{
+    font: normal 13px Roboto;
+}
+.slide_soon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 150px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background: linear-gradient(to top, #4ca2c7, #43a39f);
+    font: normal 16px Roboto;
+    text-align: center;
+    color: #fff;
+}
+.slide-prev,
+.slide-next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+    cursor: pointer;
+    color: #fff;
+}
+.slide-prev{
+    top: 45px;
+    left: 0;
+}
+.slide-next{
+    top: 45px;
+    right: 0;
+}
+.swiper-button-disabled{
+    opacity: 0.3;
+    cursor: default;
+}
+
+/*Страница оплаты*/
+.payment_head h1{
+    font: bold 22px Roboto;
+    color: #333;
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+    background: #eee;
+}
+.payment_content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 45px;
+    background: #FFF;
+}
+.payment_info_order{
+    width: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 0 30px 0 0;
+}
+.payment_form{
+    width: 100%;
+}
+.payment_block {
+    margin: 0 0 25px 0;
+}
+.payment_game{
+    padding: 15px;
+    background: #333;
+    border-radius: 15px;
+}
+.payment_game .foto img{
+    display: block;
+    width: 100%;
+}
+.payment_select{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.payment_cont_head{
+    font: bold 16px Roboto;
+    padding: 10px 15px;
+    color: #333;
+}
+.payment_box{
+    width: calc(20% - 2px);
+    margin: 1px;
+}
+.payment{
+    background: #f9f9f9;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.payment .payment_ic{
+    width: 70%;
+    margin: 0 auto 7px auto;
+}
+.payment .payment_ic img{
+    width: 100%;
+    display: block;
+}
+.payment .payment_name{
+    font: normal 13px Roboto;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+.payment .payment_kom{
+    font: normal 11px Roboto;
+    color: #666;
+}
+.payment_game .detail{
+    margin: 15px 0;
+}
+.payment_game .detail .name{
+    font: normal 14px Roboto;
+    color: #eee;
+    text-align: center;
+}
+.payment_game .detail .coast{
+    font: normal 14px Roboto;
+    color: #eee;
+    text-align: center;
+}
+.payment_game .detail .coast div:first-child{
+    margin: 0 0 10px 0;
+}
+.payment_game .detail .coast .base_coast span{
+    font: bold 25px Roboto;
+    color: #eee;
+    text-align: center;
+}
+.payment_box input[type=radio]{
+    display: none;
+}
+.payment_box input[type=radio]:checked + label .payment {
+    background: #ffdbb1;
+}
+.mail_box{
+    background: #f9f9f9;
+    padding: 15px;
+}
+.mail_box .mail{
+    max-width: 300px;
+    padding: 0 0 10px 0;
+}
+.mail_box .submit_form{
+    padding: 0 0 10px 0;
+    max-width: 200px;
+}
+.mail_box .terms_form{
+    padding: 0 0 10px 0;
+    font: normal 11px Roboto;
+    color: #828282;
+}
+.mail_box .terms_form a{
+    color: #828282;
+}
+.mail_box .terms_form a:hover{
+    color: #ee7e2e;
+}
+.mail_box .mail input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    box-sizing: border-box;
+}
+.mail_box .mail input:focus::-webkit-input-placeholder {
+    color:transparent;
+    outline: none;
+}
+.mail_box .mail input:focus::-moz-placeholder {
+    color:transparent;
+}
+.mail_box .mail input:focus:-ms-input-placeholder {
+    color:transparent;
+}
+.mail_box .mail input:focus{
+    outline: none;
+}
+.mail_box .submit_form input{
+    background: linear-gradient(to top, #71cb4a, #60a343);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font: normal 16px Roboto;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.mail_box .submit_form input:hover{
+    background: linear-gradient(to top, #71cb4a, #79af61);
+}
+#payment_error{
+}
+#payment_error div{
+    background: #f7d7d7;
+    color: #bb5f5f;
+    margin: 0 0 10px 0;
+    padding: 4px 10px;
+    font: normal 12px Roboto;
+}
+.final_coast{
+    background: #f9f9f9;
+    padding: 15px;
+    font: normal 15px Roboto;
+    color: #828282;
+}
+.final_coast span{
+    font: bold 15px Roboto;
+    color: #333;
+}
+
+
+

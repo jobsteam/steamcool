@@ -166,6 +166,10 @@ class IndexPage(TemplateView):
             'games_on_main_page': (Game.objects
                                    .order_by('-date_release')
                                    .filter(on_main_page=True)[:25]),
+
+            'games_soon': (Game.objects
+                                   .order_by('-date_release')
+                                   .filter(is_soon=True)[:25]),
         })
         return context
 

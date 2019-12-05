@@ -24,106 +24,129 @@
 {% endblock extra-scripts %}
 
 {% block view_element %}
-    <div class="game-object">
+    <div class="game_page">
         <h1>{{ game.seo_title }}</h1>
-        <div class="game-object-head clear-block">
-            <div class="game-object-head-foto">
+        <div class="game_head">
+            <div class="game_img">
                 {% thumbnail game.image "460x215" quality=100 as main_image %}
-                    <img src="{{ main_image.url }}">
+                <img src="{{ main_image.url }}">
             </div>
-            <div class="game-object-head-detail">
-                <div class="game-mini-detail">
-                    Жанр:
-                        {% for genre in game.genre.all%}
-                            <a href="{% url 'games:genre_list' genre.slug %}">{{ genre.title }}</a>{% if not forloop.last %}, {% endif %}
-                        {% endfor %}
-                        <br />
-                    Язык:
-                        {{ game.get_language_display }}
-                        <br />
-                    Активация:
-                        <a class="method-activation" href="{% url 'games:store_list' game.get_store_activation_display %}">{{ game.get_method_activation_display }}</a>&nbsp;(<a href="{% url 'pages:activation' %}">инструкция</a>)
-                        <br />
-                    Дата выхода:
-                        {{ game.date_release|date:"SHORT_DATE_FORMAT" }}
-                        <br />
-
-                    Издатель:
-                        {{ game.publisher }}
-                        <br />
-                </div>
-                <div class="price-buy">
-                    <div class="buy">
-                        <div class="coast">{{ game.my_coast }} <span>руб.</span></div>
-
-
-
-
-                    {% if game.in_stock %}
-                        <a href="{% url 'games:order' game.slug %}" class="buy-button">Купить</a>
-                    {% elif game.is_soon %}
-                        <div class="soon">Скоро!</div>
-                    {% else %}
-                        <div class="nonal">Закончился!</div>
-                    {% endif %}
-
-
-
+            <div class="game_info">
+                <div class="game_detail_info">
+                    <div>
+                        <span>Жанр:</span>
+                        <span>
+                            {% for genre in game.genre.all%}
+                                <a href="{% url 'games:genre_list' genre.slug %}">{{ genre.title }}</a>{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        </span>
                     </div>
-                    <div class="percent">СКИДКА <span>- {{ game.percent }}%</span></div>
+                    <div>
+                        <span>Язык:</span>
+                        <span>{{ game.get_language_display }}</span>
+                    </div>
+                    <div>
+                        <span>Активация:</span>
+                        <span>
+                            <a class="method-activation" href="{% url 'games:store_list' game.get_store_activation_display %}">{{ game.get_method_activation_display }}</a>
+                        </span>
+                    </div>
+                    <div>
+                        <span>Дата выхода:</span>
+                        <span>{{ game.date_release|date:"SHORT_DATE_FORMAT" }}</span>
+                    </div>
+                    <div>
+                        <span>Издатель:</span>
+                        <span>{{ game.publisher }}</span>
+                    </div>
+                </div>
+                <div class="status">
+                    <div class="percent">
+                        <percent>Скидка <span>-{{ game.percent }}%</span></percent>
+                    </div>
+                    <div class="buy">
+                        <div class="coast">
+                            <price>{{ game.my_coast }}<span> руб.</span></price>
+                        </div>
+                        {% if game.in_stock %}
+                            <a class="buy_button" href="{% url 'games:order' game.slug %}">
+                                <span>Купить игру</span>
+                            </a>
+                        {% elif game.is_soon %}
+                            <div class="soon">
+                                <span>Скоро!</span>
+                            </div>
+                        {% else %}
+                            <div class="nonal">
+                                <span>Закончился!</span>
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="game-description clear-block">
-            <div class="game-desc clear-block">
-                <div class="game-description-left">
-                
-                    <div class="description">
-                            <h2>Описание игры</h2>
-                            <div class="description-content">
-                                {{ game.description|safe }}
-                            </div>
-                    </div>
-                    <div class="system">
-                        <h2>Системные требования</h2>
-                        <div class="system-content">
-                            <div class="system-element">
-                                <div class="system-name">ОС</div>
-                                <div class="system-value">{{ game.os }}</div>
-                            </div>
-
-                            <div class="system-element">
-                                <div class="system-name">CPU</div>
-                                <div class="system-value">{{ game.processor }}</div>
-                            </div>
-                            <div class="system-element">
-                                <div class="system-name">ОЗУ</div>
-                                <div class="system-value">{{ game.ozu }}</div>
-                            </div>
-                            <div class="system-element">
-                                <div class="system-name">HDD</div>
-                                <div class="system-value">{{ game.hdd }}</div>
-                            </div>
-                            <div class="system-element">
-                                <div class="system-name">Video</div>
-                                <div class="system-value">{{ game.video_card }}</div>
-                            </div>
-                        </div>
-                    </div>
-                    {{ game.gamevideo }}
-                </div>
-                <div class="game-description-right">
-                    <div class="game-screenshot">
-                        <div class="gallery clear-block">
-                            {% for screenshot in game.screenshots.all %}
-                                <div class="gallery-item">
-                                    <a data-fancybox="gallery" href="{{ screenshot.image.url }}">
-                                        {% thumbnail screenshot.image "297x167" as im %}
-                                        <img src="{{ im.url }}">
-                                    </a>
+        <div class="game_description">
+            <div class="game_description_tabs">
+                <ul class="tab_menu">
+                    <li class="active">Описание</li>
+                    <li>Системные требования</li>
+                    <li>Активация</li>
+                </ul>
+            </div>
+            <div class="game_description_columns">
+                <div class="game_description_left">
+                    <div class="tabs">
+                        <div class="tab_content active">
+                            <div class="description_block">
+                                <h2>Описание игры</h2>
+                                <div class="description_content">
+                                    {{ game.description|safe }}
                                 </div>
-                            {% endfor %}
+                            </div>
                         </div>
+                        <div class="tab_content">
+                            <div class="description_block">
+                                <h2>Описание игры</h2>
+                                <div class="description_content">
+                                    ОС {{ game.os }}
+                                    CP {{ game.processor }}
+                                    ОЗ {{ game.ozu }}
+                                    HD {{ game.hdd }}
+                                    Vi {{ game.video_card }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab_content">
+                            
+                            <div class="description_block">
+                                <h2>Описание игры</h2>
+                                <div class="description_content">
+                                    123
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="game_description_right">
+                    <div class="media_block">
+
+                        {% for screenshot in game.screenshots.all %}
+                            {% if forloop.first and game.id_video %}
+                                <div class="media_element">
+                                    {% thumbnail screenshot.image "297x167" as im %}
+                                    <img src="{{ im.url }}">
+                                    <div class="video_sticker">трейлер</div>
+                                    <a data-fancybox="video" class="play" data-width="830" data-height="470" href="https://www.youtube.com/watch?v={{ game.id_video }};autoplay=1&amp;rel=0&amp;controls=1&amp;showinfo=0"></a>
+                                </div>
+                            {% else %}
+                                <div class="media_element">
+                                    {% thumbnail screenshot.image "297x167" as im %}
+                                    <img src="{{ im.url }}">
+                                    <a data-fancybox="gallery" data-width="830" href="{{ screenshot.image.url }}"></a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
@@ -135,5 +158,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}

@@ -1,1025 +1,1402 @@
-/*Адаптация head*/
-@media screen and (min-width: 1150px) and (max-width: 1250px){
-    .head{
-        width: 1100px;
-    }
-    .search{
-        width: 490px;
-    }
-}
-@media screen and (min-width: 970px) and (max-width: 1150px){
-    .head{
-        width: 950px;
-    }
-    .search{
-        width: 340px;
-    }
-}
-@media screen and (min-width: 600px) and (max-width: 970px){
-    .head{
-        width: 100%;
-        height: 150px;
-    }
-    .search{
-        width: calc( 100% - 20px);
-        top: auto;
-        bottom: 10px;
-        left: 10px;
-        right: 10px;
-    }
-    .book{
-        right: 10px;
-    }
-}
-@media screen and (max-width: 600px){
-    .head{
-        width: 100%;
-        min-height: 150px;
-        padding: 15px 0 0 0;
-    }
-    .logo{
-        position: static;
-        margin: 0 auto 
-    }
-    .search{
-        width: calc( 100% - 20px);
-        top: auto;
-        bottom: 10px;
-        left: 10px;
-        right: 10px;
-    }
-    .book{
-        display: none;
-    }
-}
-/*Адаптация menu*/
-@media screen and (min-width: 1150px) and (max-width: 1250px){
-    .top-navigation{
-        width: 1100px;
-    }
-}
-@media screen and (min-width: 970px) and (max-width: 1150px){
-    .top-navigation{
-        width: 950px;
-    }
-}
-@media screen and (max-width: 970px){
-    .top-navigation{
-        width: 100%;
-    }
-    .top-navigation-container{
-        display: none;
-        padding: 15px;
-    }
-    .menu{
-        display: block;
-    }
-    .menu ul{
-        height: auto;
-        display: block;
-    }
-    .menu ul li{
-        display: block;
-        width: 75%;
-        margin: 0 auto;
-        padding-bottom: 1px;
-        box-sizing: border-box;
-        border: none;
-    }
-    .menu ul li:nth-last-child(2) {
-        border: none;
-    }
-    .menu ul li a{
-        text-align: center;
-        background: #FFF;
-    }
-    .lucky-button{
-        margin: 15px auto;
-        position: static;
-    }
-
-    .open-menu{
-        display: block;
-    }
-}
-
-
-
-
-/*Адаптация wrapper left, right, center*/
-@media screen and (min-width: 1150px) and (max-width: 1250px){
-    .wrapper{
-        width: 1100px;
-    }
-    .left, .right{
-        width: 200px;
-    }
-    .ganre-menu ul li a, .last-pay ul li a{
-        font: normal 14px ptSans;
-    }
-    .ganre-menu h3,.last-pay h3 {
-        font: normal 15px ptSans;
-    }
-}
-
-@media screen and (min-width: 970px) and (max-width: 1150px){
-    .wrapper{
-        width: 950px;
-    }
-    .left, .right{
-        width: 200px;
-    }
-    .center{
-        width: 550px;
-    }
-    .ganre-menu ul li a, .last-pay ul li a{
-        font: normal 14px ptSans;
-    }
-    .ganre-menu h3,.last-pay h3 {
-        font: normal 15px ptSans;
-    }
-}
-@media screen and (min-width: 700px) and (max-width: 970px){
-    .wrapper{
-        width: 100%;
-    }
-    .right{
-        display: none;
-    }
-    .left{
-        width: 200px;
-        float: left;
-    }
-    .center{
-        float: left;
-        width: calc(100% - 200px); 
-    }
-}
-@media screen and (min-width: 520px) and (max-width: 700px){
-    .wrapper{
-        width: 100%;
-    }
-    .right{
-        display: none;
-    }
-    .left{
-        display: none;
-    }
-    .center{
-        float: none;
-        width: 100%; 
-    }
-}
-@media screen and (min-width: 330px) and (max-width: 520px){
-    .wrapper{
-        width: 100%;
-    }
-    .right{
-        display: none;
-    }
-    .left{
-        display: none;
-    }
-    .center{
-        float: none;
-        width: 100%; 
-    }
-}
-
-
-@media screen and (max-width: 330px){
-    .wrapper{
-        width: 100%;
-    }
-    .right{
-        display: none;
-    }
-    .left{
-        display: none;
-    }
-    .center{
-        float: none;
-        width: 100%; 
-    }
-}
-
-
-
-
-
-
-
-
-
-/*Карточка игры*/
-@media screen and (min-width: 1150px) and (max-width: 1250px){
-    .big-center{
-        float: left;
-        width: 900px;
-    }
-    .percent{
-        font: bold 18px Roboto;
-        padding: 15px 0 0 0;
-    }
-}
-@media screen and (min-width: 970px) and (max-width: 1150px){
-    .big-center{
-        float: left;
-        width: 750px;
-    }
-    .game-object-head-foto{
-        width: 400px;
-    }
-    .game-object-head-detail{
-        margin: 0 0 0 400px;
-        padding: 0 0 60px 0;
-        min-height: 186px;
-    }
-    .buy{
-        width: 180px;
-        height: 35px;
-    }
-    .coast{
-        height: 35px;
-        font: normal 16px Roboto;
-    }
-    a.buy-button{
-        height: 35px;
-        font: normal 16px Roboto;
-        padding: 8px 0 0 0;
-    }
-    .percent{
-        margin-right: 180px;
-        font: bold 16px Roboto;
-    }
-    .game-mini-detail{
-        font: normal 13px/19px Roboto;
-    }
-    .game-description{
-        font: normal 13px/21px Roboto;
-    }
-    .nonal{
-        width: 90px;
-        height: 50px;
-        font: bold 13px Roboto;
-        padding: 10px 0 0 0;
-    }
-}
-@media screen and (min-width: 880px) and (max-width: 970px){
-    .big-center{
-        float: left;
-        width: calc(100% - 200px);
-    }
-    .game-object-head-foto{
-        width: 400px;
-    }
-    .game-object-head-detail{
-        margin: 0 0 0 400px;
-        padding: 0 0 60px 0;
-        min-height: 186px;
-    }
-    .buy{
-        width: 180px;
-        height: 35px;
-        float: none;
-    }
-    .coast{
-        height: 35px;
-        font: normal 16px Roboto;
-    }
-    a.buy-button{
-        height: 35px;
-        font: normal 16px Roboto;
-        padding: 8px 0 0 0;
-    }
-    .percent{
-        margin-right: 180px;
-        font: bold 16px Roboto;
-        display: none;
-    }
-    .game-mini-detail{
-        font: normal 13px/19px Roboto;
-    }
-    .game-description{
-        font: normal 13px/21px Roboto;
-    }
-    .game-description-left{
-        padding: 0 0 0 0;
-        width: 100%;
-        float: none;
-    }
-    .game-description-right{
-        width: 100%;
-        float: none;
-    }
-    .gallery-item{
-        width: calc(25% - 2px);
-    }
-    .nonal{
-        width: 90px;
-        height: 50px;
-        font: bold 13px Roboto;
-        padding: 10px 0 0 0;
-    }
-}
-@media screen and (min-width: 700px) and (max-width: 880px){
-    .big-center{
-        float: left;
-        width: calc(100% - 200px);
-    }
-    .game-object-head-foto{
-        padding: 15px;
-        float: none;
-        max-width: 460px;
-        width: auto;
-        margin: 0 auto;
-    }
-    .game-mini-detail{
-        padding: 15px;
-        text-align: center;
-    }
-    .game-object-head-foto img{
-        border: solid 3px #eee;
-        box-sizing: border-box;
-    }
-    .game-object-head-detail{
-        margin: 0;
-        padding: 0 0 0 0;
-    }
-    .price-buy{
-        max-width: 460px;
-        width: auto;
-        padding: 0 15px 15px 15px;
-    }
-    .game-object h1{
-        font: bold 18px Roboto;
-    }
-    .game-description{
-        font: normal 13px/21px Roboto;
-    }
-    .game-description-left{
-        padding: 0 0 0 0;
-        width: 100%;
-        float: none;
-    }
-    .game-description-right{
-        width: 100%;
-        float: none;
-    }
-    .gallery-item{
-        width: calc(33.3% - 2px);
-    }
-    .buy{
-        margin: 0 auto; 
-        float: none;
-    }
-    .percent{
-        margin: 0;
-        text-align: center;
-    }
-    .price-buy{
-        position: static;
-        max-width: 460px;
-        width: auto;
-        padding: 0 15px 15px 15px;
-        margin: 0 auto;
-    }
-}
-
-@media screen and (max-width: 700px){
-    .big-center{
-        width: 100%;
-        float: none;
-    }
-    .game-object-head-foto{
-        padding: 15px;
-        float: none;
-        max-width: 460px;
-        width: auto;
-        margin: 0 auto; 
-    }
-    .game-object-head-foto img{
-        border: solid 3px #eee;
-        box-sizing: border-box;
-    }
-    .game-mini-detail{
-        padding: 15px;
-        text-align: center;
-    }
-    .game-object-head-detail{
-        margin: 0;
-        padding: 0 0 15px 0;
-    }
-    .price-buy{
-        position: static;
-        max-width: 460px;
-        width: auto;
-        padding: 0 15px 15px 15px;
-        margin: 0 auto;
-    }
-    .game-object h1{
-        font: bold 18px Roboto;
-    }
-    .game-description{
-        font: normal 13px/21px Roboto;
-    }
-    .percent{
-        margin: 0;
-        text-align: center;
-    }
-    .buy{
-        margin: 0 auto; 
-        float: none;
-    }
-    .gallery-item{
-        width: calc( 50% - 2px );
-    }
-    .game-description-left{
-        padding: 0 0 0 0;
-        width: 100%;
-        float: none;
-    }
-    .game-description-right{
-        width: 100%;
-        float: none;
-    }
-    .gallery-item{
-        width: 49%;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Подвал сайта*/
-@media screen and (max-width: 700px){
-    .footer-col, .footer-logo{
-        float: none;
-    }
-}
-/*Оформление заказа игры*/
+/*Адаптация wrapper и body*/
 @media screen and (min-width: 1150px) and (max-width: 1300px){
-    .game-order-title{
-        font: bold 20px Roboto;
+    .wrapper{
+        max-width: 1100px;
     }
 }
-@media screen and (min-width: 970px) and (max-width: 1150px){
-    .game-order-title{
-        font: bold 20px Roboto;
+@media screen and (min-width: 450px) and (max-width: 980px){
+    body{
+        padding: 75px 0 0 0;
     }
-}
-@media screen and (min-width: 820px) and (max-width: 970px){
-    .game-order-title{
-        font: bold 20px Roboto;
-    }
-    .pay-block{
-        width: 33.3%;
-    }
-    .game-order-image{
-        width: 200px; 
-    }
-    .game-order-info {
-        margin: 0 0 0 200px;
-        padding: 25px 10px;
-        min-height: auto;
-        box-sizing: border-box;
-    }
-}
-@media screen and (min-width: 570px) and (max-width: 820px){
-    .game-order-title{
-        font: bold 20px Roboto;
-    }
-    .pay-block{
-        width: 100%;
-        padding: 0 0 10px 0;
-    }
-    .game-order-image{
-        width: 200px; 
-    }
-    .game-order-info {
-        margin: 0 0 0 200px;
-        padding: 25px 10px;
-        min-height: auto;
-        box-sizing: border-box;
-    }
-    .pay-icon{
-        width: 50px;
-        float: left;
-    }
-    .pay-info{
-        margin: 0 0 0 50px;
-        padding: 5px 0 0 25px;
-        text-align: left;
-    }
-    .pay-box{
-        padding: 15px;
-        border-top: none;
-        height: auto;
-    }
-
-    .order-mail-mail{
-        width: 75%;
-        float: none;
-        margin: 0 auto 15px auto;
+    .wrapper{
+        max-width: 1100px;
         padding: 0;
     }
-    .order-mail-submit{
-        width: 45%;
-        float: none;
-        margin: 0 auto;
-    }
-    
-
-
-
 }
-@media screen and (min-width: 200px) and (max-width: 570px){
-    .game-order-title{
-        font: bold 16px Roboto;
+@media screen and (max-width: 450px){
+    body{
+        padding: 50px 0 0 0;
     }
-    .game-order-title span {
-        font: bold 16px Roboto;
-        display: block;
-        color: #ff6000;
-    }
-    .pay-block{
-        width: 100%;
-        padding: 0 0 10px 0;
-    }
-    .game-order-image{
-        display: none;
-    }
-    .game-order-info {
-        margin: 0 0 0 0;
-        padding: 25px;
-        min-height: auto;
-        box-sizing: border-box;
-    }
-    .pay-icon{
-        width: 50px;
-        float: left;
-    }
-    .pay-info{
-        margin: 0 0 0 50px;
-        padding: 5px 0 0 25px;
-        text-align: left;
-    }
-    .pay-box{
-        padding: 15px;
-        border-top: none;
-        height: auto;
-    }
-    .order-text {
-        font: normal 13px/18px Roboto;
-    }
-
-    .order-mail-mail{
-        width: 100%;
-        float: none;
-        margin: 0 auto 15px auto;
+    .wrapper{
+        max-width: 1100px;
         padding: 0;
     }
-    .order-mail-submit{
-        width: 100%;
-        float: none;
-        margin: 0 auto;
-    }
-    .order-mail-submit input{
-        font: bold 15px Roboto;
-    }
-    .order-mail-text{
-        font: normal 13px/19px Roboto;
-    }
 }
 
-
-/*Адаптация удачи*/
-@media screen and (min-width: 850px) and (max-width: 1050px){
-    .lucky-box{
-        text-align: center;
-        float: left;
-        width: calc(33.3% - 24px);
-        margin: 0 10px;
+/*Адаптация popup элементов*/
+@media screen and (min-width: 980px){
+    .active_popup .head_popup{
+        display: none;
     }
-    .cristal{
-        width: 50px;
+}
+@media screen and (max-width: 450px){
+    .head_popup{
         height: 50px;
-        margin: 0 auto;
-    }
-    .silver .cristal{
-        background: url(../images/cristal.png) -100px 0 no-repeat;
-    }
-    .gold .cristal{
-        background: url(../images/cristal.png) -100px -100px no-repeat;
-    }
-    .vip .cristal{
-        background: url(../images/cristal.png) -100px -200px no-repeat;
     }
 }
-@media screen and (min-width: 300px) and (max-width: 850px){
-    .lucky-box{
-        float: none;
+
+/*Адаптация head*/
+@media screen and (min-width: 980px) and (max-width: 1150px){
+    .logo {
+        width: 160px;
+        height: 56px;
+        top: 25px;
+    } 
+    .logo a img:nth-child(1){
+        width: 38px;
+        margin: 0 10px 0 0;
+    }
+    .logo a img:nth-child(2){
+        width: 112px;
+    }
+    .logo a img:nth-child(3){
         width: 100%;
-        margin: 10px 0;
-    }
-    .cristal{
-        width: 50px;
-        height: 50px;
-        margin: 0 auto;
-    }
-    .silver .cristal{
-        background: url(../images/cristal.png) -100px 0 no-repeat;
-    }
-    .gold .cristal{
-        background: url(../images/cristal.png) -100px -100px no-repeat;
-    }
-    .vip .cristal{
-        background: url(../images/cristal.png) -100px -200px no-repeat;
+        margin: 6px 0 0 0;
     }
 }
-
-
-
-/*Адаптация слайда*/
-
-@media screen and (min-width: 1150px) and (max-width: 1250px){
-    .slide-title {
-        font: bold 18px ptSans;
-        margin: 0 0 12px 0;
+@media screen and (min-width: 700px) and (max-width: 980px){
+    .logo {
+        position: static;
+        width: 170px;
+        height: 40px;
+        top: 25px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        margin: 0 25px 0 0;
     }
-    .slide-text {
-        font: normal 13px ptSans;
+    .logo a img:nth-child(1){
+        width: 40px;
+        margin: 0 10px 0 0;
     }
-    .slide-coast {
-        font: bold 18px Roboto;
+    .logo a img:nth-child(2){
+        width: 118px;
     }
-    .slide-percent {
-        font: bold 18px Roboto;
-    }
-
-}
-@media screen and (min-width: 970px) and (max-width: 1150px){
-    .slide-info {
-        padding: 10px 10px 65px 10px;
-    }
-    .slide-title {
-        font: bold 18px ptSans;
-        margin: 0 0 12px 0;
-    }
-    .slide-text {
-        font: normal 13px ptSans;
-    }
-    .slide-coast {
-        font: bold 18px Roboto;
-    }
-    .slide-percent {
-        font: bold 18px Roboto;
-    }
-
-}
-@media screen and (min-width: 700px) and (max-width: 970px){
-    .slide {
-        display: block;
-    }
-    .slide-foto{
-        width: 100%;
-        border: solid 3px #333;
-    }
-    .slide-foto a{
-        display: block;
-        width: 600px;
-        margin: 25px auto;
-    }
-    .slide-info {
-        width: 100%;
-        padding: 20px 20px 65px 20px;
-    }
-    .slide-title {
-        font: bold 18px ptSans;
-        margin: 0 0 12px 0;
-    }
-    .slide-text {
-        font: normal 13px ptSans;
-    }
-    .slide-coast {
-        font: bold 18px Roboto;
-    }
-    .slide-percent {
-        font: bold 18px Roboto;
-    }
-}
-@media screen and (min-width: 200px) and (max-width: 700px){
-    .slide {
-        display: block;
-    }
-    .slide-foto{
-        width: 100%;
-        margin: 0;
-        border: none;
-    }
-    .slide-info {
-        width: 100%;
-        padding: 20px 20px 75px 20px;
-    }
-    .slide-title {
-        font: bold 18px ptSans;
-        margin: 0 0 12px 0;
-    }
-    .slide-text {
-        font: normal 13px ptSans;
-    }
-    .slide-coast {
-        font: bold 18px Roboto;
-    }
-    .slide-percent {
-        font: bold 18px Roboto;
-    }
-    .slide-price {
-        right: auto;
-        left: 20px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Адаптация кнопки another-button*/
-@media screen and (max-width: 850px){
-    .garant{
-        width: 100%;
-        box-sizing: border-box;
-        padding: 15px 25px;
-        font: normal 15px Roboto;
-    }
-}
-@media screen and (max-width: 550px){
-    .another-button a{
-        width: 70%;
-    }
-}
-/*Адаптация отзывы*/
-@media screen and (max-width: 850px){
-    .review-date{
-        font: normal 14px ptSans;
-    }
-    .review-text{
-        font: normal 14px ptSans;
-        padding: 8px 10px;
-    }
-}
-/*Адаптация специального блока под описанием товара*/
-@media screen and (max-width: 550px){
-    .special-game{
-        display: block;
-        max-width: 460px;
-        margin: 0 0 10px 0;
-    }
-    .special-game-foto{
-        width: 100%;
-    }
-    .special-game-info{
-        display: block;
-    }
-    .special-game-info .title{
-        text-align: center;
-        width: 100%;
-        padding: 5px;
-        box-sizing: border-box;
-        font: bold 14px Roboto;
-    }
-    .special-game-info .price{
-        width: 100px;
-        font: normal 14px Roboto;
-        text-align: center;
-        margin: 0 auto;
-        background: #46ac2c;
-        padding: 5px 0;
-        color: #FFF;
-    }
-    .special-game:nth-child(2n-1){
-        background: none;
-    }
-    .special-game:hover{
-        background: none;
-    }
-    .special-game .skidka{
+    .logo a img:nth-child(3){
         display: none;
     }
-    .special-games h2{
-        text-align: center;
-    }
-}
-/*Кнопка весь каталог игр*/
-@media screen and (max-width: 600px){
-    .more-games a{
-        width: 85%;
-    }
-}
-
-
-
-
-/*Адаптация списка игр*/
-@media screen and (min-width: 1150px) and (max-width: 1250px){
-    .game-img {
-        flex-basis: 200px;
-    }
-    .game-name {
-        font: bold 16px Roboto;
-    }
-    .game-key{
-        font: normal 13px ptSans;
-    }
-    .game-info-price {
-        font: bold 16px Roboto;
-        padding: 5px 0;
-    }
-}
-@media screen and (min-width: 970px) and (max-width: 1150px){
-    .game-img {
-        flex-basis: 150px;
-    }
-    .game-name {
-        font: bold 14px Roboto;
-    }
-    .game-key{
-        font: normal 13px ptSans;
-    }
-    .game-info-price {
-        font: bold 16px Roboto;
-        padding: 5px 0;
-    }
-    .game-info-coast {
-        flex-basis: 90px;
-    }
-}
-@media screen and (min-width: 600px) and (max-width: 970px){
-    .game-img {
-        flex-basis: 200px;
-    }
-    .game-name {
-        font: normal 14px Roboto;
-    }
-    .game-key{
-        font: normal 13px ptSans;
-    }
-    .game-info-price {
-        font: normal 16px Roboto;
-        padding: 5px 0;
-    }
-    .game-info-coast {
-        flex-basis: 90px;
-    }
-    .slide-coast {
-        background: #71cb4a;
-    }
-}
-@media screen and (min-width: 380px) and (max-width: 600px){
-    .game-img {
-        flex-basis: 140px;
-    }
-    .game-name {
-        font: normal 12px Roboto;
-    }
-    .game-key{
-        display: none;
-        font: normal 13px ptSans;
-    }
-    .game-info-price {
-        font: normal 14px Roboto;
-        padding: 5px 0;
-    }
-    .game-info-price span {
-        font: normal 10px Roboto;
-    }
-    .game-info-coast {
-        flex-basis: 80px;
-        padding: 0 8px 0 0;
-    }
-    .slide-coast {
-        background: #71cb4a;
-    }
-}
-@media screen and (min-width: 150px) and (max-width: 380px){
-    .game-img {
-        flex-basis: 90px;
-    }
-    .game-name {
-        font: normal 12px Roboto;
-    }
-    .game-key{
-        display: none;
-        font: normal 13px ptSans;
-    }
-    .game-info-price {
-        font: normal 13px Roboto;
-        padding: 5px 0;
-    }
-    .game-info-price span {
-        font: normal 10px Roboto;
-    }
-    .game-info-coast {
-        flex-basis: 80px;
-        padding: 0 8px 0 0;
-    }
-    .slide-coast {
-        background: #71cb4a;
-    }
-}
-
-/*Адаптация боксов испытай удачу*/
-@media screen and (min-width: 970px) and (max-width: 1250px){
-    .key-box-text {
-        font: bold 14px Roboto;
-    }
-    .key-box-coast {
-        font: bold 25px Roboto;
-    }
-    .key-box-button a {
-        padding: 6px;
-        font: bold 14px Roboto;
-    }
-}
-@media screen and (min-width: 700px) and (max-width: 970px){
-    .key-box-text {
-        font: bold 14px Roboto;
-    }
-    .key-box-coast {
-        font: bold 25px Roboto;
-    }
-    .key-box-button a {
-        padding: 6px;
-        font: bold 14px Roboto;
-    }
-}
-@media screen and (min-width: 480px) and (max-width: 560px){
-    .key-box-text {
-        font: bold 14px Roboto;
-    }
-    .key-box-coast {
-        font: bold 25px Roboto;
-    }
-    .key-box-button a {
-        padding: 6px;
-        font: bold 14px Roboto;
-    }
-}
-@media screen and (min-width: 200px) and (max-width: 480px){
-    .key-boxs{
-        flex-wrap: wrap;
-    }
-    .key-box{
-        border-radius: 10px;
-        width: 100%;
-        margin: 5px;
-        background: #314453 url(../images/strelki.png) top center no-repeat;
-        text-align: center;
-        padding: 25px 0;
+    .head{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
+        justify-content: space-between;
         align-items: center;
+        height: 75px;
+        box-sizing: border-box;
+        padding: 0 15px;
+        background: #000000c7;
     }
-    .key-box-text {
-        width: 50%;
+    .search_button{
+        display: flex;
+    }
+    .book_button{
+        display: flex;
+    }
+    .sandvich_button{
+        display: flex;
+    }
+}
+@media screen and (min-width: 450px) and (max-width: 700px){
+    .logo {
+        position: static;
+        width: 170px;
+        height: 40px;
+        top: 25px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        margin: 0 25px 0 0;
+    }
+    .logo a img:nth-child(1){
+        width: 40px;
+        margin: 0 10px 0 0;
+    }
+    .logo a img:nth-child(2){
+        width: 118px;
+    }
+    .logo a img:nth-child(3){
+        display: none;
+    }
+    .head{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        height: 75px;
+        box-sizing: border-box;
+        padding: 0 15px;
+        background: #000000c7;
+    }
+    .search_button{
+        display: flex;
+    }
+    .book_button{
+        display: flex;
+    }
+    .sandvich_button{
+        display: flex;
+    }
+}
+@media screen and (max-width: 450px){
+    .logo {
+        position: static;
+        width: 130px;
+        height: 32px;
+        top: 25px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        margin: 0 15px 0 0;
+    }
+    .logo a img:nth-child(1){
+        width: 30px;
+        margin: 0 10px 0 0;
+    }
+    .logo a img:nth-child(2){
+        width: 90px;
+    }
+    .logo a img:nth-child(3){
+        display: none;
+    }
+    .head{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        box-sizing: border-box;
+        padding: 0 10px;
+        background: #000000c7;
+    }
+    .search_button{
+        width: 45px;
+        height: 45px;
+        display: flex;
+    }
+    .book_button{
+        width: 45px;
+        height: 45px;
+        display: flex;
+    }
+    .sandvich_button{
+        width: 45px;
+        height: 45px;
+        display: flex;
+    }
+}
+
+/*Адаптация главное меню*/
+@media screen and (min-width: 1150px) and (max-width: 1300px){
+    .navigation .menu ul li a{
+        font: bold 12px Roboto;
+    }
+    .navigation .menu ul li a.lucky-button{
+        font: bold 12px Roboto;
+    }
+}
+@media screen and (min-width: 980px) and (max-width: 1150px){
+    .navigation .menu ul li a{
+        font: bold 11px Roboto;
+        padding: 10px 15px;
+    }
+    .navigation .menu ul li a.lucky-button{
+        font: bold 11px Roboto;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 980px){
+    .navigation{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000000f2;
+    }
+    .navigation .menu{
+        padding: 15px;
+    }
+    .navigation .menu ul{
+        display: block;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .navigation .menu ul li{
+        margin: 0 0 1px 0;
+    }
+    .navigation .menu ul li a {
+        border: none;
+        background: #5050638c;
+        color: #fff;
+        font: normal 16px Roboto;
+        text-align: left;
+    }
+    .navigation .menu ul li a:hover {
+        text-decoration: none;
+        background: #505063c7;
+    }
+    .navigation .menu ul li a.lucky-button {
+        font: normal 16px Roboto;
+        text-align: left;
+    }
+}
+@media screen and (min-width: 450px) and (max-width: 700px){
+    .navigation{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000000f2;
+    }
+    .navigation .menu{
+        padding: 15px;
+    }
+    .navigation .menu ul{
+        display: block;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .navigation .menu ul li{
+        margin: 0 0 1px 0;
+    }
+    .navigation .menu ul li a {
+        border: none;
+        background: #5050638c;
+        color: #fff;
+        font: normal 16px Roboto;
+        text-align: left;
+    }
+    .navigation .menu ul li a:hover {
+        text-decoration: none;
+        background: #505063c7;
+    }
+    .navigation .menu ul li a.lucky-button {
+        font: normal 16px Roboto;
+        text-align: left;
+    }
+}
+@media screen and (max-width: 450px){
+    .navigation{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000000f2;
+    }
+    .navigation .menu{
+        padding: 15px;
+    }
+    .navigation .menu ul{
+        display: block;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .navigation .menu ul li{
+        margin: 0 0 1px 0;
+    }
+    .navigation .menu ul li a {
+        border: none;
+        background: #5050638c;
+        color: #fff;
         font: normal 14px Roboto;
+        text-align: left;
+        padding: 10px 10px;
     }
-    .key-box-coast {
-        font: bold 25px Roboto;
-        padding: 4px 0 0 0;
+    .navigation .menu ul li a:hover {
+        text-decoration: none;
+        background: #505063c7;
     }
-    .key-box-coast span{
-        font: normal 17px Roboto;
+    .navigation .menu ul li a.lucky-button {
+        font: normal 14px Roboto;
+        text-align: left;
     }
-    .key-box-button {
-        width: 50%;
+    span.close_popup_button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 35px;
+        width: 35px;
+        font-size: 22px;
+        color: #fff;
+        background: #1d1d1d;
+        border-radius: 5px;
+        text-shadow: 0 1px 1px #00000070;
+        cursor: pointer;
     }
-    .key-box-button a {
-        padding: 6px;
+}
+@media screen and (max-width: 980px){
+    .navigation{
+        display: none;
+    }
+}
+
+/*Адаптация алфавитный указатель*/
+@media screen and (min-width: 980px) and (max-width: 1150px){
+    .book {
+        width: 195px;
+        top: 35px;
+    }
+    .book a {
+        width: 15px;
+        height: 15px;
+        font: normal 11px/15px ptSans;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 980px){
+    .book{
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000000f2;
+        width: auto;
+        height: auto;
+    }
+    .books_head{
+        display: block;
+    }
+    .books{
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+    .book a{
+        width: 40px;
+        height: 40px;
+        font: normal 20px ptSans;
+        background: #5050638c;
+        margin: 5px;
+    }
+}
+@media screen and (min-width: 450px) and (max-width: 700px){
+    .book{
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000000f2;
+        width: auto;
+        height: auto;
+    }
+    .books_head{
+        display: block;
+    }
+    .books{
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+    .book a{
+        width: 40px;
+        height: 40px;
+        font: normal 20px ptSans;
+        background: #5050638c;
+        margin: 5px;
+    }
+}
+@media screen and (max-width: 450px){
+    .book{
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000000f2;
+        width: auto;
+        height: auto;
+    }
+    .books_head{
+        display: block;
+        font: normal 16px Roboto;
+    }
+    .books{
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+    .book a{
+        width: 35px;
+        height: 35px;
+        font: normal 18px ptSans;
+        background: #5050638c;
+        margin: 5px;
+    }
+}
+
+/*Адаптация поиска*/
+@media screen and (min-width: 1150px) and (max-width: 1300px){
+    .search {
+        width: 500px;
+    }
+}
+@media screen and (min-width: 980px) and (max-width: 1150px){
+    .search {
+        width: 500px;
+        top: 35px;
+        left: 215px;
+    }
+    .search-text input{
+        height: 30px;
+    }
+    .search-submit input{
+        height: 30px;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 980px){
+    .search {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000000f2;
+        width: auto;
+        height: auto;
+    }
+    .search form{
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+    .search-text {
+        padding: 0;
+    }
+    .search-submit {
+        display: none;
+    }
+}
+@media screen and (max-width: 700px){
+    .search {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000000f2;
+        width: auto;
+        height: auto;
+    }
+    .search form{
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+    .search-text {
+        padding: 0;
+    }
+    .search-submit {
+        display: none;
+    }
+}
+
+/*Адаптация подвала*/
+@media screen and (min-width: 1150px) and (max-width: 1300px){
+    .footer_columns {
+        padding: 35px 25px;
+    }
+    .footer_columns .menu span{
+        font: bold 12px Roboto;
+    }
+    .footer_columns .footer_info span {
+        font: bold 12px Roboto;
+    }
+}
+@media screen and (min-width: 980px) and (max-width: 1150px){
+    .footer_columns {
+        padding: 25px 15px;
+    }
+    .footer_columns .menu span{
+        font: bold 11px Roboto;
+    }
+    .footer_columns .footer_info span {
+        font: bold 11px Roboto;
+    }
+    .footer_columns .footer_info {
+        font: normal 12px/17px Roboto;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 980px){
+    .footer_columns {
+        padding: 25px 15px;
+        flex-wrap: wrap;
+    }
+    .footer_columns .menu {
+        padding: 0 20px;
+    }
+    .footer_columns .menu span{
+        font: bold 11px Roboto;
+    }
+    .footer_columns .footer_info span {
+        font: bold 11px Roboto;
+    }
+    .footer_columns .footer_info {
+        font: normal 12px/17px Roboto;
+        padding: 0 20px;
+    }
+    .footer_columns div:last-child{
+        width: 100%;
+        margin: 25px 0 0 0;
+    }
+}
+@media screen and (min-width: 450px) and (max-width: 700px){
+    .footer_columns {
+        padding: 25px 15px;
+        flex-wrap: wrap;
+    }
+    .footer_columns .menu {
+        width: 40%;
+        padding: 0 10px;
+    }
+    .footer_columns .menu span{
+        font: bold 11px Roboto;
+    }
+    .footer_columns .footer_info span {
+        font: bold 11px Roboto;
+    }
+    .footer_columns .footer_info {
+        font: normal 12px/17px Roboto;
+        padding: 0 10px;
+    }
+    .footer_columns div:last-child{
+        width: 100%;
+        margin: 25px 0 0 0;
+    }
+    .footer_columns div:nth-last-child(2){
+        width: 100%;
+        margin: 25px 0 0 0;
+    }
+}
+@media screen and (max-width: 450px){
+    .footer_columns {
+        padding: 25px 15px;
+        flex-wrap: wrap;
+    }
+    .footer_columns .menu {
+        width: 100%;
+        padding: 0;
+        order: 1;
+    }
+    .footer_columns .menu:nth-child(2) {
+        order: 0;
+    }
+    .footer_columns .menu span{
+        font: bold 11px Roboto;
+    }
+    .footer_columns .footer_info span {
+        font: bold 11px Roboto;
+    }
+    .footer_columns .footer_info {
+        font: normal 12px/17px Roboto;
+        padding: 0;
+        order: 1;
+    }
+    .footer_columns div:last-child{
+        width: 100%;
+        margin: 25px 0 0 0;
+    }
+    .footer_columns div:nth-last-child(2){
+        width: 100%;
+        margin: 25px 0 0 0;
+    }
+    .footer_columns .menu ul li a{
+        max-width: 200px;
+    }
+}
+
+
+
+
+/*Адаптация колонок*/
+@media screen and (min-width: 1150px) and (max-width: 1300px){
+    .columns .left{
+        flex-basis: 230px;
+    }
+    .columns .right{
+        flex-basis: 230px;
+    }
+}
+@media screen and (min-width: 980px) and (max-width: 1150px){
+    .columns .left{
+        flex-basis: 200px;
+    }
+    .columns .right{
+        flex-basis: 200px;
+    }
+}
+@media screen and (max-width: 980px){
+    .columns .left{
+        flex-basis: 0px;
+    }
+    .columns .right{
+        flex-basis: 0px;
+    }
+    .columns .left .block, .columns .right .block{
+        display: none;
+    }
+}
+
+
+
+
+
+/*Адаптация вывод игры*/
+@media screen and (min-width: 1150px) and (max-width: 1300px){
+    .game_page h1 {
+        font: bold 22px Roboto;
+        padding: 15px;
+    }
+    .game_page .game_info .status .percent {
+        font: bold 18px Roboto;
+    }
+    .game_page .game_info .status .buy .coast {
+        font: bold 18px Roboto;
+    }
+    .game_page .game_info .status .buy a.buy_button{
+        font: normal 16px Roboto;
+    }
+    .game_page .game_info .status .buy div.soon{
+        font: normal 16px Roboto;
+    }
+    .game_page .game_info .status {
+        height: 40px;
+    }
+    .game_page .game_info {
+        padding: 0 0 40px 0;
+    }
+    .game_page .game_detail_info div {
+        font: normal 11px Roboto;
+    }
+}
+@media screen and (min-width: 980px) and (max-width: 1150px){
+    .game_page h1 {
+        font: bold 22px Roboto;
+        padding: 15px;
+    }
+    .game_page .game_info .status .percent {
+        font: bold 14px Roboto;
+    }
+    .game_page .game_info .status .buy .coast {
+        font: bold 18px Roboto;
+    }
+    .game_page .game_info .status .buy a.buy_button{
+        font: normal 16px Roboto;
+    }
+    .game_page .game_info .status .buy div.soon{
+        font: normal 16px Roboto;
+    }
+    .game_page .game_info .status {
+        height: 40px;
+    }
+    .game_page .game_info {
+        padding: 0 0 40px 0;
+    }
+    .game_page .game_detail_info div {
+        font: normal 11px Roboto;
+    }
+    .game_page .game_img {
+        flex-basis: 410px;
+    }
+    .game_page .game_info .status .buy .coast span {
+        font: normal 12px Roboto;
+    }
+    .game_page .description_content {
+        font: normal 12px/19px Roboto;
+        padding: 5px 15px;
+    }
+    .game_page .game_description_left {
+        padding: 20px 10px 20px 20px;
+    }
+    .game_page .game_description_right {
+        padding: 20px 20px 20px 10px;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 980px){
+    .game_page h1 {
+        font: bold 22px Roboto;
+    }
+    .game_page .game_head {
+        padding: 30px;
+    }
+    .game_page .game_detail_info {
+        padding: 0 0 0 20px;
+    }
+    .game_page .game_info .status .percent {
         font: bold 16px Roboto;
     }
-    .key-box {
-        padding: 15px 0;
+    .game_page .game_info .status .buy {
+        border-radius: 5px;
+    }
+    .game_page .game_info .status {
+        height: 40px;
+    }
+    .game_page .game_info .status .buy .coast {
+        font: bold 18px Roboto;
+    }
+    .game_page .game_info .status .buy a.buy_button {
+        font: normal 16px Roboto;
+    }
+    .game_page .game_info .status .buy div.soon{
+        font: normal 16px Roboto;
+    }
+    .game_page .game_description_tabs ul {
+        padding: 8px 30px 0 30px;
+    }
+
+    .game_page .game_description_left {
+        padding: 15px 15px 15px 30px;
+    }
+    .game_page .game_description_right {
+        padding: 15px 30px 15px 15px;
+    }
+    .game_page .game_img {
+        flex-basis: 370px;
+    }
+}
+@media screen and (min-width: 680px) and (max-width: 800px){
+    .game_page h1 {
+        font: bold 22px Roboto;
+    }
+    .game_page .game_head {
+        padding: 30px;
+    }
+    .game_page .game_detail_info {
+        padding: 0 0 0 20px;
+    }
+    .game_page .game_info .status .percent {
+        font: bold 16px Roboto;
+        height: 40px;
+        width: 70%;
+    }
+    .game_page .game_info .status .buy {
+        border-radius: 5px;
+        height: 40px;
+        width: 85%;
+    }
+    .game_page .game_info .status {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        padding: 0 0 0 20px;
+    }
+    .game_page .game_info {
+        padding: 0 0 0 0;
+    }
+    .game_page .game_info .status .buy .coast {
+        font: bold 18px Roboto;
+    }
+    .game_page .game_info .status .buy a.buy_button {
+        font: normal 16px Roboto;
+    }
+    .game_page .game_info .status .buy div.soon{
+        font: normal 16px Roboto;
+    }
+    .game_page .game_description_tabs ul {
+        padding: 8px 30px 0 30px;
+    }
+
+    .game_page .game_description_left {
+        padding: 15px 15px 15px 30px;
+    }
+    .game_page .game_description_right {
+        padding: 15px 30px 15px 15px;
+        width: 180px;
+    }
+    .game_page .game_img {
+        flex-basis: 330px;
+    }
+    .game_page .game_detail_info div {
+        font: normal 11px Roboto;
+    }
+    .game_page .game_detail_info div span:first-child {
+        width: 70px;
+    }
+}
+@media screen and (min-width: 450px) and (max-width: 680px){
+    .game_page h1 {
+        font: bold 22px Roboto;
+        text-align: center;
+    }
+    .game_page .game_head {
+        display: block;
+        padding: 30px;
+    }
+    .game_page .game_detail_info {
+        padding: 0 0 0 0;
+        max-width: 370px;
+        margin: 0 auto;
+    }
+    .game_page .game_info .status .percent {
+        font: bold 16px Roboto;
+        height: 40px;
+        width: 70%;
+    }
+    .game_page .game_info .status .buy {
+        border-radius: 5px;
+        height: 40px;
+        width: 85%;
+    }
+    .game_page .game_info .status {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        padding: 0 0 0 0;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .game_page .game_info {
+        padding: 0 0 0 0;
+        max-width: 460px;
+        margin: 0 auto;
+    }
+    .game_page .game_info .status .buy .coast {
+        font: bold 18px Roboto;
+    }
+    .game_page .game_info .status .buy a.buy_button {
+        font: normal 16px Roboto;
+    }
+    .game_page .game_info .status .buy div.soon{
+        font: normal 16px Roboto;
+    }
+    .game_page .game_description_tabs ul {
+        padding: 8px 30px 0 30px;
+        justify-content: center;
+    }
+    .game_page .game_description_columns{
+        display: block;
+    }
+    .game_page .game_description_left {
+        padding: 15px 30px 15px 30px;
+        box-sizing: border-box;
+    }
+    .game_page .game_description_right {
+        padding: 15px 30px 15px 30px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .game_page .game_img {
+        max-width: 460px;
+        flex-basis: 330px;
+        margin: 0 auto 30px auto;
+        border: solid 3px #333;
+    }
+    .game_page .game_detail_info div {
+        font: normal 13px Roboto;
+    }
+    .game_page .game_detail_info div span:first-child {
+        width: 100px;
+    }
+    .game_page .media_block .media_element {
+        width: calc(33.3% - 2px);
+    }
+}
+@media screen and (max-width: 450px){
+        .game_page h1 {
+        font: bold 22px Roboto;
+        text-align: center;
+    }
+    .game_page .game_head {
+        display: block;
+        padding: 20px;
+    }
+    .game_page .game_detail_info {
+        padding: 0 0 0 0;
+        max-width: 370px;
+        margin: 0 auto;
+    }
+    .game_page .game_info .status .percent {
+        font: bold 16px Roboto;
+        height: 40px;
+        width: 70%;
+    }
+    .game_page .game_info .status .buy {
+        border-radius: 5px;
+        height: 40px;
+        width: 85%;
+    }
+    .game_page .game_info .status {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        padding: 0 0 0 0;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .game_page .game_info {
+        padding: 0 0 0 0;
+        max-width: 460px;
+        margin: 0 auto;
+    }
+    .game_page .game_info .status .buy .coast {
+        font: bold 18px Roboto;
+    }
+    .game_page .game_info .status .buy a.buy_button {
+        font: normal 16px Roboto;
+    }
+    .game_page .game_info .status .buy div.soon{
+        font: normal 16px Roboto;
+    }
+    .game_page .game_description_tabs ul {
+        padding: 8px 20px 8px 20px;
+        justify-content: center;
+    }
+    .game_page .game_description_tabs ul li {
+        margin: 0 3px 3px 0;
+        border-radius: 5px;
+        padding: 6px 10px;
+        font: normal 12px Roboto;
+    }
+    .game_page .game_description_columns{
+        display: block;
+    }
+    .game_page .game_description_left {
+        padding: 15px 20px 15px 20px;
+        box-sizing: border-box;
+    }
+    .game_page .game_description_right {
+        padding: 15px 20px 15px 20px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .game_page .game_img {
+        max-width: 460px;
+        flex-basis: 330px;
+        margin: 0 auto 10px auto;
+        border: solid 3px #333;
+    }
+    .game_page .game_detail_info div {
+        font: normal 11px Roboto;
+    }
+    .game_page .game_detail_info div span:first-child {
+        width: 70px;
+    }
+    .game_page .media_block .media_element {
+        width: calc(33.3% - 2px);
+    }
+}
+
+/*Адаптация списка игр*/
+@media screen and (min-width: 1150px) and (max-width: 1300px){
+    .game_list .game .game_img {
+        flex-basis: 150px;
+    }
+}
+@media screen and (min-width: 980px) and (max-width: 1150px){
+    .game_list .game .game_img {
+        flex-basis: 150px;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 980px){
+    .game_list .game .game_img {
+        flex-basis: 160px;
+    }
+    .head_game_list .filter_button {
+        display: flex;
+        width: 55px;
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 700px){
+    .game_list .game .game_img {
+        flex-basis: 140px;
+    }
+    .game_list .percent {
+        display: none;
+    }
+    .game_list .name {
+        font: normal 14px Roboto;
+    }
+    .game_list .nonal {
+        font: normal 10px Roboto;
+    }
+    .game_list .game .game_info .status {
+        flex-basis: 90px;
+    }
+    .head_game_list .filter_button {
+        display: flex;
+        width: 55px;
+    }
+}
+@media screen and (min-width: 350px) and (max-width: 500px){
+    .game_list .game .game_img {
+        flex-basis: 100px;
+    }
+    .game_list .percent {
+        display: none;
+    }
+    .game_list .name {
+        font: normal 12px Roboto;
+        margin: 0 0 2px 0;
+    }
+    .game_list .nonal {
+        font: normal 10px Roboto;
+    }
+    .game_list .soon {
+        font: normal 12px Roboto;
+    }
+    .game_list .price {
+        font: normal 12px Roboto;
+    }
+    .game_list .game .game_info .status {
+        flex-basis: 80px;
+        padding: 0 5px 0 0;
+    }
+    .game_list .store_info{
+        display: none;
+    }
+    .game_list .game .game_info .product {
+        padding: 0 7px;
+    }
+    .head_game_list .filter_button {
+        display: flex;
+        width: 35px;
+    }
+}
+@media screen and (max-width: 350px){
+    .game_list .game .game_img {
+        display: none;
+    }
+    .game_list .percent {
+        display: none;
+    }
+    .game_list .name {
+        font: normal 12px Roboto;
+        margin: 0 0 2px 0;
+    }
+    .game_list .nonal {
+        font: normal 10px Roboto;
+    }
+    .game_list .soon {
+        font: normal 12px Roboto;
+    }
+    .game_list .price {
+        font: normal 12px Roboto;
+    }
+    .game_list .game .game_info .status {
+        flex-basis: 80px;
+        padding: 0 0 0 0;
+    }
+    .game_list .store_info{
+        display: none;
+    }
+    .game_list .game .game_info .product {
+        padding: 0 7px;
+    }
+    .head_game_list .filter_button {
+        display: flex;
+        width: 35px;
+    }
+}
+/*Адаптация фильтра каталога*/
+@media screen and (min-width: 450px) and (max-width: 980px){
+    .filter_block{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000000f2;
+        padding: 0;
+        margin: 0;
+        overflow: scroll;
+    }
+    .filter {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    .block h3 {
+        border-bottom: none;
+        margin: 0 0 0 0;
+        width: 100%;
+        text-align: center;
+        font: normal 20px Roboto;
+        color: #fff;
+        padding: 0 0 15px 0;
+        text-transform: none;
+    }
+}
+@media screen and (max-width: 450px){
+    .filter_block{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000000f2;
+        padding: 0;
+        margin: 0;
+        overflow: scroll;
+    }
+    .filter {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    .block h3 {
+        border-bottom: none;
+        margin: 0 0 0 0;
+        width: 100%;
+        text-align: center;
+        font: normal 16px Roboto;
+        color: #fff;
+        padding: 0 0 15px 0;
+        text-transform: none;
+    }
+}
+
+/*Адаптация pager*/
+@media screen and (max-width: 500px){
+    .pager {
+        font: normal 20px Roboto;
+    }
+    .pager ul li {
+        display: none;
+    }
+    .pager ul li.prev, .pager ul li.next {
+        display: block;
+    }
+}
+
+/*Адаптация slide*/
+
+@media screen and (min-width: 400px) and (max-width: 500px){
+    .slide .slide_info{
+        display: block;
+    }
+    .slide .slide_info .slide_name{
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .slide .slide_info .slide_coast{
+        max-width: 100px;
+        padding: 3px 8px;
+        margin: 0 auto;
+        font: normal 14px Roboto;
+    }
+    .slide_soon{
+        max-width: 100px;
+        padding: 3px 8px;
+        margin: 0 auto;
+        font: normal 14px Roboto;
+    }
+}
+@media screen and (max-width: 400px){
+    .slide .slide_info{
+        display: block;
+    }
+    .slide .slide_info .slide_name{
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .slide .slide_info .slide_coast{
+        max-width: 100px;
+        padding: 3px 8px;
+        margin: 0 auto;
+        font: normal 13px Roboto;
+    }
+    .slide_soon{
+        max-width: 100px;
+        padding: 3px 8px;
+        margin: 0 auto;
+        font: normal 13px Roboto;
+    }
+    .slide-prev{
+        top: 40px;
+        left: 0;
+    }
+    .slide-next{
+        top: 40px;
+        right: 0;
+    }
+}
+
+/*Адаптация страницы выбора оплаты*/
+@media screen and (min-width: 1150px) and (max-width: 1300px){
+    .payment_head h1 {
+        font: bold 19px Roboto;
+    }
+    .payment_info_order {
+        width: 250px;
+    }
+    .payment {
+        padding: 15px;
+    }
+    .payment .payment_ic {
+        width: 55%;
+    }
+    .payment_cont_head {
+        font: bold 14px Roboto;
+    }
+}
+@media screen and (min-width: 980px) and (max-width: 1150px){
+    .payment_head h1 {
+        font: bold 19px Roboto;
+    }
+    .payment_info_order {
+        width: 250px;
+    }
+    .payment_box {
+        width: calc(25% - 2px);
+    }
+    .payment {
+        padding: 15px;
+    }
+    .payment .payment_ic {
+        width: 55%;
+    }
+    .payment_cont_head {
+        font: bold 14px Roboto;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 980px){
+    .payment_content {
+        padding: 20px;
+    }
+    .payment_head h1 {
+        font: bold 19px Roboto;
+    }
+    .payment_info_order {
+        width: 250px;
+        margin: 0 15px 0 0;
+    }
+    .payment_box {
+        width: calc(33% - 2px);
+    }
+    .payment {
+        padding: 15px;
+    }
+    .payment .payment_ic {
+        width: 55%;
+    }
+    .payment_cont_head {
+        font: bold 14px Roboto;
+    }
+}
+@media screen and (min-width: 560px) and (max-width: 700px){
+    .payment_content {
+        display: block;
+        padding: 20px;
+    }
+    .payment_head h1 {
+        font: bold 19px Roboto;
+    }
+    .payment_info_order {
+        display: none;
+    }
+    .payment_box {
+        width: calc(25% - 2px);
+    }
+    .payment {
+        padding: 15px;
+    }
+    .payment .payment_ic {
+        width: 55%;
+    }
+    .payment_cont_head {
+        font: bold 14px Roboto;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 560px){
+    .payment_content {
+        display: block;
+        padding: 20px;
+    }
+    .payment_head h1 {
+        font: bold 19px Roboto;
+    }
+    .payment_info_order {
+        display: none;
+    }
+    .payment_box {
+        width: calc(33.3% - 2px);
+    }
+    .payment {
+        padding: 15px;
+    }
+    .payment .payment_ic {
+        width: 55%;
+    }
+    .payment_cont_head {
+        font: bold 14px Roboto;
+    }
+}
+@media screen and (max-width: 450px){
+    .payment_content {
+        display: block;
+        padding: 10px;
+    }
+    .payment_head h1 {
+        font: bold 15px Roboto;
+    }
+    .payment_info_order {
+        display: none;
+    }
+    .payment_box {
+        width: calc(50% - 2px);
+    }
+    .payment {
+        padding: 15px;
+    }
+    .payment .payment_ic {
+        width: 55%;
+    }
+    .payment_cont_head {
+        font: bold 14px Roboto;
+        text-align: center;
+    }
+    .final_coast {
+        font: normal 13px Roboto;
+        text-align: center;
+    }
+    .mail_box .mail {
+        margin: 0 auto;
+    }
+    .mail_box .submit_form {
+        margin: 0 auto;
+    }
+    .mail_box .submit_form input {
+        font: normal 14px Roboto;
+    }
+    .mail_box .terms_form {
+        font: normal 10px Roboto;
+        text-align: center;
+    }
+    #payment_error div {
+        font: normal 11px Roboto;
+        text-align: center;
+    }
+    .payment_select {
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
