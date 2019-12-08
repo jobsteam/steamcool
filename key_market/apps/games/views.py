@@ -1,17 +1,32 @@
+from functools import reduce
+import operator
+
 from random import shuffle
 
 from urllib.parse import urlencode
 
 from django.conf import settings
+from django.db.models import Q, Func, Max, Min
 from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, TemplateView
 
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
+from games.forms import FilterForm
 from games.models import Game, Genre, StoreActivation
 from games.serializers import SearchGameSerializer, SearchGameFilter
 
 from users.forms import MailForm
+
+
+class Floor(Func):
+    function = 'FLOOR'
+    arity = 1
+
+
+class Ceiling(Func):
+    function = 'CEILING'
+    arity = 1
 
 
 class PageTitleMixin(object):
@@ -53,6 +68,34 @@ class GamesList(PageTitleMixin, ListView):
     template_name = "games_list.html"
     paginate_by = 10
 
+    def get_form(self, prices):
+        request = self.request
+        price_min = request.GET.get('price_min') or 0
+        price_max = request.GET.get('price_max') or prices['price_max']
+        genre = request.GET.getlist('genre')
+        store = request.GET.getlist('store_activation')
+
+        form = FilterForm(initial={
+            'price_min': price_min,
+            'price_max': price_max,
+            'genre': genre,
+            'store_activation': store,
+        })
+        return form
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        prices = Game.objects.aggregate(
+            price_min=Floor(Min('my_coast')),
+            price_max=Ceiling(Max('my_coast')))
+
+        context.update({
+            'prices': prices,
+            'filter_form': self.get_form(prices),
+        })
+
+        return context
+
     def get_queryset(self):
         qs = super().get_queryset()
         slug = self.kwargs.get('slug')
@@ -63,7 +106,32 @@ class GamesList(PageTitleMixin, ListView):
         elif symbol:
             qs = qs.filter(title__istartswith=symbol)
 
-        return qs
+        genre_ids = self.request.GET.getlist('genre')
+        store_ids = self.request.GET.getlist('store_activation')
+        price_min = self.request.GET.get('price_min')
+        price_max = self.request.GET.get('price_max')
+
+        q_filters = []
+
+        if genre_ids:
+            q_filters.append(
+                reduce(operator.or_, [Q(genre=id) for id in genre_ids]))
+
+        if store_ids:
+            q_filters.append(
+                reduce(operator.or_,
+                       [Q(store_activation=id) for id in store_ids]))
+
+        if any([price_min, price_max]):
+            if all([price_min, price_max]):
+                q_filters.append(Q(my_coast__gte=price_min) &
+                                 Q(my_coast__lte=price_max))
+            elif price_min:
+                q_filters.append(Q(my_coast__gte=price_min))
+            elif price_max:
+                q_filters.append(Q(my_coast__lte=price_max))
+
+        return qs.filter(*q_filters)
 
 
 class GamesStoreList(PageTitleMixin, ListView):
@@ -79,24 +147,6 @@ class GamesStoreList(PageTitleMixin, ListView):
             # test[test2.index('uplay')]
             qs = qs.filter(store_activation=id)
         return qs
-
-
-class GamesFreeList(ListView):
-    model = Game
-    template_name = "games_list.html"
-
-    def get_queryset(self):
-        qs = super().get_queryset()
-        return qs.filter(is_free=True)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context.update({
-            'page_title': 'Игры даром',
-            'section': 'Игры даром',
-            'is_freelist': True,
-        })
-        return context
 
 
 class GamesDetail(DetailView):
@@ -168,8 +218,8 @@ class IndexPage(TemplateView):
                                    .filter(on_main_page=True)[:25]),
 
             'games_soon': (Game.objects
-                                   .order_by('-date_release')
-                                   .filter(is_soon=True)[:25]),
+                           .order_by('-date_release')
+                           .filter(is_soon=True)[:25]),
         })
         return context
 

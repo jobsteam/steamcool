@@ -9,8 +9,6 @@ stories = [store for index, store in StoreActivation.CHOICES]
 urlpatterns = [
     url(r'^games/$',
         views_games.GamesList.as_view(), name='list'),
-    url(r'^games/free/$',
-        views_games.GamesFreeList.as_view(), name='free'),
     url(r'^games/(?P<slug>[-\w]+)/$',
         views_games.GamesDetail.as_view(), name='detail'),
     url(r'^games/(?P<slug>[-\w]+)/order/$',

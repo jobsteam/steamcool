@@ -28,7 +28,11 @@ class SearchGameFilter(django_filters.FilterSet):
 
 class SearchGameSerializer(serializers.ModelSerializer):
     url = serializers.CharField(source='get_absolute_url', read_only=True)
+    image_url = serializers.SerializerMethodField()
 
     class Meta:
-        fields = ['title', 'url']
+        fields = ['title', 'url', 'image_url', 'my_coast']
         model = Game
+
+    def get_image_url(self, obj):
+        return obj.image.url

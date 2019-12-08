@@ -1,4 +1,4 @@
-{% extends "columns_2.html" %}
+{% extends "columns_1.html" %}
 
 {% load static pipeline %}
 {% load thumbnail %}
@@ -14,6 +14,232 @@
 {% block extra-scripts %}{% endblock extra-scripts %}
 
 {% block view_element %}
+
+    <div class="payment_head">
+        <h1>{{ game.title }} - оформление заказа</h1>
+    </div>
+    <div class="payment_content">
+        <div class="payment_info_order">
+            <div class="payment_block">
+                <div class="payment_cont_head">Детали заказа:</div>
+                <div class="payment_game">
+                    <div class="foto">
+                        <img src="{{ game.image.url }}">
+                    </div>
+                    <div class="detail">
+                        <div class="coast">
+                            <div>Cтоимость без комиссии:</div>
+                            <div class="base_coast">
+                                <span>{{ game.my_coast }}</span> руб.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="payment_form">
+            <form id="payment" action="#file">
+                <div class="payment_block">
+                    <div class="payment_cont_head">Выберите способ оплаты:</div>
+                    <div class="payment_select">
+
+                        <div class="payment_box">
+                            <input type="radio" name="payment" value="wmr" id="payment1">
+                            <label for="payment1">
+                                <div class="payment" data-price="359">
+                                    <div class="payment_ic">
+                                        <img src="images/wm.png">
+                                    </div>
+                                    <div class="payment_name">
+                                        Webmoney
+                                    </div>
+                                    <div class="payment_kom">
+                                        комиссия 0,5%
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="payment_box">
+                            <input type="radio" name="payment" value="QSR" id="payment2">
+                            <label for="payment2">
+                                <div class="payment" data-price="363.28">
+                                    <div class="payment_ic">
+                                        <img src="images/qiwi.png">
+                                    </div>
+                                    <div class="payment_name">
+                                        Qiwi
+                                    </div>
+                                    <div class="payment_kom">
+                                        комиссия 0,5%
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="payment_box">
+                            <input type="radio" name="payment" value="PCR" id="payment3">
+                            <label for="payment3">
+                                <div class="payment" data-price="370">
+                                    <div class="payment_ic">
+                                        <img src="images/yam.png">
+                                    </div>
+                                    <div class="payment_name">
+                                        Яндекс Деньги
+                                    </div>
+                                    <div class="payment_kom">
+                                        комиссия 0,5%
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="payment_box">
+                            <input type="radio" name="payment" value="RUB" id="payment4">
+                            <label for="payment4">
+                                <div class="payment" data-price="351">
+                                    <div class="payment_ic">
+                                        <img src="images/ter.png">
+                                    </div>
+                                    <div class="payment_name">
+                                        Терминалы
+                                    </div>
+                                    <div class="payment_kom">
+                                        комиссия 0,5%
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="payment_box">
+                            <input type="radio" name="payment" value="MTS" id="payment5">
+                            <label for="payment5">
+                                <div class="payment" data-price="350">
+                                    <div class="payment_ic">
+                                        <img src="images/mts.png">
+                                    </div>
+                                    <div class="payment_name">
+                                        МТС
+                                    </div>
+                                    <div class="payment_kom">
+                                        комиссия 0,5%
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="payment_box">
+                            <input type="radio" name="payment" value="BLN" id="payment6">
+                            <label for="payment6">
+                                <div class="payment" data-price="365">
+                                    <div class="payment_ic">
+                                        <img src="images/beel.png">
+                                    </div>
+                                    <div class="payment_name">
+                                        Билайн
+                                    </div>
+                                    <div class="payment_kom">
+                                        комиссия 0,5%
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="payment_box">
+                            <input type="radio" name="payment" value="MGF" id="payment7">
+                            <label for="payment7">
+                                <div class="payment" data-price="364">
+                                    <div class="payment_ic">
+                                        <img src="images/meg.png">
+                                    </div>
+                                    <div class="payment_name">
+                                        Мегафон
+                                    </div>
+                                    <div class="payment_kom">
+                                        комиссия 0,5%
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="payment_box">
+                            <input type="radio" name="payment" value="BTC" id="payment8">
+                            <label for="payment8">
+                                <div class="payment" data-price="359">
+                                    <div class="payment_ic">
+                                        <img src="images/bit.png">
+                                    </div>
+                                    <div class="payment_name">
+                                        Bitcoin
+                                    </div>
+                                    <div class="payment_kom">
+                                        комиссия 0,5%
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="payment_box">
+                            <input type="radio" name="payment" value="PRR" id="payment9">
+                            <label for="payment9">
+                                <div class="payment" data-price="385">
+                                    <div class="payment_ic">
+                                        <img src="images/pochta.png">
+                                    </div>
+                                    <div class="payment_name">
+                                        Почта России
+                                    </div>
+                                    <div class="payment_kom">
+                                        комиссия 0,5%
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment_block">
+                    <div class="payment_cont_head">Итоговая стоимость:</div>
+                    <div class="final_coast">
+                        Стоимость с учетом комиссии: <span>359</span> руб.
+                    </div>
+                </div>
+
+                <div class="payment_block">
+                    <div class="payment_cont_head">E-mail получателя:</div>
+                    <div class="mail_box">
+                        <div class="terms_form">Оформляя заказ на нашем сайте, вы соглашаетесь с <a href="#">условиями и положениями сайта</a>, <a href="#">договором-оферты</a> и соглашением об обработке персональных данных покупателя. Интернет-магазин не хранит ваши платежные реквизиты в базе данных. Сайт проводит транзакции через защищенное соединение.</div>
+                        <div id="payment_error"></div>
+                        <div class="mail"><input placeholder="Укажите ваш E-mail" autocomplete="off" type="text" name="mail"></div>
+                        <div class="submit_form"><input type="submit" value="Перейти к оплате"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="game-object">
         <h1>Оформление заказа</h1>
         <div class="game-order-head clear-block">

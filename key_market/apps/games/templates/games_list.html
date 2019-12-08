@@ -7,12 +7,26 @@
 
 {% block description %}Описание {{ section }}{% endblock description %}
 
+
+{% block left_column %}
+    <div class="test">
+        <form action="" method="GET">
+            <input type="number" name="price_min" value="0" id="id_price_min">
+            <input type="number" name="price_max" value="1599" id="id_price_max">
+            {{ filter_form.genre }}
+            {{ filter_form.store_activation }}
+            <button type="submit">Найти</button>
+        </form>
+
+        {{ prices.price_min }}
+        {{ prices.price_max }}
+    </div>
+{% endblock left_column %}
+
+
 {% block center_column %}
     {% if game_list %}
         <h1 class="list_title">{{ page_title }}</h1>
-
-
-
         <div class="game-list">
             {% for games in object_list %}
                 <div class="game">
