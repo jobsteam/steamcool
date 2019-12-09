@@ -17,17 +17,17 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/css.css' %}?v=1" />
     <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/responsive.css' %}?v=1" />
-    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/nouislider.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/fancybox.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/swiper.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/nouislider.css' %}?v=1" />
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/fancybox.css' %}?v=1" />
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/swiper.css' %}?v=1" />
     <link rel="stylesheet" type="text/css" href="{% static 'frontend/font-awesome/css/font-awesome.min.css' %}">
 
     {% block scripts %}
         {% javascript 'libs' %}
-            <script type="text/javascript" src="{% static 'frontend/js/fancybox.js' %}"></script>
-            <script type="text/javascript" src="{% static 'frontend/js/nouislider.js' %}"></script>
-            <script type="text/javascript" src="{% static 'frontend/js/swiper.min.js' %}"></script>
-            <script type="text/javascript" src="{% static 'frontend/js/settings.js' %}"></script>
+            <script type="text/javascript" src="{% static 'frontend/js/fancybox.js' %}?v=1"></script>
+            <script type="text/javascript" src="{% static 'frontend/js/nouislider.js' %}?v=1"></script>
+            <script type="text/javascript" src="{% static 'frontend/js/swiper.min.js' %}?v=1"></script>
+            <script type="text/javascript" src="{% static 'frontend/js/settings.js' %}?v=1"></script>
         {% javascript 'frontend' %}
     {% endblock %}
     
