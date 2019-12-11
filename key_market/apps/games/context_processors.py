@@ -2,7 +2,7 @@ import string
 
 from django.core.cache import cache
 
-from games.models import Game, Genre, StoreActivation
+from games.models import Game, Genre, Mode, StoreActivation
 from games.utils import fetch_last_pay
 
 
@@ -10,6 +10,7 @@ def sitewide(request):
     return {
         'alphabet': string.ascii_lowercase,
         'genre_list': Genre.objects.all(),
+        'mode_list': Mode.objects.all(),
         'store_list': [store[1] for store in StoreActivation.CHOICES],
         'soon': Game.objects.filter(is_soon=True)[:3],
         'soon_block': Game.objects.filter(is_soon=True)[:3]

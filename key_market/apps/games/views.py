@@ -13,7 +13,7 @@ from django.views.generic import ListView, DetailView, TemplateView
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from games.forms import FilterForm
-from games.models import Game, Genre, StoreActivation
+from games.models import Game, Genre, Mode, StoreActivation
 from games.serializers import SearchGameSerializer, SearchGameFilter
 
 from users.forms import MailForm
@@ -74,12 +74,14 @@ class GamesList(PageTitleMixin, ListView):
         price_max = request.GET.get('price_max') or prices['price_max']
         genre = request.GET.getlist('genre')
         store = request.GET.getlist('store_activation')
+        mode = request.GET.getlist('mode')
 
         form = FilterForm(initial={
             'price_min': price_min,
             'price_max': price_max,
             'genre': genre,
             'store_activation': store,
+            'mode': mode,
         })
         return form
 
@@ -107,6 +109,7 @@ class GamesList(PageTitleMixin, ListView):
             qs = qs.filter(title__istartswith=symbol)
 
         genre_ids = self.request.GET.getlist('genre')
+        mode_ids = self.request.GET.getlist('mode')
         store_ids = self.request.GET.getlist('store_activation')
         price_min = self.request.GET.get('price_min')
         price_max = self.request.GET.get('price_max')
@@ -116,6 +119,10 @@ class GamesList(PageTitleMixin, ListView):
         if genre_ids:
             q_filters.append(
                 reduce(operator.or_, [Q(genre=id) for id in genre_ids]))
+
+        if mode_ids:
+            q_filters.append(
+                reduce(operator.or_, [Q(mode=id) for id in mode_ids]))
 
         if store_ids:
             q_filters.append(

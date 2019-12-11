@@ -19,11 +19,12 @@ class FilterForm(forms.ModelForm):
         required=False)
 
     class Meta:
-        fields = ['price_min', 'price_max', 'genre', 'store_activation']
+        fields = ['price_min', 'price_max', 'genre', 'store_activation', 'mode']
         model = Game
         widgets = {
             'genre': CheckboxWidget,
             'store_activation': CheckboxWidget,
+            'mode': CheckboxWidget,
         }
 
     def __init__(self, *args, **kwargs):

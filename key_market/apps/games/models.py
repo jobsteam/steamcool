@@ -80,6 +80,12 @@ class Game(models.Model):
         related_name='genres',
         blank=True)
 
+    mode = models.ManyToManyField(
+        'Mode',
+        verbose_name='Режим',
+        related_name='modes',
+        blank=True)
+
     publisher = models.ForeignKey(
         'Publisher',
         verbose_name='Издатель',
@@ -286,6 +292,36 @@ class Genre(models.Model):
         ordering = ['order']
         verbose_name = 'Жанр'
         verbose_name_plural = 'Жанры'
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        self.autoslug()
+        super().save(*args, **kwargs)
+
+    def autoslug(self):
+        self.slug = slugify(self.title)
+
+
+class Mode(models.Model):
+    title = models.CharField(
+        'Название режима',
+        max_length=254)
+
+    slug = models.SlugField(
+        'slug',
+        blank=True)
+
+    order = models.PositiveSmallIntegerField(
+        'Порядок',
+        default=0, blank=False, null=False)
+
+    class Meta:
+        default_related_name = 'Без названия'
+        ordering = ['order']
+        verbose_name = 'Режим'
+        verbose_name_plural = 'Режимы'
 
     def __str__(self):
         return self.title
