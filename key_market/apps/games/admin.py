@@ -42,6 +42,7 @@ class GameAdmin(admin.ModelAdmin):
                 'title',
                 'slug',
                 'genre',
+                'mode',
                 'description',
                 'language',
                 'date_release',
@@ -174,6 +175,13 @@ class GameAdmin(admin.ModelAdmin):
 
 @admin.register(game_models.Genre)
 class GenreAdmin(SortableAdminMixin, admin.ModelAdmin):
+    readonly_fields = [
+        'slug',
+    ]
+
+
+@admin.register(game_models.Mode)
+class ModeAdmin(SortableAdminMixin, admin.ModelAdmin):
     readonly_fields = [
         'slug',
     ]
