@@ -15,6 +15,8 @@ urlpatterns = [
         views_games.GamesOrder.as_view(), name='order'),
     url(r'^genre/(?P<slug>[-\w]+)/$',
         views_games.GamesList.as_view(), name='genre_list'),
+    url(r'^mode/(?P<slug>[-\w]+)/$',
+        views_games.GamesList.as_view(), name='mode_list'),
     url(r'^store/(?P<store>%s)/$' % '|'.join(stories),
         views_games.GamesStoreList.as_view(), name='store_list'),
     url(r'^lucky/$',

@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
     <title>{% block title %}STEAMCOOL. Интернет-магазин лицензионных ключей для игр на PC{% endblock title %}</title>
     <meta name="keywords" content="{% block keywords %}магазин ключей, ключи steam, ключи origin, ключи uplay, со скидкой, купить ключ {% endblock keywords %}" />
     <meta name="description" content="{% block description %}Магазин лицензионных steam, origin, uplay ключей по низким ценам.{% endblock description %}" />
@@ -16,19 +15,19 @@
     <meta property="og:image" content="{% block ogimg %}{% static 'frontend/images/logo-350.png' %}{% endblock ogimg %}"/>
 
 
-    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/css.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/responsive.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/nouislider.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/fancybox.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/swiper.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/css.css' %}?v=2" />
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/responsive.css' %}?v=2" />
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/nouislider.css' %}?v=2" />
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/fancybox.css' %}?v=2" />
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/style/swiper.css' %}?v=2" />
     <link rel="stylesheet" type="text/css" href="{% static 'frontend/font-awesome/css/font-awesome.min.css' %}">
 
     {% block scripts %}
         {% javascript 'libs' %}
-            <script type="text/javascript" src="{% static 'frontend/js/fancybox.js' %}"></script>
-            <script type="text/javascript" src="{% static 'frontend/js/nouislider.js' %}"></script>
-            <script type="text/javascript" src="{% static 'frontend/js/swiper.min.js' %}"></script>
-            <script type="text/javascript" src="{% static 'frontend/js/settings.js' %}"></script>
+            <script type="text/javascript" src="{% static 'frontend/js/fancybox.js' %}?v=2"></script>
+            <script type="text/javascript" src="{% static 'frontend/js/nouislider.js' %}?v=2"></script>
+            <script type="text/javascript" src="{% static 'frontend/js/swiper.min.js' %}?v=2"></script>
+            <script type="text/javascript" src="{% static 'frontend/js/settings.js' %}?v=2"></script>
         {% javascript 'frontend' %}
     {% endblock %}
     
