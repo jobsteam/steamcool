@@ -61,7 +61,12 @@
                             <div class="product">
                                 <div class="name">{{ game.title}}</div>
                                 <div class="store_info">
-                                    <img src="images/steam.png">
+                                    <div class="mini_icon mini_icon_{{ game.get_store_activation_display }}"></div>
+                                    <div class="genre">
+                                        {% for genre in game.genre.all %}
+                                            {{ genre.title }}{% if not forloop.last %}, {% endif %} 
+                                        {% endfor %}
+                                    </div>
                                 </div>
                             </div>
                             <div class="status">
@@ -96,7 +101,12 @@
                             <div class="product">
                                 <div class="name">{{ game.title}}</div>
                                 <div class="store_info">
-                                    <img src="images/steam.png">
+                                    <div class="mini_icon mini_icon_{{ game.get_store_activation_display }}"></div>
+                                    <div class="genre">
+                                        {% for genre in game.genre.all %}
+                                            {{ genre.title }}{% if not forloop.last %}, {% endif %} 
+                                        {% endfor %}
+                                    </div>
                                 </div>
                             </div>
                             <div class="status">
@@ -131,7 +141,12 @@
                             <div class="product">
                                 <div class="name">{{ game.title}}</div>
                                 <div class="store_info">
-                                    <img src="images/steam.png">
+                                    <div class="mini_icon mini_icon_{{ game.get_store_activation_display }}"></div>
+                                    <div class="genre">
+                                        {% for genre in game.genre.all %}
+                                            {{ genre.title }}{% if not forloop.last %}, {% endif %} 
+                                        {% endfor %}
+                                    </div>
                                 </div>
                             </div>
                             <div class="status">

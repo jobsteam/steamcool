@@ -515,9 +515,28 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
 }
-.game_list .store_info img{
+.game_list .store_info .mini_icon{
+    width: 16px;
+    height: 16px;
     margin: 0 5px 0 0;
+}
+.game_list .store_info .mini_icon_steam{
+    background: url(../images/steam.png) 0px 0px no-repeat;
+}
+.game_list .store_info .mini_icon_origin{
+    background: url(../images/origin.png) 0px 0px no-repeat;
+}
+.game_list .store_info .mini_icon_uplay{
+    background: url(../images/uplay.png) 0px 0px no-repeat;
+}
+.game_list .store_info .mini_icon_rockstar{
+    background: url(../images/rockstar.png) 0px 0px no-repeat;
+}
+.game_list .store_info .genre{
+    font: normal 12px Roboto;
+    color: #ccc;
 }
 .game_list .coast{
     width: 100%;
@@ -793,13 +812,6 @@ body{
 .game_page .game_detail_info div span a:hover{
     color: #ffffff;
 }
-
-
-
-
-
-
-
 .game_page .game_img img{
     display: block;
     width: 100%;

@@ -27,40 +27,60 @@
 
 {% block center_column %}
     {% if game_list %}
-        <h1 class="list_title">{{ page_title }}</h1>
-        <div class="game-list">
-            {% for games in object_list %}
-                <div class="game">
-                    <div class="game-img">
-                        {% thumbnail games.image "250x117" as im %}
-                        <img src="{{ im.url }}" width="100%">
-                    </div>
-                    <div class="game-info">
-                        
-                        <div class="game-info-title">
-                            <div class="game-name">{{ games.title }}</div>
-                            <div class="game-key">{{ games.get_store_activation_display }} | 
-                            {% for genre in games.genre.all %}
-                                {{ genre.title }}{% if not forloop.last %}, {% endif %} 
-                            {% endfor %}
+        <div class="content">
+            <div class="head_game_list">
+                <h1>{{ page_title }}</h1>
+                <div data-popup-button="filter" class="filter_button">
+                    <i class="fa fa-sliders" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="game_list">
+                {% for games in object_list %}
+                    <div class="game">
+                        <a class="link" href="{% url 'games:detail' games.slug %}"></a>
+                        <div class="game_img">
+                            {% thumbnail games.image "250x117" as im %}
+                            <img src="{{ im.url }}">
+                        </div>
+                        <div class="game_info">
+                            <div class="product">
+                                <div class="name">{{ games.title }}</div>
+                                <div class="store_info">
+                                    <div class="mini_icon mini_icon_{{ games.get_store_activation_display }}"></div>
+                                    <div class="genre">
+                                        {% for genre in games.genre.all %}
+                                            {{ genre.title }}{% if not forloop.last %}, {% endif %} 
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="status">
+                                {% if games.in_stock %}
+                                    <div class="coast">
+                                        <div class="percent">-{{ games.percent }}%</div>
+                                        <div class="price">
+                                            {{ games.my_coast }} <span>руб.</span>
+                                        </div>
+                                    </div>
+                                {% elif game.is_soon %}
+                                    <div class="soon">Скоро!</div>
+                                {% else %}
+                                    <div class="nonal">Закончился!</div>
+                                {% endif %}
                             </div>
                         </div>
-                        <div class="game-info-coast">
-                            <div class="game-info-price">{{ games.my_coast }} <span>руб.</span></div>
-                        </div>
                     </div>
-                    <a href="{% url 'games:detail' games.slug %}" class="game-link"></a>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
+    {% else %}
+        {% if is_alphabet %}
+            На такую букву игр не нашлось
         {% else %}
-            {% if is_alphabet %}
-                На такую букву игр не нашлось
-            {% else %}
-                В разделе {{ section }} нет ни одной игры. Приходите позже, они обязательно появятся
-            {% endif %}
+            В разделе {{ section }} нет ни одной игры. Приходите позже, они обязательно появятся
         {% endif %}
-        {% if is_paginated %}
-            {% paginator 2 %}
-        {% endif %}
+    {% endif %}
+    {% if is_paginated %}
+        {% paginator 2 %}
+    {% endif %}
 {% endblock %}
