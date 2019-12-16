@@ -1268,5 +1268,17 @@ body{
     color: #333;
 }
 
+/*Оформление страницы контента - контакты, поддержка, отзывы ... */
+.content_head h1{
+    font: bold 22px Roboto;
+    color: #333;
+    padding: 15px;
+    margin: 0;
+    background: #eee;
+}
+.content{
+    padding: 15px;
+    background: #fff;
+}
 
 
