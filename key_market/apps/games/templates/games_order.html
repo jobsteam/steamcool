@@ -14,7 +14,6 @@
 {% block extra-scripts %}{% endblock extra-scripts %}
 
 {% block view_element %}
-
     <div class="payment_head">
         <h1>{{ game.title }} - оформление заказа</h1>
     </div>
@@ -38,17 +37,16 @@
             </div>
         </div>
         <div class="payment_form">
-            <form id="payment" action="#file">
+            <form id="payment" action="" method="POST">{% csrf_token %}
                 <div class="payment_block">
                     <div class="payment_cont_head">Выберите способ оплаты:</div>
                     <div class="payment_select">
-
                         <div class="payment_box">
-                            <input type="radio" name="payment" value="wmr" id="payment1">
+                            <input type="radio" name="payment" value="WMR" id="payment1">
                             <label for="payment1">
                                 <div class="payment" data-price="359">
                                     <div class="payment_ic">
-                                        <img src="images/wm.png">
+                                        <img src="{% static 'frontend/images/wm.png' %}">
                                     </div>
                                     <div class="payment_name">
                                         Webmoney
@@ -64,7 +62,7 @@
                             <label for="payment2">
                                 <div class="payment" data-price="363.28">
                                     <div class="payment_ic">
-                                        <img src="images/qiwi.png">
+                                        <img src="{% static 'frontend/images/qiwi.png' %}">
                                     </div>
                                     <div class="payment_name">
                                         Qiwi
@@ -80,7 +78,7 @@
                             <label for="payment3">
                                 <div class="payment" data-price="370">
                                     <div class="payment_ic">
-                                        <img src="images/yam.png">
+                                        <img src="{% static 'frontend/images/yam.png' %}">
                                     </div>
                                     <div class="payment_name">
                                         Яндекс Деньги
@@ -96,7 +94,7 @@
                             <label for="payment4">
                                 <div class="payment" data-price="351">
                                     <div class="payment_ic">
-                                        <img src="images/ter.png">
+                                        <img src="{% static 'frontend/images/ter.png' %}">
                                     </div>
                                     <div class="payment_name">
                                         Терминалы
@@ -112,7 +110,7 @@
                             <label for="payment5">
                                 <div class="payment" data-price="350">
                                     <div class="payment_ic">
-                                        <img src="images/mts.png">
+                                        <img src="{% static 'frontend/images/mts.png' %}">
                                     </div>
                                     <div class="payment_name">
                                         МТС
@@ -128,7 +126,7 @@
                             <label for="payment6">
                                 <div class="payment" data-price="365">
                                     <div class="payment_ic">
-                                        <img src="images/beel.png">
+                                        <img src="{% static 'frontend/images/beel.png' %}">
                                     </div>
                                     <div class="payment_name">
                                         Билайн
@@ -144,7 +142,7 @@
                             <label for="payment7">
                                 <div class="payment" data-price="364">
                                     <div class="payment_ic">
-                                        <img src="images/meg.png">
+                                        <img src="{% static 'frontend/images/meg.png' %}">
                                     </div>
                                     <div class="payment_name">
                                         Мегафон
@@ -160,7 +158,7 @@
                             <label for="payment8">
                                 <div class="payment" data-price="359">
                                     <div class="payment_ic">
-                                        <img src="images/bit.png">
+                                        <img src="{% static 'frontend/images/bit.png' %}">
                                     </div>
                                     <div class="payment_name">
                                         Bitcoin
@@ -176,7 +174,7 @@
                             <label for="payment9">
                                 <div class="payment" data-price="385">
                                     <div class="payment_ic">
-                                        <img src="images/pochta.png">
+                                        <img src="{% static 'frontend/images/pochta.png' %}">
                                     </div>
                                     <div class="payment_name">
                                         Почта России
@@ -192,7 +190,7 @@
                 <div class="payment_block">
                     <div class="payment_cont_head">Итоговая стоимость:</div>
                     <div class="final_coast">
-                        Стоимость с учетом комиссии: <span>359</span> руб.
+                        Стоимость с учетом комиссии: <span>{{ game.my_coast }}</span> руб.
                     </div>
                 </div>
 
@@ -202,256 +200,12 @@
                         <div class="terms_form">Оформляя заказ на нашем сайте, вы соглашаетесь с <a href="#">условиями и положениями сайта</a>, <a href="#">договором-оферты</a> и соглашением об обработке персональных данных покупателя. Интернет-магазин не хранит ваши платежные реквизиты в базе данных. Сайт проводит транзакции через защищенное соединение.</div>
                         <div id="payment_error"></div>
                         <div class="mail"><input placeholder="Укажите ваш E-mail" autocomplete="off" type="text" name="mail"></div>
-                        <div class="submit_form"><input type="submit" value="Перейти к оплате"></div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="game-object">
-        <h1>Оформление заказа</h1>
-        <div class="game-order-head clear-block">
-            <div class="game-order-image">
-                <img src="{{ game.image.url }}">
-            </div>
-            <div class="game-order-info">
-                <div class="game-order-title">
-                    {{ game.title }}
-                    <span>Товар в наличии</span>
-                </div>
-            </div>
-        </div>
-        <div class="game-order">
-            {% if form.payment.errors %}
-                <span class="error">Вы не выбрали способ оплаты</span>
-            {% endif %}
-            {% if form.mail.errors %}
-                <span class="error">Вы не заполнили поле E-mail</span>
-            {% endif %}
-            <form class="order-form" action="" method="POST">{% csrf_token %}
-                <div class="text-content order-text">
-                    <h2>Важная информация</h2>
-                    Покупая в нашем магазине товар вы автоматически соглашаетесь с <a href="#">Договором оферты</a>. Данный товар работает и может быть активирован в следующих странах: Россия, Украина, Беларусь, Казахстан, Армения, Азербайджан, Грузия, Киргизстан, Республика Молдова, Таджикистан, Туркменистан, Узбекистан. В описании под товаром могут быть внесены дополнительные региональные ограничения либо разрешения.
-                </div>
-                <div class="text-content select-payment">
-                    <h2>Выберите способ оплаты</h2>
-                    <div class="pay-blocks clear-block">
-                        <div class="pay-block">
-                            <input checked="" class="radio_button" type="radio" name="payment" id="payment1" value="WMR">
-                            <label class="label_button" for="payment1">
-                                <div class="pay-box clear-block">
-                                    <div class="pay-icon">
-                                        <img width="50" src="{% static 'frontend/images/webmoney.png' %}">
-                                    </div>
-                                    <div class="pay-info">
-                                        <div class="pay-name">Webmoney (RUB)</div>
-                                        <div class="pay-percent">Коммиссия 0,8%</div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="pay-block">
-                            <input class="radio_button" type="radio" name="payment" id="payment2" value="WMZ">
-                            <label class="label_button" for="payment2">
-                                <div class="pay-box clear-block">
-                                    <div class="pay-icon">
-                                        <img width="50" src="{% static 'frontend/images/webmoney.png' %}">
-                                    </div>
-                                    <div class="pay-info">
-                                        <div class="pay-name">Webmoney (USD)</div>
-                                        <div class="pay-percent">Коммиссия 0,8%</div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="pay-block">
-                            <input class="radio_button" type="radio" name="payment" id="payment3" value="WME">
-                            <label class="label_button" for="payment3">
-                                <div class="pay-box clear-block">
-                                    <div class="pay-icon">
-                                        <img width="50" src="{% static 'frontend/images/webmoney.png' %}">
-                                    </div>
-                                    <div class="pay-info">
-                                        <div class="pay-name">Webmoney (EUR)</div>
-                                        <div class="pay-percent">Коммиссия 0,8%</div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="pay-block">
-                            <input class="radio_button" type="radio" name="payment" id="payment4" value="PCR">
-                            <label class="label_button" for="payment4">
-                                <div class="pay-box clear-block">
-                                    <div class="pay-icon">
-                                        <img width="50" src="{% static 'frontend/images/yandex.png' %}">
-                                    </div>
-                                    <div class="pay-info">
-                                        <div class="pay-name">Яндекс.Деньги</div>
-                                        <div class="pay-percent">Коммиссия 6%</div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="pay-block">
-                            <input class="radio_button" type="radio" name="payment" id="payment5" value="QSR">
-                            <label class="label_button" for="payment5">
-                                <div class="pay-box clear-block">
-                                    <div class="pay-icon">
-                                        <img width="50" src="{% static 'frontend/images/qiwi.png' %}">
-                                    </div>
-                                    <div class="pay-info">
-                                        <div class="pay-name">Qiwi</div>
-                                        <div class="pay-percent">Коммиссия 5.5%</div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="pay-block">
-                            <input class="radio_button" type="radio" name="payment" id="payment6" value="RCC">
-                            <label class="label_button" for="payment6">
-                                <div class="pay-box clear-block">
-                                    <div class="pay-icon">
-                                        <img width="50" src="{% static 'frontend/images/visa.png' %}">
-                                    </div>
-                                    <div class="pay-info">
-                                        <div class="pay-name">Viza / MasterCard</div>
-                                        <div class="pay-percent">Коммиссия 1.9%</div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="pay-block">
-                            <input class="radio_button" type="radio" name="payment" id="payment7" value="BLN">
-                            <label class="label_button" for="payment7">
-                                <div class="pay-box clear-block">
-                                    <div class="pay-icon">
-                                        <img width="50" src="{% static 'frontend/images/beeline.png' %}">
-                                    </div>
-                                    <div class="pay-info">
-                                        <div class="pay-name">Билайн</div>
-                                        <div class="pay-percent">Коммиссия 8.6%</div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="pay-block">
-                            <input class="radio_button" type="radio" name="payment" id="payment8" value="MGY">
-                            <label class="label_button" for="payment8">
-                                <div class="pay-box clear-block">
-                                    <div class="pay-icon">
-                                        <img width="50" src="{% static 'frontend/images/megafon.png' %}">
-                                    </div>
-                                    <div class="pay-info">
-                                        <div class="pay-name">Мегафон</div>
-                                        <div class="pay-percent">Коммиссия 15.5%</div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="pay-block">
-                            <input class="radio_button" type="radio" name="payment" id="payment9" value="MTS">
-                            <label class="label_button" for="payment9">
-                                <div class="pay-box clear-block">
-                                    <div class="pay-icon">
-                                        <img width="50" src="{% static 'frontend/images/mts.png' %}">
-                                    </div>
-                                    <div class="pay-info">
-                                        <div class="pay-name">МТС</div>
-                                        <div class="pay-percent">Коммиссия 11.6%</div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="pay-block">
-                            <input class="radio_button" type="radio" name="payment" id="payment10" value="SBR">
-                            <label class="label_button" for="payment10">
-                                <div class="pay-box clear-block">
-                                    <div class="pay-icon">
-                                        <img width="50" src="{% static 'frontend/images/sberbank.png' %}">
-                                    </div>
-                                    <div class="pay-info">
-                                        <div class="pay-name">Сбербанк Онлайн</div>
-                                        <div class="pay-percent">Коммиссия 2.5%</div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="pay-block">
-                            <input class="radio_button" type="radio" name="payment" id="payment11" value="TLY">
-                            <label class="label_button" for="payment11">
-                                <div class="pay-box clear-block">
-                                    <div class="pay-icon">
-                                        <img width="50" src="{% static 'frontend/images/tele2.png' %}">
-                                    </div>
-                                    <div class="pay-info">
-                                        <div class="pay-name">Теле2</div>
-                                        <div class="pay-percent">Коммиссия 16%</div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="pay-block">
-                            <input class="radio_button" type="radio" name="payment" id="payment12" value="PRR">
-                            <label class="label_button" for="payment12">
-                                <div class="pay-box clear-block">
-                                    <div class="pay-icon">
-                                        <img width="50" src="{% static 'frontend/images/pochta.png' %}">
-                                    </div>
-                                    <div class="pay-info">
-                                        <div class="pay-name">Почта России</div>
-                                        <div class="pay-percent">Коммиссия 8%</div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-mail-box">
-                    <div class="order-mail-form clear-block">
-                        <div class="order-mail-mail">
-                            <input name="mail" class="place" type="text" placeholder="Укажите Ваш E-mail">
-                        </div>
-                        <div class="order-mail-submit">
+                        <div class="submit_form">
                             <input type="submit" value="Перейти к оплате">
                         </div>
                     </div>
-                    <div class="order-mail-text">
-                        После оплаты, товар будет доступен в <a href="#">личном кабинете</a>.
-                    </div>
                 </div>
             </form>
         </div>
-    </div>
+    </div> 
 {% endblock %}

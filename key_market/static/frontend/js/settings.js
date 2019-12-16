@@ -113,10 +113,8 @@ $(document).ready(function(){
         		}
         		console.log("не указан способ оплаты");
         	}
-        }else{
-        	console.log("отправлять");
+          return false;
         }
-        return false;
     });
 
 
