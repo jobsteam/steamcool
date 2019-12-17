@@ -1281,4 +1281,40 @@ body{
     background: #fff;
 }
 
-
+/*Список отзывов*/
+.reviews{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.oplata_reviews{
+    width: 50%;
+}
+.vk_reviews{
+    width: 50%;
+}
+.review{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background: #eeeeee;
+    margin: 0 0 1px 0;
+}
+.review_date{
+    flex-basis: 75px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font: normal 13px Roboto;
+    text-align: center;
+    padding: 8px 12px;
+    color: #333;
+    border-right: solid 1px #fff;
+    border-left: solid 3px #ee8335;
+}
+.review_text{
+    width: 100%;
+    padding: 8px 12px;
+    font: normal 13px Roboto;
+    background: #dfe8db;
+    overflow: hidden;
+}
