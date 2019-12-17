@@ -29,20 +29,31 @@
     <div class="content">
         <div class="reviews">
             <div class="oplata_reviews">
-                Отзывы, которые оставляют нам наши покупатели защищены системой oplata.info. Это сторонняя система, никак не зависящая от нас. Поэтому мы не можем изменить, добавить или удалить какой-либо отзыв. Можете быть уверены, все отзывы, присутствующие на странице написаны живыми людьми. Убедительная просьба, оставляйте отзыв после покупки товара у нас. Каждый отзыв улучшает наш магазин и позволяет наполнять наш каталог новыми играми.
+                <div class="head_review">
+                    <h2>Отзывы Oplata.info</h2>
+                    Отзывы, оставленные покупателями в платежной системе Oplata.info. Такие отзывы невозможно удалить или изменить администратором интернет-магазина steamcool.ru.
+                </div>
                 <div class="list_reviews">
-                {% for review in reviews %}
-                    <div class="review">
-                        <div class="review_date">{{ review.date }}</div>
-                        <div class="review_text">{{ review.info }}</div>
+                    <div class="review_head">
+                        <div class="review_head_date">Дата отзыва</div>
+                        <div class="review_head_text">Текст отзыва</div>
                     </div>
-                {% endfor %}
+                    {% for review in reviews %}
+                        <div class="review">
+                            <div class="review_date">{{ review.date }}</div>
+                            <div class="review_text">{{ review.info }}</div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="vk_reviews">
+                <div class="head_review">
+                    <h2>Отзывы vk.com</h2>
+                    Ниже представлены отзывы VK пользователей, которые когда-то совершили у нас покупку. Вы можете лично спросить у них о качестве нашего магазина и убедиться что мы работаем честно.
+                </div>
                 <div id="vk_comments"></div>
                 <script type="text/javascript">
-                    VK.Widgets.Comments("vk_comments", {limit: 20, attach: "photo"});
+                    VK.Widgets.Comments("vk_comments", {limit: 50, attach: "photo"});
                 </script>
             </div>
         </div>
