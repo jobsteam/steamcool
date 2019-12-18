@@ -1309,16 +1309,12 @@ body{
     background: #eee;
     border-radius: 10px;
 }
-
-
 .list_reviews{
     background: #fff;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 3px 3px 3px #e4e4e4;
 }
-
-
 .review_head{
     display: flex;
     flex-direction: row;
@@ -1341,13 +1337,6 @@ body{
     width: 100%;
     padding: 0 15px;
 }
-
-
-
-
-
-
-
 .review{
     display: flex;
     flex-direction: row;
@@ -1370,4 +1359,34 @@ body{
     width: 100%;
     padding: 8px 15px;
     overflow: hidden;
+}
+
+/*Автокомплит поиска*/
+.autocomplete-suggestions{
+    background: #333;
+}
+.game_result{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 5px;
+}
+.game_result .game_result_img{
+    flex-basis: 100px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+.game_result .game_result_img img{
+    width: 100%;
+    display: block;
+}
+.game_result .game_result_title{
+    width: 100%;
+    word-break:break-all;
+}
+.game_result .game_result_price{
+    flex-basis: 100px;
+    flex-shrink: 0;
+    flex-grow: 0;
 }

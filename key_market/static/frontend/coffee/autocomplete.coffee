@@ -21,6 +21,7 @@ do ($=jQuery, window, document) ->
           data:
             link: dataItem.url
             img: dataItem.image_url
+            price: dataItem.my_coast
       formatResult: (suggestion, currentValue) ->
         result = suggestion.value
 
@@ -35,7 +36,11 @@ do ($=jQuery, window, document) ->
             .replace(/"/g, '&quot;')
             .replace(/&lt;(\/?strong)&gt;/g, '<$1>')
 
-        "<div><img src='#{suggestion.data.img}'>#{result}</div>"
+        "<div class='game_result'>
+          <div class='game_result_img'><img src='#{suggestion.data.img}'></div>
+          <div class='game_result_title'>#{result}</div>
+          <div class='game_result_price'>#{suggestion.data.price} руб.</div>
+        </div>"
 
       onSelect: (suggestion) ->
         window.location.href = suggestion.data.link
