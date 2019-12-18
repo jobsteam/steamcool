@@ -37,7 +37,6 @@ do ($=jQuery, window, document) ->
             .replace(/&lt;(\/?strong)&gt;/g, '<$1>')
 
         "<div class='game_result'>
-          <div class='game_result_img'><img src='#{suggestion.data.img}'></div>
           <div class='game_result_title'>#{result}</div>
           <div class='game_result_price'>#{suggestion.data.price} руб.</div>
         </div>"
