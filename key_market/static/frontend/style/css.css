@@ -1297,8 +1297,9 @@ body{
 }
 .head_review {
     padding: 0 0 15px 0;
-    font: normal 15px Roboto;
+    font: normal 13px/18px Roboto;
     color: #333;
+    min-height: 100px;
 }
 .head_review h2{
     font: bold 20px Roboto;
@@ -1324,7 +1325,7 @@ body{
     flex-wrap: nowrap;
     align-items: center;
     border-bottom: solid 1px #fff;
-    background: #6abb47;
+    background: #ce4e03;
     height: 40px;
     font: bold 13px Roboto;
     color: #fff;
@@ -1362,7 +1363,6 @@ body{
     flex-grow: 0;
     flex-shrink: 0;
     padding: 8px 15px;
-    border-right: solid 3px #fff;
     text-align: center;
     color: #ee8234;
 }
