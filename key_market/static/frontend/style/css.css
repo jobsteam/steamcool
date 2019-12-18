@@ -1295,13 +1295,26 @@ body{
     padding: 15px;
     width: 50%;
 }
-
+.head_review {
+    padding: 0 0 15px 0;
+    font: normal 15px Roboto;
+    color: #333;
+}
+.head_review h2{
+    font: bold 20px Roboto;
+}
+.box_reviews{
+    padding: 15px;
+    background: #eee;
+    border-radius: 10px;
+}
 
 
 .list_reviews{
-    background: #eee;
+    background: #fff;
     border-radius: 5px;
     overflow: hidden;
+    box-shadow: 3px 3px 3px #e4e4e4;
 }
 
 
@@ -1313,7 +1326,7 @@ body{
     border-bottom: solid 1px #fff;
     background: #6abb47;
     height: 40px;
-    font: normal 13px Roboto;
+    font: bold 13px Roboto;
     color: #fff;
 }
 .review_head_date{
@@ -1321,6 +1334,7 @@ body{
     flex-grow: 0;
     flex-shrink: 0;
     padding: 0 15px;
+    text-align: center;
 }
 .review_head_text{
     width: 100%;
@@ -1337,15 +1351,20 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    border-bottom: solid 1px #fff;
-    font: normal 13px Roboto;
+    font: normal 13px/18px Roboto;
     color: #333;
+}
+.review:nth-child(2n-1) {
+    background: #fbfbfb;
 }
 .review_date{
     flex-basis: 85px;
     flex-grow: 0;
     flex-shrink: 0;
     padding: 8px 15px;
+    border-right: solid 3px #fff;
+    text-align: center;
+    color: #ee8234;
 }
 .review_text{
     width: 100%;
