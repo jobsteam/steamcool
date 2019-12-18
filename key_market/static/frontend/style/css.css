@@ -1272,7 +1272,7 @@ body{
 .content_head h1{
     font: bold 22px Roboto;
     color: #333;
-    padding: 15px;
+    padding: 15px 30px;
     margin: 0;
     background: #eee;
 }
@@ -1401,5 +1401,6 @@ body{
     padding: 0 10px;
 }
 .autocomplete-selected .game_result{
-    background: #ee7928;
+    background: #6b5a4e;
+    cursor: pointer;
 }
