@@ -1500,9 +1500,6 @@
     .review_text{
         padding: 0;
     }
-
-
-    
 }
 @media screen and (min-width: 100px) and (max-width: 400px){
     .head_review h2 {

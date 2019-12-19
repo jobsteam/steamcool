@@ -4,9 +4,16 @@
         <ul class="menu">
             {% for genre in genre_list %}
             <li>
-                <a class="{% if active_page == genre.slug %}active{% endif %}" href="{% url 'games:genre_list' genre.slug %}">{{ genre.title }}</a>
+                <a href="{% url 'games:list' %}?genre={{ genre.id }}">{{ genre.title }}</a>
             </li>
             {% endfor %}
         </ul>
     </div>
 </div>
+
+
+
+
+
+
+

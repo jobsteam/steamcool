@@ -107,7 +107,7 @@
                     <li><a href="{% url 'pages:guarantees' %}">Гарантии</a></li>
                     <li><a href="{% url 'pages:support' %}">Поддержка</a></li>
                     <li><a href="{% url 'pages:payment' %}">Способы оплаты</a></li>
-                    <li><a href="https://www.oplata.info/info/">Мои покупки</a></li>
+                    <li><a target="_blank" href="https://www.oplata.info/info/">Мои покупки</a></li>
                     <li><a class="lucky-button" href="{% url 'games:genre_list' 'ispyitaj-udachu' %}">Испытай удачу</a></li>
                 </ul>
             </div>
@@ -124,21 +124,21 @@
                 <div class="menu">
                     <span>О магазине</span>
                     <ul>
-                        <li><a href="#">Отзывы</a></li>
-                        <li><a href="#">Гарантии</a></li>
-                        <li><a href="#">Как купить</a></li>
-                        <li><a href="#">Способы оплаты</a></li>
-                        <li><a href="#">Поддержка</a></li>
-                        <li><a href="#">Мои покупки</a></li>
+                        <li><a href="{% url 'pages:reviews' %}">Отзывы</a></li>
+                        <li><a href="{% url 'pages:guarantees' %}">Гарантии</a></li>
+                        <li><a href="{% url 'pages:instruction' %}">Как купить</a></li>
+                        <li><a href="{% url 'pages:payment' %}">Способы оплаты</a></li>
+                        <li><a href="{% url 'pages:support' %}">Поддержка</a></li>
+                        <li><a target="_blank" href="https://www.oplata.info/info/">Мои покупки</a></li>
                     </ul>
                 </div>
                 <div class="menu">
                     <span>Ключи активации</span>
                     <ul>
-                        <li><a href="#">Steam</a></li>
-                        <li><a href="#">Origin</a></li>
-                        <li><a href="#">Uplay</a></li>
-                        <li><a href="#">Rockstar</a></li>
+                        <li><a href="{% url 'games:list' %}?store_activation=1">Steam</a></li>
+                        <li><a href="{% url 'games:list' %}?store_activation=2">Origin</a></li>
+                        <li><a href="{% url 'games:list' %}?store_activation=3">Uplay</a></li>
+                        <li><a href="{% url 'games:list' %}?store_activation=4">Rockstar</a></li>
                     </ul>
                 </div>
                 <div class="footer_info">
