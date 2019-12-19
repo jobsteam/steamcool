@@ -1385,7 +1385,6 @@ body{
 .game_result .game_result_title{
     width: 100%;
     box-sizing: border-box;
-    word-break:break-all;
     padding: 0 10px;
     font: normal 13px Roboto;
     color: #eee;
