@@ -1447,6 +1447,23 @@
     .head_review{
         min-height: auto;
     }
+    .review {
+        display: block;
+        padding: 15px;
+    }
+    .review_head_date{
+        display: none;
+    }
+    .review_head_text{
+        padding: 0 15px;
+    }
+    .review_date{
+        padding: 0;
+        text-align: left;
+    }
+    .review_text{
+        padding: 0;
+    }
 }
 @media screen and (min-width: 400px) and (max-width: 600px){
     .head_review h2 {
@@ -1467,26 +1484,25 @@
         min-height: auto;
     }
     .review {
-        font: normal 12px/14px Roboto;
-    }
-    .review_head {
-        font: bold 13px Roboto;
-    }
-    .review_head_date {
-        flex-basis: 60px;
-    }
-    .review_date {
-        flex-basis: 60px;
-    }
-    .box_reviews {
+        display: block;
         padding: 10px;
     }
-    .review_text{
-        padding: 8px 15px 8px 0px;
+    .review_head_date{
+        display: none;
     }
     .review_head_text{
-        padding: 0px 15px 0px 0px;
+        padding: 0 10px;
     }
+    .review_date{
+        padding: 0;
+        text-align: left;
+    }
+    .review_text{
+        padding: 0;
+    }
+
+
+    
 }
 @media screen and (min-width: 100px) and (max-width: 400px){
     .head_review h2 {
@@ -1506,28 +1522,26 @@
     .head_review{
         min-height: auto;
     }
-    .review {
-        font: normal 12px/14px Roboto;
-    }
-    .review_head {
-        font: bold 13px Roboto;
-    }
-    .review_head_date {
-        text-align: left;
-        flex-basis: 60px;
-    }
-    .review_date {
-        text-align: left;
-        flex-basis: 60px;
-    }
-    .box_reviews {
+    .box_reviews{
         padding: 10px;
     }
-    .review_text{
-        padding: 8px 15px 8px 0px;
+    .review {
+        display: block;
+        padding: 10px;
+        font: normal 12px/18px Roboto;
+    }
+    .review_head_date{
+        display: none;
     }
     .review_head_text{
-        padding: 0px 15px 0px 0px;
+        padding: 0 10px;
+    }
+    .review_date{
+        padding: 0;
+        text-align: left;
+    }
+    .review_text{
+        padding: 0;
     }
 }
 
