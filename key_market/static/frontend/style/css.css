@@ -1372,6 +1372,7 @@ body{
     flex-wrap: nowrap;
     align-items: center;
     padding: 5px;
+    height: 25px;
 }
 .game_result .game_result_img{
     flex-basis: 120px;
