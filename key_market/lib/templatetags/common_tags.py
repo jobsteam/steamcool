@@ -28,4 +28,17 @@ def paginator(context, adjacent_pages=2):
         'show_first': 1 not in page_numbers,
         'show_last': total not in page_numbers,
         'queries': context.get('queries'),
+        'request': context.get('request'),
+        'page_kwarg': context.get('page_kwarg'),
     }
+
+
+@register.simple_tag(takes_context=True)
+def pagination_url(context, page):
+    request = context['request']
+    dict_ = request.GET.copy()
+
+    page_kwarg = context.get('page_kwarg') or 'page'
+    dict_[page_kwarg] = page
+
+    return dict_.urlencode()

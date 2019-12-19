@@ -13,7 +13,7 @@ from django.views.generic import ListView, DetailView, TemplateView
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from games.forms import FilterForm
-from games.models import Game, Genre, Mode, StoreActivation
+from games.models import Game, Genre, StoreActivation
 from games.serializers import SearchGameSerializer, SearchGameFilter
 
 from users.forms import MailForm
@@ -138,7 +138,7 @@ class GamesList(PageTitleMixin, ListView):
             elif price_max:
                 q_filters.append(Q(my_coast__lte=price_max))
 
-        return qs.filter(*q_filters)
+        return qs.filter(*q_filters).distinct()
 
 
 class GamesStoreList(PageTitleMixin, ListView):

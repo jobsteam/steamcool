@@ -11,11 +11,24 @@
 {% block left_column %}
     <div class="test">
         <form action="" method="GET">
-            <input type="number" name="price_min" value="0" id="id_price_min">
-            <input type="number" name="price_max" value="1599" id="id_price_max">
-            {{ filter_form.genre }}
-            {{ filter_form.store_activation }}
-            {{ filter_form.mode }}
+            <input type="text" name="price_min" value="0" id="id_price_min">
+            <input type="text" name="price_max" value="1599" id="id_price_max">
+
+            <div class="property">
+                <div class="property_head">{{ filter_form.genre.label }}</div>
+                {{ filter_form.genre }}
+            </div>
+
+            <div class="property">
+                <div class="property_head">{{ filter_form.store_activation.label }}</div>
+                {{ filter_form.store_activation }}
+            </div>
+
+            <div class="property">
+                <div class="property_head">{{ filter_form.mode.label }}</div>
+                {{ filter_form.mode }}
+            </div>
+
             <button type="submit">Найти</button>
         </form>
 

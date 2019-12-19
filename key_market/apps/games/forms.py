@@ -19,7 +19,8 @@ class FilterForm(forms.ModelForm):
         required=False)
 
     class Meta:
-        fields = ['price_min', 'price_max', 'genre', 'store_activation', 'mode']
+        fields = ['price_min', 'price_max', 'genre', 'store_activation',
+                  'mode']
         model = Game
         widgets = {
             'genre': CheckboxWidget,
