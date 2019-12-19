@@ -1400,3 +1400,166 @@
         margin: 0 auto;
     }
 }
+
+/*Адаптация отзывов*/
+@media screen and (min-width: 1150px) and (max-width: 1300px){
+    .head_review h2 {
+        font: bold 18px Roboto;
+    }
+}
+@media screen and (min-width: 980px) and (max-width: 1150px){
+    .head_review h2 {
+        font: bold 18px Roboto;
+    }
+    .vk_reviews {
+        padding: 10px;
+    }
+    .oplata_reviews {
+        padding: 10px;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 980px){
+    .head_review h2 {
+        font: bold 18px Roboto;
+    }
+    .vk_reviews {
+        padding: 7px;
+    }
+    .oplata_reviews {
+        padding: 7px;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 800px){
+    .head_review h2 {
+        font: bold 16px Roboto;
+    }
+    .reviews {
+        flex-wrap: wrap;
+    }
+    .vk_reviews {
+        width: 100%;
+        padding: 0px;
+    }
+    .oplata_reviews {
+        width: 100%;
+        padding: 0px;
+    }
+    .head_review{
+        min-height: auto;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 600px){
+    .head_review h2 {
+        font: bold 16px Roboto;
+    }
+    .reviews {
+        flex-wrap: wrap;
+    }
+    .vk_reviews {
+        width: 100%;
+        padding: 0px;
+    }
+    .oplata_reviews {
+        width: 100%;
+        padding: 0px;
+    }
+    .head_review{
+        min-height: auto;
+    }
+    .review {
+        font: normal 11px/14px Roboto;
+    }
+    .review_head {
+        font: bold 13px Roboto;
+    }
+    .review_head_date {
+        flex-basis: 60px;
+    }
+    .review_date {
+        flex-basis: 60px;
+    }
+    .box_reviews {
+        padding: 10px;
+    }
+    .review_text{
+        padding: 8px 15px 8px 0px;
+    }
+    .review_head_text{
+        padding: 0px 15px 0px 0px;
+    }
+}
+@media screen and (min-width: 100px) and (max-width: 400px){
+    .head_review h2 {
+        font: bold 16px Roboto;
+    }
+    .reviews {
+        flex-wrap: wrap;
+    }
+    .vk_reviews {
+        width: 100%;
+        padding: 0px;
+    }
+    .oplata_reviews {
+        width: 100%;
+        padding: 0px;
+    }
+    .head_review{
+        min-height: auto;
+    }
+    .review {
+        font: normal 11px/14px Roboto;
+    }
+    .review_head {
+        font: bold 13px Roboto;
+    }
+    .review_head_date {
+        text-align: left;
+        flex-basis: 60px;
+    }
+    .review_date {
+        text-align: left;
+        flex-basis: 60px;
+    }
+    .box_reviews {
+        padding: 10px;
+    }
+    .review_text{
+        padding: 8px 15px 8px 0px;
+    }
+    .review_head_text{
+        padding: 0px 15px 0px 0px;
+    }
+}
+
+/*Адаптация каркаса контента*/
+
+@media screen and (min-width: 980px) and (max-width: 1150px){
+    .content_head h1 {
+        font: bold 20px Roboto;
+        padding: 15px 25px;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 980px){
+    .content_head h1 {
+        font: bold 20px Roboto;
+        padding: 15px 22px;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 800px){
+    .content_head h1 {
+        font: bold 20px Roboto;
+        padding: 15px;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 600px){
+    .content_head h1 {
+        font: bold 20px Roboto;
+        padding: 15px;
+    }
+}
+@media screen and (min-width: 200px) and (max-width: 400px){
+    .content_head h1 {
+        font: bold 20px Roboto;
+        padding: 15px;
+    }
+}
