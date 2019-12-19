@@ -1389,6 +1389,9 @@ body{
     padding: 0 10px;
     font: normal 13px Roboto;
     color: #eee;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .game_result .game_result_price{
     flex-basis: 100px;
