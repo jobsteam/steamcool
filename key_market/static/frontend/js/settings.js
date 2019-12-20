@@ -20,14 +20,18 @@ $(document).ready(function(){
 	/*Ползунок цены в фильтре*/
 	if($("#price").exists()) {
 		var startSlider = $('#price')[0],
-			minInput = $('#min-price')[0],
-			maxInput = $('#max-price')[0];
+      minInput = $('#min-price')[0],
+      maxInput = $('#max-price')[0],
+      min_current = $('#min-price').val(),
+      max_current = $('#max-price').val(),
+      min_price = $('#min-price').data('price-min'),
+      max_price = $('#max-price').data('price-max');
 		noUiSlider.create(startSlider, {
-		    start: [0, 3000],
+		    start: [min_current, max_current],
 		    step: 10,
 		    range: {
-		        'min': [0],
-		        'max': [3000]
+		        'min': [min_price],
+		        'max': [max_price]
 		    },
 			format: {
 				to: function (value) {

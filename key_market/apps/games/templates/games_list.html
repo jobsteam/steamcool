@@ -9,38 +9,60 @@
 
 
 {% block left_column %}
-    <div class="test">
-        <form action="" method="GET">
-            <input type="text" name="price_min" value="0" id="id_price_min">
-            <input type="text" name="price_max" value="1599" id="id_price_max">
+    <div data-popup="filter" class="block filter_block">
+        <div class="head_popup">
+            <span class="close_popup_button">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+        </div>
+        <div class="filter">
+            <h3>Фильтр каталога</h3>
+            <form action="" method="GET">
+                <div class="block_content">
 
-            <div class="property">
-                <div class="property_head">{{ filter_form.genre.label }}</div>
-                {{ filter_form.genre }}
-            </div>
 
-            <div class="property">
-                <div class="property_head">{{ filter_form.store_activation.label }}</div>
-                {{ filter_form.store_activation }}
-            </div>
+                    <div class="property">
+                        <div class="property_head">Цена</div>
+                        <div class="property_content">
+                            <div id="price"></div>
+                            <div class="price_detail">
+                                <span>от</span>
+                                <div><input data-price-min="{{ prices.price_min }}" name="price_min" id="min-price" value="{{ filter_form.price_min.value }}"></div>
+                                <span>до</span>
+                                <div><input data-price-max="{{ prices.price_max }}" name="price_max" id="max-price" value="{{ filter_form.price_max.value }}"></div>
+                                <span>руб.</span>
+                            </div>
+                        </div>
+                        
+                    </div>
 
-            <div class="property">
-                <div class="property_head">{{ filter_form.mode.label }}</div>
-                {{ filter_form.mode }}
-            </div>
+                    <div class="property">
+                        <div class="property_head">{{ filter_form.genre.label }}</div>
+                        {{ filter_form.genre }}
+                    </div>
 
-            <button type="submit">Найти</button>
-        </form>
+                    <div class="property">
+                        <div class="property_head">{{ filter_form.store_activation.label }}</div>
+                        {{ filter_form.store_activation }}
+                    </div>
 
-        {{ prices.price_min }}
-        {{ prices.price_max }}
+                    <div class="property">
+                        <div class="property_head">{{ filter_form.mode.label }}</div>
+                        {{ filter_form.mode }}
+                    </div>
+                </div>
+                <div class="block_button">
+                    <input type="submit" value="Подобрать">
+                </div>
+            </form>
+        </div>
     </div>
 {% endblock left_column %}
 
 
 {% block center_column %}
     {% if game_list %}
-        <div class="content">
+        <div class="wrapper_game_list">
             <div class="head_game_list">
                 <h1>{{ page_title }}</h1>
                 <div data-popup-button="filter" class="filter_button">

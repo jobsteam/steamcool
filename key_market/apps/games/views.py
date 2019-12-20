@@ -66,7 +66,7 @@ class PageTitleMixin(object):
 class GamesList(PageTitleMixin, ListView):
     model = Game
     template_name = "games_list.html"
-    paginate_by = 10
+    paginate_by = 20
 
     def get_form(self, prices):
         request = self.request

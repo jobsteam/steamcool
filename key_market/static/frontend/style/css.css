@@ -419,7 +419,9 @@ body{
 
 
 /*Список игр*/
-
+.wrapper_game_list{
+    background: #fff;
+}
 .head_game_list{
     display: flex;
     flex-direction: row;
@@ -697,12 +699,12 @@ body{
     margin: 0 0 15px 0;
 }
 .property_head{
-    font: normal 13px Roboto;
+    font: bold 13px Roboto;
     color: #fff;
     margin: 0 0 15px 0;
-    background: #5050638c;
     padding: 4px;
     border-bottom: solid 2px #484848;
+    text-transform: uppercase;
 }
 
 .property_list div{
