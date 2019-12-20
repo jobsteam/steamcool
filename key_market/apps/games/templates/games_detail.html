@@ -37,7 +37,7 @@
                         <span>Жанр:</span>
                         <span>
                             {% for genre in game.genre.all%}
-                                <a href="{% url 'games:genre_list' genre.slug %}">{{ genre.title }}</a>{% if not forloop.last %}, {% endif %}
+                                <a href="{% url 'games:list' %}?genre={{ genre.id }}">{{ genre.title }}</a>{% if not forloop.last %}, {% endif %}
                             {% endfor %}
                         </span>
                     </div>

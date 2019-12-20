@@ -82,11 +82,6 @@
                                 <div class="name">{{ games.title }}</div>
                                 <div class="store_info">
                                     <div class="mini_icon mini_icon_{{ games.get_store_activation_display }}"></div>
-                                    <div class="genre">
-                                        {% for genre in games.genre.all %}
-                                            {{ genre.title }}{% if not forloop.last %}, {% endif %} 
-                                        {% endfor %}
-                                    </div>
                                 </div>
                             </div>
                             <div class="status">
