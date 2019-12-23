@@ -53,6 +53,15 @@ class RegionActivation(object):
         )
 
 
+class PartnerName(object):
+        STEAMBUY = 1
+        SFERA2002 = 2
+        CHOICES = (
+            (STEAMBUY, 'steambuy.com'),
+            (SFERA2002, 'sfera2002 на plati.ru'),
+        )
+
+
 class Game(models.Model):
     title = models.CharField(
         'Название игры',
@@ -200,22 +209,6 @@ class Game(models.Model):
         'Показать на главной',
         default=False)
 
-    sb_id = models.IntegerField(
-        'Steambuy id_d',
-        blank=True, null=True)
-
-    sp_id = models.IntegerField(
-        'Steampay id_d',
-        blank=True, null=True)
-
-    sa_id = models.IntegerField(
-        'Steam-Account id_d',
-        blank=True, null=True)
-
-    zz_id = models.IntegerField(
-        'Zaka-Zaka id_d',
-        blank=True, null=True)
-
     class Meta:
         default_related_name = 'Без названия'
         ordering = ['title']
@@ -347,3 +340,29 @@ class Publisher(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Partner(models.Model):
+    partner_title = models.IntegerField(
+        'Название партнера',
+        choices=PartnerName.CHOICES,
+        db_index=True, blank=True, null=True)
+
+    partner_digi_id = models.CharField(
+        'ID товара',
+        max_length=254)
+
+    game = models.ForeignKey(
+        'Game',
+        verbose_name='Партнеры',
+        related_name='partners',
+        blank=True, null=True, on_delete=models.SET_NULL)
+
+    class Meta:
+        default_related_name = 'Без названия'
+        ordering = ['partner_title']
+        verbose_name = 'Партнер'
+        verbose_name_plural = 'Партнеры'
+
+    def __str__(self):
+        return self.get_partner_title_display()

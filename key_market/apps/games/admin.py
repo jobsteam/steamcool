@@ -25,6 +25,11 @@ class ScreenshotInlineAdmin (admin.StackedInline):
     field_thumbnail.short_description = 'Превью обложки'
 
 
+class PartnerInlineAdmin (admin.StackedInline):
+    extra = 0
+    model = game_models.Partner
+
+
 @admin.register(game_models.Game)
 class GameAdmin(admin.ModelAdmin):
     list_display = (
@@ -33,6 +38,7 @@ class GameAdmin(admin.ModelAdmin):
     )
 
     inlines = [
+        PartnerInlineAdmin,
         ScreenshotInlineAdmin,
     ]
 
@@ -98,6 +104,12 @@ class GameAdmin(admin.ModelAdmin):
                 'slide_text'
             )
         }),
+        ('Трейлер игры', {
+            'classes': ('wide',),
+            'fields': (
+                'id_video',
+            )
+        }),
         ('Цена / Digiseller', {
             'classes': ('wide',),
             'fields': (
@@ -105,21 +117,6 @@ class GameAdmin(admin.ModelAdmin):
                 'my_coast',
                 'store_coast',
                 'in_stock',
-            )
-        }),
-        ('Анализ цен конкурентов', {
-            'classes': ('wide',),
-            'fields': (
-                'sp_id',
-                'sb_id',
-                'sa_id',
-                'zz_id',
-            )
-        }),
-        ('Трейлер игры', {
-            'classes': ('wide',),
-            'fields': (
-                'id_video',
             )
         }),
     )
