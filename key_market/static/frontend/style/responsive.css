@@ -1191,6 +1191,7 @@
 @media screen and (min-width: 400px) and (max-width: 500px){
     .slide .slide_info{
         display: block;
+        padding: 0 0 20px 0;
     }
     .slide .slide_info .slide_name{
         text-align: center;
@@ -1212,6 +1213,7 @@
 @media screen and (max-width: 400px){
     .slide .slide_info{
         display: block;
+        padding: 0 0 20px 0;
     }
     .slide .slide_info .slide_name{
         text-align: center;
@@ -1572,5 +1574,38 @@
     .content_head h1 {
         font: bold 20px Roboto;
         padding: 15px;
+    }
+}
+
+
+/*Адаптация табов на главной странице*/
+@media screen and (min-width: 400px) and (max-width: 500px){
+    .tabs_on_main .tab_menu {
+        background: #f5f5f5;
+        justify-content: center;
+        border-bottom: solid 3px #131d19;
+    }
+    .tabs_on_main .tab_menu li{
+        text-transform: none;
+        border-radius: 5px 5px 0 0;
+        background: #131d19;
+        margin: 0 2px;
+        color: #fff;
+    }
+}
+@media screen and (max-width: 400px){
+    .tabs_on_main .tab_menu {
+        background: #f5f5f5;
+        justify-content: center;
+        border-bottom: solid 3px #131d19;
+    }
+    .tabs_on_main .tab_menu li{
+        font: bold 12px Roboto;
+        padding: 10px 15px;
+        text-transform: none;
+        border-radius: 5px 5px 0 0;
+        background: #131d19;
+        margin: 0 2px;
+        color: #fff;
     }
 }
