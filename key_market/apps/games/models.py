@@ -177,29 +177,9 @@ class Game(models.Model):
         max_length=254,
         blank=True, null=True)
 
-    seo_title = models.CharField(
-        'Заголовок страницы',
-        max_length=1000,
-        blank=True, null=True)
-
-    seo_keywords = models.CharField(
-        'Ключевые слова',
-        max_length=1000,
-        blank=True, null=True)
-
-    seo_description = models.CharField(
-        'Описание',
-        max_length=1000,
-        blank=True, null=True)
-
     is_slide = models.BooleanField(
         'Показать в слайде',
         default=False)
-
-    slide_text = models.TextField(
-        'Текст для слайда',
-        max_length=300,
-        blank=True)
 
     is_soon = models.BooleanField(
         'Скоро в продаже',

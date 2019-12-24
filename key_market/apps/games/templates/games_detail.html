@@ -3,15 +3,15 @@
 {% load static pipeline %}
 {% load thumbnail %}
 
-{% block title %}{{ game.seo_title }}{% endblock title %}
+{% block title %}Купить {{ game.title }} на PC для {{ game.get_store_activation_display }}{% endblock title %}
 
-{% block keywords %}{{ game.seo_keywords }}{% endblock keywords %}
+{% block keywords %}Купить {{ game.title }}, ключ {{ game.title }}, на pc, купить со скидкой{% endblock keywords %}
 
-{% block description %}{{ game.seo_description }}{% endblock description %}
+{% block description %}Купить лицензионный ключ {{ game.title }} на PC. Активация в {{ game.get_store_activation_display }}. Моментальная доставка. Игра продается со скидкой по самой низкой цене в интернете.{% endblock description %}
 
-{% block ogtitle %}Купить {{ game.title }} ({{ game.get_store_activation_display }}){% endblock ogtitle %}
+{% block ogtitle %}Купить {{ game.title }} на PC для {{ game.get_store_activation_display }}{% endblock ogtitle %}
 
-{% block ogdescription %}Купить лицензионный {{ game.title }} - активация в {{ game.get_store_activation_display }}. Моментальная доставка на электронный почтовый ящик.{% endblock ogdescription %}
+{% block ogdescription %}Купить лицензионный ключ {{ game.title }} на PC. Активация в {{ game.get_store_activation_display }}. Моментальная доставка. Игра продается со скидкой по самой низкой цене в интернете.{% endblock ogdescription %}
 
 {% block ogimg %}{{ game.image.url }}{% endblock ogimg %}
 
@@ -25,7 +25,7 @@
 
 {% block view_element %}
     <div class="game_page">
-        <h1>{{ game.seo_title }}</h1>
+        <h1>Купить {{ game.title }} на PC</h1>
         <div class="game_head">
             <div class="game_img">
                 {% thumbnail game.image "460x215" quality=100 as main_image %}

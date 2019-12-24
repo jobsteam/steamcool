@@ -3,11 +3,11 @@
 {% load static pipeline %}
 {% load thumbnail %}
 
-{% block title %}{{ game.seo_title }}{% endblock title %}
+{% block title %}{{ game.title }} - оформление заказа{% endblock title %}
 
-{% block keywords %}{{ game.seo_keywords }}{% endblock keywords %}
+{% block keywords %}Заказать {{ game.title }}, оплатить {{ game.title }}{% endblock keywords %}
 
-{% block description %}{{ game.seo_description }}{% endblock description %}
+{% block description %}Оформление заказа на {{ game.title }}, выбор способа оплаты{% endblock description %}
 
 {% block extra-styles %}<link rel="stylesheet" href="{% static 'frontend/style/jquery.fancybox.css' %}" />{% endblock extra-styles %}
 

@@ -80,14 +80,6 @@ class GameAdmin(admin.ModelAdmin):
                 'hdd',
             )
         }),
-        ('СЕО', {
-            'classes': ('wide',),
-            'fields': (
-                'seo_title',
-                'seo_keywords',
-                'seo_description',
-            )
-        }),
         ('Настрока отображения', {
             'classes': ('wide',),
             'fields': (
@@ -100,8 +92,7 @@ class GameAdmin(admin.ModelAdmin):
             'fields': (
                 'is_slide',
                 'image_slide',
-                'field_slide_thumbnail',
-                'slide_text'
+                'field_slide_thumbnail'
             )
         }),
         ('Трейлер игры', {
