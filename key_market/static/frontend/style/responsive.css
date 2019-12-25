@@ -1581,31 +1581,29 @@
 /*Адаптация табов на главной странице*/
 @media screen and (min-width: 400px) and (max-width: 500px){
     .tabs_on_main .tab_menu {
-        background: #f5f5f5;
+        background: #333;
         justify-content: center;
-        border-bottom: solid 3px #131d19;
     }
     .tabs_on_main .tab_menu li{
-        text-transform: none;
-        border-radius: 5px 5px 0 0;
         background: #131d19;
-        margin: 0 2px;
+        margin: 0;
         color: #fff;
+        width: 33.3%;
+        text-align: center;
     }
 }
 @media screen and (max-width: 400px){
     .tabs_on_main .tab_menu {
-        background: #f5f5f5;
+        background: #333;
         justify-content: center;
-        border-bottom: solid 3px #131d19;
     }
     .tabs_on_main .tab_menu li{
         font: bold 12px Roboto;
-        padding: 10px 15px;
-        text-transform: none;
-        border-radius: 5px 5px 0 0;
+        padding: 10px 5px;
         background: #131d19;
-        margin: 0 2px;
+        margin: 0;
         color: #fff;
+        width: 33.3%;
+        text-align: center;
     }
 }
