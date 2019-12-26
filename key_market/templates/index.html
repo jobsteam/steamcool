@@ -40,133 +40,131 @@
             <i class="fa fa-chevron-right" aria-hidden="true"></i>
         </div>
     </div>
-    <div class="tabs_on_main">
-        <ul class="tab_menu">
-            <li class="active">Популярное</li>
-            <li>Новое на сайте</li>
-            <li>Скоро</li>
-        </ul>
-    </div>
-    <div class="tabs">
-        <div class="tab_content active">
-            <div class="game_list">
-                {% for game in games_on_main_page %}
-                    <div class="game">
-                        <a class="link" href="{% url 'games:detail' game.slug %}"></a>
-                        <div class="game_img">
-                            {% thumbnail game.image "250x117" as im %}
-                            <img src="{{ im.url }}">
-                        </div>
-                        <div class="game_info">
-                            <div class="product">
-                                <div class="name">{{ game.title}}</div>
-                                <div class="store_info">
-                                    <div class="mini_icon mini_icon_{{ game.get_store_activation_display }}"></div>
-                                    <div class="genre">
-                                        {% for genre in game.genre.all %}
-                                            {{ genre.title }}{% if not forloop.last %}, {% endif %} 
-                                        {% endfor %}
-                                    </div>
+
+
+<div class="main_page_tabs">
+    <div class="tab_item active_tab">Популярное</div>
+    <div class="tab_block active">
+        <div class="game_list">
+            {% for game in games_on_main_page %}
+                <div class="game">
+                    <a class="link" href="{% url 'games:detail' game.slug %}"></a>
+                    <div class="game_img">
+                        {% thumbnail game.image "250x117" as im %}
+                        <img src="{{ im.url }}">
+                    </div>
+                    <div class="game_info">
+                        <div class="product">
+                            <div class="name">{{ game.title}}</div>
+                            <div class="store_info">
+                                <div class="mini_icon mini_icon_{{ game.get_store_activation_display }}"></div>
+                                <div class="genre">
+                                    {% for genre in game.genre.all %}
+                                        {{ genre.title }}{% if not forloop.last %}, {% endif %} 
+                                    {% endfor %}
                                 </div>
                             </div>
-                            <div class="status">
-                                {% if game.in_stock %}
-                                    <div class="coast">
-                                        <div class="percent">-33%</div>
-                                        <div class="price">
-                                            {{ game.my_coast }} <span>руб.</span>
-                                        </div>
-                                    </div>
-                                {% elif game.is_soon %}
-                                    <div class="soon">Скоро!</div>
-                                {% else %}
-                                    <div class="nonal">Закончился!</div>
-                                {% endif %}
-                            </div>
                         </div>
-                    </div> 
-                {% endfor %}
-            </div>
-        </div>
-        <div class="tab_content">
-            <div class="game_list">
-                {% for game in games_new_on_site %}
-                    <div class="game">
-                        <a class="link" href="{% url 'games:detail' game.slug %}"></a>
-                        <div class="game_img">
-                            {% thumbnail game.image "250x117" as im %}
-                            <img src="{{ im.url }}">
-                        </div>
-                        <div class="game_info">
-                            <div class="product">
-                                <div class="name">{{ game.title}}</div>
-                                <div class="store_info">
-                                    <div class="mini_icon mini_icon_{{ game.get_store_activation_display }}"></div>
-                                    <div class="genre">
-                                        {% for genre in game.genre.all %}
-                                            {{ genre.title }}{% if not forloop.last %}, {% endif %} 
-                                        {% endfor %}
+                        <div class="status">
+                            {% if game.in_stock %}
+                                <div class="coast">
+                                    <div class="percent">-33%</div>
+                                    <div class="price">
+                                        {{ game.my_coast }} <span>руб.</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="status">
-                                {% if game.in_stock %}
-                                    <div class="coast">
-                                        <div class="percent">-33%</div>
-                                        <div class="price">
-                                            {{ game.my_coast }} <span>руб.</span>
-                                        </div>
-                                    </div>
-                                {% elif game.is_soon %}
-                                    <div class="soon">Скоро!</div>
-                                {% else %}
-                                    <div class="nonal">Закончился!</div>
-                                {% endif %}
-                            </div>
+                            {% elif game.is_soon %}
+                                <div class="soon">Скоро!</div>
+                            {% else %}
+                                <div class="nonal">Закончился!</div>
+                            {% endif %}
                         </div>
-                    </div> 
-                {% endfor %}
-            </div>
-        </div>
-        <div class="tab_content">
-            <div class="game_list">
-                {% for game in games_soon %}
-                    <div class="game">
-                        <a class="link" href="{% url 'games:detail' game.slug %}"></a>
-                        <div class="game_img">
-                            {% thumbnail game.image "250x117" as im %}
-                            <img src="{{ im.url }}">
-                        </div>
-                        <div class="game_info">
-                            <div class="product">
-                                <div class="name">{{ game.title}}</div>
-                                <div class="store_info">
-                                    <div class="mini_icon mini_icon_{{ game.get_store_activation_display }}"></div>
-                                    <div class="genre">
-                                        {% for genre in game.genre.all %}
-                                            {{ genre.title }}{% if not forloop.last %}, {% endif %} 
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="status">
-                                {% if game.in_stock %}
-                                    <div class="coast">
-                                        <div class="percent">-33%</div>
-                                        <div class="price">
-                                            {{ game.my_coast }} <span>руб.</span>
-                                        </div>
-                                    </div>
-                                {% elif game.is_soon %}
-                                    <div class="soon">Скоро!</div>
-                                {% else %}
-                                    <div class="nonal">Закончился!</div>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div> 
-                {% endfor %}
-            </div>
+                    </div>
+                </div> 
+            {% endfor %}
         </div>
     </div>
+    <div class="tab_item">Новое на сайте</div>
+    <div class="tab_block">
+        <div class="game_list">
+            {% for game in games_new_on_site %}
+                <div class="game">
+                    <a class="link" href="{% url 'games:detail' game.slug %}"></a>
+                    <div class="game_img">
+                        {% thumbnail game.image "250x117" as im %}
+                        <img src="{{ im.url }}">
+                    </div>
+                    <div class="game_info">
+                        <div class="product">
+                            <div class="name">{{ game.title}}</div>
+                            <div class="store_info">
+                                <div class="mini_icon mini_icon_{{ game.get_store_activation_display }}"></div>
+                                <div class="genre">
+                                    {% for genre in game.genre.all %}
+                                        {{ genre.title }}{% if not forloop.last %}, {% endif %} 
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="status">
+                            {% if game.in_stock %}
+                                <div class="coast">
+                                    <div class="percent">-33%</div>
+                                    <div class="price">
+                                        {{ game.my_coast }} <span>руб.</span>
+                                    </div>
+                                </div>
+                            {% elif game.is_soon %}
+                                <div class="soon">Скоро!</div>
+                            {% else %}
+                                <div class="nonal">Закончился!</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div> 
+            {% endfor %}
+        </div>
+    </div>
+    <div class="tab_item">Скоро</div>
+    <div class="tab_block">
+        <div class="game_list">
+            {% for game in games_soon %}
+                <div class="game">
+                    <a class="link" href="{% url 'games:detail' game.slug %}"></a>
+                    <div class="game_img">
+                        {% thumbnail game.image "250x117" as im %}
+                        <img src="{{ im.url }}">
+                    </div>
+                    <div class="game_info">
+                        <div class="product">
+                            <div class="name">{{ game.title}}</div>
+                            <div class="store_info">
+                                <div class="mini_icon mini_icon_{{ game.get_store_activation_display }}"></div>
+                                <div class="genre">
+                                    {% for genre in game.genre.all %}
+                                        {{ genre.title }}{% if not forloop.last %}, {% endif %} 
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="status">
+                            {% if game.in_stock %}
+                                <div class="coast">
+                                    <div class="percent">-33%</div>
+                                    <div class="price">
+                                        {{ game.my_coast }} <span>руб.</span>
+                                    </div>
+                                </div>
+                            {% elif game.is_soon %}
+                                <div class="soon">Скоро!</div>
+                            {% else %}
+                                <div class="nonal">Закончился!</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div> 
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock center_column %}

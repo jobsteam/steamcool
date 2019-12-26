@@ -1579,31 +1579,16 @@
 
 
 /*Адаптация табов на главной странице*/
-@media screen and (min-width: 400px) and (max-width: 500px){
-    .tabs_on_main .tab_menu {
-        background: #333;
-        justify-content: center;
-    }
-    .tabs_on_main .tab_menu li{
-        background: #131d19;
-        margin: 0;
+@media screen and (max-width: 500px){
+    .tab_item{
+        width: 100%;
+        order: 0;
+        background: linear-gradient(to top, #212121, #4a4a4a 4%, #383838);
         color: #fff;
-        width: 33.3%;
         text-align: center;
     }
-}
-@media screen and (max-width: 400px){
-    .tabs_on_main .tab_menu {
-        background: #333;
-        justify-content: center;
-    }
-    .tabs_on_main .tab_menu li{
-        font: bold 12px Roboto;
-        padding: 10px 5px;
-        background: #131d19;
-        margin: 0;
-        color: #fff;
-        width: 33.3%;
-        text-align: center;
+    .tab_block{
+        width: 100%;
+        order: 0;
     }
 }

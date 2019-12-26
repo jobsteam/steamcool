@@ -1012,6 +1012,7 @@ body{
 /*Слайд на главной*/
 .slide-container {
     width: 100%;
+    border-bottom: solid 3px #333
 }
 .swiper-wrapper {
     width: 1px!important;
@@ -1412,4 +1413,33 @@ body{
 .autocomplete-selected .game_result{
     background: #6b5a4e;
     cursor: pointer;
+}
+
+
+
+/*Табы на главной странице*/
+.main_page_tabs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #fff;
+}
+.tab_item{
+    order: 1;
+    padding: 10px 20px;
+    font: bold 13px Roboto;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.tab_block{
+    order: 2;
+    width: 100%;
+    display: none;
+}
+.tab_block.active{
+    display: block;
+}
+.active_tab{
+    background: #ee7928;
+    color: #fff;
 }
