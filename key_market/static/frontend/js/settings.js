@@ -124,10 +124,10 @@ $(document).ready(function(){
 
     /*Табы на главной странице*/
     $("div.tab_item").click(function() {
-      /*
+      
       $("div.tab_item").removeClass("active_tab");
       $(this).addClass("active_tab");
-      */
+      
       var elem = $(this).nextAll("div.tab_block:first");
       if (elem.is(":hidden")) {
         if($(document).width()>500){
