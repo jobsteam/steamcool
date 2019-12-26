@@ -1033,13 +1033,14 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    background: linear-gradient(to top, #fff, #eee);
+    background: linear-gradient(to top, #212121, #4a4a4a 4%, #383838);
 }
 .slide .slide_info .slide_name{
     width: 100%;
     font: bold 13px Roboto;
     text-transform: uppercase;
     padding: 10px;
+    color: #fff;
 }
 .slide .slide_info .slide_coast{
     display: flex;
