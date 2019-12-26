@@ -953,9 +953,6 @@ body{
     display: block;
     width: 100%;
 }
-.game_page .media_block .media_element:first-child{
-    width: calc(100% - 2px);
-}
 .game_page .media_block .media_element{
     width: calc(50% - 2px);
     margin: 1px;

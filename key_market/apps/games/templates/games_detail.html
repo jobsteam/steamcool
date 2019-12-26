@@ -108,11 +108,14 @@
                             <div class="description_block">
                                 <h2>Описание игры</h2>
                                 <div class="description_content">
-                                    ОС {{ game.os }}
-                                    CP {{ game.processor }}
-                                    ОЗ {{ game.ozu }}
-                                    HD {{ game.hdd }}
-                                    Vi {{ game.video_card }}
+                                    <p>Системные требования</p>
+                                    <p>
+                                    <strong>ОС:</strong> {{ game.os }}<br />
+                                    <strong>Видео карта:</strong> {{ game.video_card }}<br />
+                                    <strong>Процессор:</strong> {{ game.processor }}<br />
+                                    <strong>ОЗУ:</strong> {{ game.ozu }}<br />
+                                    <strong>HDD:</strong> {{ game.hdd }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
