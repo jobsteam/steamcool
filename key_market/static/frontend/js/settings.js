@@ -115,10 +115,10 @@ $(document).ready(function(){
             }
             console.log("не указан способ оплаты");
           }
+          return false;
         }else{
           console.log("отправлять");
         }
-        return false;
     });
 
 
