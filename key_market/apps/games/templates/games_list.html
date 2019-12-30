@@ -73,7 +73,7 @@
                     <div class="game">
                         <a class="link" href="{% url 'games:detail' games.slug %}"></a>
                         <div class="game_img">
-                            {% thumbnail games.image "250x117" as im %}
+                            {% thumbnail games.image "250x117" quality=100 as im %}
                             <img src="{{ im.url }}">
                         </div>
                         <div class="game_info">
