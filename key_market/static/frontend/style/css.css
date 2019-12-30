@@ -783,6 +783,7 @@ body{
     flex-basis: 460px;
     flex-shrink: 0;
     flex-grow: 0;
+    padding: 20px 0 20px 20px;
 }
 .game_page .game_info{
     position: relative;
@@ -821,6 +822,7 @@ body{
 .game_page .game_img img{
     display: block;
     width: 100%;
+    border-radius: 10px;
 }
 .game_page .game_description{
     background: #fff;
@@ -832,20 +834,20 @@ body{
 }
 .game_page .game_description_left{
     width: 100%;
-    padding: 30px 15px 30px 30px;
+    padding: 0;
 }
 .game_page .game_description_right{
     width: 250px;
     flex-grow: 0;
     flex-shrink: 0;
-    padding: 30px 30px 30px 15px;
+    padding: 15px;
 }
 .game_page .game_description_tabs ul{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0;
-    padding: 8px 8px 0 8px;
+    padding: 0;
     list-style: none;
     background: #2f2f2f;
 }
@@ -866,18 +868,18 @@ body{
     flex-direction: row;
     flex-wrap: nowrap;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 30px;
+    left: 20px;
+    right: 20px;
     height: 50px;
 }
 .game_page .game_info .status .percent{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 35%;
     color: #fff;
-    font: bold 23px Roboto;
+    font: bold 20px Roboto;
 }
 .game_page .game_info .status .percent span {
     color: #ff6000;
@@ -886,9 +888,9 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: 60%;
+    width: 65%;
     background: linear-gradient(to top, #71cb4a, #60a343);
-    border-radius: 15px 0 0 0;
+    border-radius: 8px;
     overflow: hidden;
 }
 .game_page .game_info .status .buy .coast{
@@ -939,10 +941,10 @@ body{
     color: #333;
 }
 .game_page .description_content{
-    font: normal 13px/19px Roboto;
-    background: #eee;
+    font: normal 14px/20px Roboto;
+    background: #fbfbfb;
     color: #333;
-    padding: 15px;
+    padding: 15px 35px;
 }
 .game_page .media_block{
     display: flex;
@@ -957,6 +959,9 @@ body{
     width: calc(50% - 2px);
     margin: 1px;
     position: relative;
+    opacity: 0.9;
+    filter: brightness(0.5);
+
 }
 .game_page .media_block .media_element a{
     position: absolute;
@@ -976,7 +981,8 @@ body{
 }
 .comments{
     font: normal 14px Roboto;
-    padding: 0 30px 30px 30px;
+    padding: 30px;
+    background: #fbfbfb;
 }
 
 
