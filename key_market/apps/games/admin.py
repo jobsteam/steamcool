@@ -17,7 +17,7 @@ class ScreenshotInlineAdmin (admin.StackedInline):
     readonly_fields = ['field_thumbnail']
 
     def field_thumbnail(self, instance):
-        options = {'size': (200, 0), 'quality': 80}
+        options = {'size': (200, 0), 'quality': 100}
         thumb = get_thumbnailer(instance.image).get_thumbnail(options)
         return mark_safe(
             '<img src="{url}" title="{title}" />'.format(url=thumb.url,
@@ -130,7 +130,7 @@ class GameAdmin(admin.ModelAdmin):
     field_my_price.short_description = 'Цена'
 
     def field_thumbnail(self, instance):
-        options = {'size': (200, 0), 'quality': 80}
+        options = {'size': (200, 0), 'quality': 100}
         thumb = get_thumbnailer(instance.image).get_thumbnail(options)
         return mark_safe(
             '<img src="{url}" title="{title}" />'.format(url=thumb.url,
@@ -138,7 +138,7 @@ class GameAdmin(admin.ModelAdmin):
     field_thumbnail.short_description = 'Превью обложки'
 
     def field_slide_thumbnail(self, instance):
-        options = {'size': (200, 0), 'quality': 80}
+        options = {'size': (200, 0), 'quality': 100}
         thumb = get_thumbnailer(instance.image_slide).get_thumbnail(options)
         return mark_safe(
             '<img src="{url}" title="{title}" />'.format(url=thumb.url,
