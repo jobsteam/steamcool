@@ -3,7 +3,7 @@ Django==1.11.26
 pip==9.0.1
 setuptools==35.0.2
 
-celery==3.1.24
+celery==5.2.2
 dicttoxml==1.7.4
 django-admin-sortable2==0.7
 django-autocomplete-light==3.2.10
